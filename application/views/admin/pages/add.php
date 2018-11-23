@@ -1,5 +1,5 @@
 <h2 class="page-header">Add Page</h2>
-<?= validation_errors('<p class="alert alert-danger">'); ?>
+<?= validation_errors('<p class="alert alert-dismissable alert-danger">'); ?>
 <?= form_open('admin/pages/add'); ?>
     <div class="form-group">
      <?= form_label('Page Title', 'title');  ?>

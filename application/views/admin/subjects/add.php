@@ -1,5 +1,5 @@
 <h2 class="page-header">Add Subject</h2>
-
+<?= validation_errors('<p class="alert alert-dismissable alert-danger">'); ?>
 <?= form_open('admin/subjects/add'); ?>
     <div class="form-group">
      <?= form_label('Subject Name', 'name');  ?>

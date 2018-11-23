@@ -1,10 +1,10 @@
 <h2 class="page-header">Pages</h2>
 
 <?php if($this->session->flashdata('success')) : ?>
-        <?= '<div class="alert alert-success">'.$this->session->flashdata('success').'</div>'  ?>
+        <?= '<div class="alert alert-dismissable alert-success">'.$this->session->flashdata('success').'</div>'  ?>
     <?php endif; ?>
     <?php if($this->session->flashdata('error')) : ?>
-        <?= '<div class="alert alert-danger">'.$this->session->flashdata('error').'</div>'  ?>
+        <?= '<div class="alert alert-dismissable alert-danger">'.$this->session->flashdata('error').'</div>'  ?>
     <?php endif; ?>
 
 <?php if($pages) : ?>

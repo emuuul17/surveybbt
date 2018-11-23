@@ -1,6 +1,6 @@
 <h2 class="page-header">Edit Page</h2>
 
-<?= validation_errors('<p class="alert alert-danger">'); ?>
+<?= validation_errors('<p class="alert alert-dismissable alert-danger">'); ?>
 <?= form_open('admin/pages/edit/'.$item->id); ?>
     <div class="form-group">
      <?= form_label('Page Title', 'title');  ?>

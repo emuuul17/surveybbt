@@ -70,7 +70,6 @@ class Pages extends CI_Controller {
 
 			// redirect
 			redirect('admin/pages');
-
 		}
 	}
 
@@ -124,7 +123,7 @@ class Pages extends CI_Controller {
 				'type' => 'page',
 				'action' => 'updated',
 				'user_id' => 1,
-				'message' => 'A page was added ('.$data['title'].')'
+				'message' => 'A page was edited ('.$data['title'].')'
 			);
 
 			//  Insert activity

@@ -1,5 +1,6 @@
 <h2 class="page-header">Edit Subject</h2>
 
+<?= validation_errors('<p class="alert alert-dismissable alert-danger">'); ?>
 <?= form_open('admin/subjects/edit/'.$item->id); ?>
     <div class="form-group">
      <?= form_label('Subject Name', 'name');  ?>
