@@ -42,7 +42,7 @@
 
            <ul class="nav navbar-nav navbar-right">
             <li><?= anchor('/', 'View Website', 'target="_blank"');?></li>
-            <li><?= anchor('users/logout', 'Logout', 'title="Logout"');?></li>
+            <li><?= anchor('admin/users/logout', 'Logout', 'title="Logout"');?></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -1,6 +1,14 @@
 <?php $atts = array('id' => 'login_form', 'class' => 'form-signin', 'role' => 'form'); ?>
 <?= form_open('admin/users/login', $atts); ?>
         <h2 class="form-signin-heading">Sparkup Admin Login</h2>
+        
+        <?php if($this->session->flashdata('success')) : ?>
+                <?= '<div class="alert alert-dismissable alert-success">'.$this->session->flashdata('success').'</div>'  ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('error')) : ?>
+                <?= '<div class="alert alert-dismissable alert-danger">'.$this->session->flashdata('error').'</div>'  ?>
+            <?php endif; ?>
+            
         <?= validation_errors('<p class="alert alert-dismissable alert-danger">'); ?>
         <?php if($this->session->flashdata('success')) : ?>
             <?= '<div class="alert alert-dismissable alert-success">'.$this->session->flashdata('success').'</div>'  ?>

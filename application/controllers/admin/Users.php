@@ -5,6 +5,10 @@ class Users extends CI_Controller {
 
 	public function index()
 	{
+		// check login
+		if(!$this->session->userdata('logged_in')){
+			redirect('admin/login');
+		}
 		$data['users'] = $this->User_model->get_list();
 		// load template
 		$this->template->load('admin', 'default', 'users/index', $data);
@@ -12,6 +16,10 @@ class Users extends CI_Controller {
 
 	public function add()
 	{
+		// check login
+		if(!$this->session->userdata('logged_in')){
+			redirect('admin/login');
+		}
 		// field rules
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|min_length[2]');
 		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|min_length[2]');
@@ -62,6 +70,10 @@ class Users extends CI_Controller {
 
 	public function edit($id)
 	{
+		// check login
+		if(!$this->session->userdata('logged_in')){
+			redirect('admin/login');
+		}
 		// field rules
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|min_length[2]');
 		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|min_length[2]');
@@ -106,6 +118,10 @@ class Users extends CI_Controller {
 
 	public function delete($id)
 	{
+		// check login
+		if(!$this->session->userdata('logged_in')){
+			redirect('admin/login');
+		}
 		$username = $this->User_model->get($id)->username;
 
 		// Delete user
@@ -180,6 +196,14 @@ class Users extends CI_Controller {
 
 	public function logout()
 	{
-		
+		$this->session->unset_userdata('logged_in');
+		$this->session->unset_userdata('user_id');
+		$this->session->unset_userdata('username');
+		$this->session->sess_destroy();
+
+		// msg
+		$this->session->set_flashdata('success', 'You are logged out');
+
+		redirect('admin/users/login');
 	}
 }
