@@ -134,7 +134,48 @@ class Users extends CI_Controller {
 
 	public function login()
 	{
+		// field rules
 		
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]');
+		
+		if($this->form_validation->run() == FALSE){
+
+		// load template
+		$this->template->load('admin', 'login', 'users/login');
+
+		}else{
+			// get post data
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			$enc_password = md5($password);
+
+			$user_id = $this->User_model->login($username, $enc_password);
+
+			if($user_id){
+				$user_data = array(
+					'user_id' => $user_id,
+					'username' => $username,
+					'logged_in' => true
+				);
+
+				// set session data
+				$this->session->set_userdata($user_data);
+				// set msg
+				$this->session->set_flashdata('success', 'You are logged in');
+
+				// redirect
+				redirect('admin');
+			} else {
+				// set error
+				$this->session->set_flashdata('error', 'Invalid login');
+
+				// redirect
+				redirect('admin/users/login');
+			}
+			
+		}
+	
 	}
 
 	public function logout()
