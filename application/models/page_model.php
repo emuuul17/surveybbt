@@ -31,4 +31,19 @@ class Page_model extends CI_MODEL{
         $this->db->delete($this->table);
     }
 
+    public function get_featured(){
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->where('is_featured', 1);
+        $this->db->where('is_published', 1);
+
+        $query = $this->db->get();
+
+        if($query->num_rows() >= 1){
+            return $query->result();
+        } else{
+            return false;
+        }
+    }
+
 }

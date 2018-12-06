@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Subjects extends CI_Controller {
+class Subjects extends Admin_Controller {
 	function __construct(){
 		parent::__construct();
 
