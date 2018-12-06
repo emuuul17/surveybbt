@@ -18,6 +18,10 @@ class MY_Controller extends CI_Controller{
             parent::__construct();
             // die('PUB');
 
+            $this->load->library('menu');
+
+            $this->pages = $this->menu->get_pages();
+
             // brand/logo
             $this->brand = 'My Website';
 

@@ -55,7 +55,7 @@ class Pages extends Admin_Controller {
 				'is_published' => $this->input->post('is_published'),
 				'is_featured' => $this->input->post('is_featured'),
 				'in_menu' => $this->input->post('in_menu'),
-				'user_id' => 1,
+				'user_id' => $this->session->userdata('user_id'),
 				'order' => $this->input->post('order')
 			);
 
@@ -66,7 +66,7 @@ class Pages extends Admin_Controller {
 				'resource_id' => $this->db->insert_id(),
 				'type' => 'page',
 				'action' => 'added',
-				'user_id' => 1,
+				'user_id' => $this->session->userdata('user_id'),
 				'message' => 'A new page was added ('.$data['title'].')'
 			);
 
@@ -119,7 +119,7 @@ class Pages extends Admin_Controller {
 				'is_published' => $this->input->post('is_published'),
 				'is_featured' => $this->input->post('is_featured'),
 				'in_menu' => $this->input->post('in_menu'),
-				'user_id' => 1,
+				'user_id' => $this->session->userdata('user_id'),
 				'order' => $this->input->post('order')
 			);
 
@@ -130,7 +130,7 @@ class Pages extends Admin_Controller {
 				'resource_id' => $this->db->insert_id(),
 				'type' => 'page',
 				'action' => 'updated',
-				'user_id' => 1,
+				'user_id' => $this->session->userdata('user_id'),
 				'message' => 'A page was edited ('.$data['title'].')'
 			);
 
@@ -158,7 +158,7 @@ class Pages extends Admin_Controller {
 			'resource_id' => $this->db->insert_id(),
 			'type' => 'page',
 			'action' => 'deleted',
-			'user_id' => 1,
+			'user_id' => $this->session->userdata('user_id'),
 			'message' => 'Page has been deleted'
 		);
 

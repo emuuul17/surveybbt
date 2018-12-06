@@ -31,7 +31,7 @@
             <td><?= $page->id; ?></td>
             <td><span class="<?= $publish_icon; ?>"></span></td>
             <td><?= $page->title; ?></td>
-            <td><?= 'SOME USER'; ?></td>
+            <td><?= get_user_full_name($page->user_id); ?></td>
             <td><?= $formatted_date; ?></td>
             <td>
                 <?= anchor('admin/pages/edit/'.$page->id.'', 'Edit', 'class="btn btn-default"'); ?>

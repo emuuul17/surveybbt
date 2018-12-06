@@ -52,7 +52,7 @@ class Users extends Admin_Controller {
 				'resource_id' => $this->db->insert_id(),
 				'type' => 'user',
 				'action' => 'added',
-				'user_id' => 1,
+				'user_id' => $this->session->userdata('user_id'),
 				'message' => 'A new user was added ('.$data['username'].')'
 			);
 
@@ -100,7 +100,7 @@ class Users extends Admin_Controller {
 				'resource_id' => $this->db->insert_id(),
 				'type' => 'user',
 				'action' => 'updated',
-				'user_id' => 1,
+				'user_id' => $this->session->userdata('user_id'),
 				'message' => 'A user was updated ('.$data['username'].')'
 			);
 
@@ -132,7 +132,7 @@ class Users extends Admin_Controller {
 			'resource_id' => $this->db->insert_id(),
 			'type' => 'user',
 			'action' => 'deleted',
-			'user_id' => 1,
+			'user_id' => $this->session->userdata('user_id'),
 			'message' => 'User has been deleted'
 		);
 
