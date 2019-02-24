@@ -16,12 +16,11 @@
 	</script>
 	<!--// Meta tag Keywords -->
 
-	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/flexslider.css" type="text/css" media="all" /><!-- for testimonials -->
-
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/public/flexslider.css" type="text/css" media="all" /><!-- for testimonials -->
 	<!-- css files -->
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/public/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/public/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/public/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+	<link href="<?= base_url(); ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 	<!-- //css files -->
 
 	<!-- web-fonts -->

@@ -72,7 +72,7 @@
         </button>
       </div>
       <div class="modal-body">
-		<img src="<?php echo base_url();?>/assets/web/images/banner.jpg" class="img-fluid mb-3" alt="Modal Image" />
+		<img src="<?php echo base_url();?>assets/images/banner.jpg" class="img-fluid mb-3" alt="Modal Image" />
         Vivamus eget est in odio tempor interdum. Mauris maximus fermentum arcu, ac finibus ante. Sed mattis risus at ipsum elementum, ut auctor turpis cursus. Sed sed odio pharetra, aliquet velit cursus, vehicula enim. Mauris porta aliquet magna, eget laoreet ligula.
       </div>
       <div class="modal-footer">

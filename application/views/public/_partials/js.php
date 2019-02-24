@@ -2,7 +2,7 @@
 
 	<!-- js -->
 	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/public/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/public/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
 	<!-- //js -->	
 	
 	<!-- odometer-script -->
@@ -49,15 +49,12 @@
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			/*
 				var defaults = {
 				containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
 				scrollSpeed: 1200,
 				easingType: 'linear' 
 				};
-			*/
-								
 			$().UItoTop({ easingType: 'easeOutQuart' });
 								
 			});
@@ -67,7 +64,7 @@
 	
 	<!-- FlexSlider-JavaScript -->
 	<script defer src="<?php echo base_url();?>assets/js/public/jquery.flexslider.js"></script>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		$(function(){
 			SyntaxHighlighter.all();
 				});
@@ -79,6 +76,6 @@
 					}
 			});
 		});
-	</script>
+	</script> -->
 	<!-- //FlexSlider-JavaScript -->
 <!-- //js-scripts -->
