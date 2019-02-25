@@ -1,8 +1,8 @@
 <?php
-class Kontak_model extends CI_MODEL {
+class Contact_model extends CI_MODEL {
     function __construct(){
         parent::__construct();
-        $this->table = 'kontak';
+        $this->table = 'contact';
     }
 
     public function get_all()

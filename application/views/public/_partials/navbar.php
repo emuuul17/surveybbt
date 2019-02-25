@@ -65,8 +65,10 @@
 								<a href="<?php echo base_url();?>index.php/antawijaya/produk">Jadwal</a>
 							</li>
 							<li class="nav-item">
-								<a href="<?php echo base_url();?>index.php/antawijaya/kontak">Kontak Kami</a>
+								
+								<?= anchor('public/contact', 'Kontak Kami', 'title="Contact title"');?>
 							</li>
+							
 				</div>
 		  </nav>
 	</div>
