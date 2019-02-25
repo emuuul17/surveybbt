@@ -1,6 +1,6 @@
 <?php $atts = array('id' => 'login_form', 'class' => 'form-signin', 'role' => 'form'); ?>
 <?= form_open('admin/users/login', $atts); ?>
-        <h2 class="form-signin-heading">Sparkup Admin Login</h2>
+        <h2 class="form-signin-heading">Antawijaya Login</h2>
         
         <?php if($this->session->flashdata('success')) : ?>
                 <?= '<div class="alert alert-dismissable alert-success">'.$this->session->flashdata('success').'</div>'  ?>
