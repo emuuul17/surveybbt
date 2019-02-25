@@ -66,7 +66,7 @@
 							</li>
 							<li class="nav-item">
 								
-								<?= anchor('public/contact', 'Kontak Kami', 'title="Contact title"');?>
+								<?= anchor('contact', 'Kontak Kami', 'title="Contact Us"');?>
 							</li>
 							
 				</div>
