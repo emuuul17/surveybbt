@@ -1,5 +1,3 @@
-
-
 <section class="contact py-5 my-lg-5">
 	<div class="container">
 		<h3 class="heading text-center text-capitalize font-weight-bold mb-5">KONTAK KAMI</h3>
