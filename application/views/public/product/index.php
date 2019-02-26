@@ -1,4 +1,3 @@
-<section class="contact py-5 my-lg-5">
 <section class="section py-5">
     <div class="container py-md-0">
         <div class="row section_grids">
@@ -68,6 +67,7 @@
     </div>
 </section>
 <!-- //section -->
+
 <div class="container pt-3">
         <div class="row py-sm-5">
 

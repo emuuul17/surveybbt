@@ -10,3 +10,5 @@ $route['admin/login'] = 'admin/users/login';
 
 $route['contact'] = 'public/contact';
 $route['about'] = 'public/about';
+$route['product'] = 'public/product';
+
