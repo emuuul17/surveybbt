@@ -9,4 +9,4 @@ $route['admin'] = 'admin/dashboard';
 $route['admin/login'] = 'admin/users/login';
 
 $route['contact'] = 'public/contact';
-$route['product'] = 'public/product';
+$route['about'] = 'public/about';
