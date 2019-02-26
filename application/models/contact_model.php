@@ -11,4 +11,5 @@ class Contact_model extends CI_MODEL {
          $query = $this->db->get($this->table);
          return $query->result();
     }
+
 }

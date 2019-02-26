@@ -65,7 +65,6 @@
 								<a href="<?php echo base_url();?>index.php/antawijaya/produk">Jadwal</a>
 							</li>
 							<li class="nav-item">
-								
 								<?= anchor('contact', 'Kontak Kami', 'title="Contact Us"');?>
 							</li>
 							
