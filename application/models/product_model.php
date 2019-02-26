@@ -2,7 +2,7 @@
 class Product_model extends CI_MODEL {
     function __construct(){
         parent::__construct();
-        $this->table = 'produk_jasa';
+        $this->table = 'produk';
     }
 
     public function get_all()
