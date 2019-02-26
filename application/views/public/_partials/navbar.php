@@ -59,7 +59,7 @@
 							</li>
 						</ul>
 						<li class="nav-item">
-								<a href="<?php echo base_url();?>index.php/ctrl_produk/index_produk">Produk & Jasa</a>
+							<?= anchor('product', 'Produk & Jasa', 'title="Service & Products"');?>
 							</li>
 							<li class="nav-item">
 								<a href="<?php echo base_url();?>index.php/antawijaya/produk">Jadwal</a>
