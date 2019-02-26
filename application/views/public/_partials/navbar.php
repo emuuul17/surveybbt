@@ -37,7 +37,8 @@
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
 							<li>
-								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/ctrl_about/index_antawijaya">Antawijaya T&C</a>
+								<a class="active" class="nav-link">
+								<?= anchor('about', 'Tentang Kami', 'title="About Us"');?>
 							</li>
 							<li>
 								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/visimisi">Visi Misi</a>
