@@ -8,10 +8,10 @@
 
 <div class="card mb-3">
     <div class="card-header text-white bg-primary ">
-        Contact
+       <b><?= $title ?></b>
          <?= anchor('admin/contact/add', 'Add', 'class="btn btn-sm btn-success float-sm-right"'); ?>
 	    </div>
-    <div class="card-body table-responsive">
+    <div class="card-body table-responsive table-hover">
         <?php if($kontak) : ?>
             <table class="table table-bordered" cellspacing="0">
                 <tr>
@@ -28,7 +28,7 @@
                     <td><?= $user->nama; ?></td>
                     <td><?= $user->no_tlp; ?></td>
                     <td>
-                        <?= anchor('admin/contact/edit/'.$user->id.'', 'Edit', 'class="btn btn-sm btn-primary"'); ?>
+                        <?= anchor('admin/contact/edit/'.$user->id.'', 'Edit', 'class="btn btn-sm btn-warning"'); ?>
                         <?= anchor('admin/contact/delete/'.$user->id.'', 'Delete', 'class="btn btn-sm btn-danger"'); ?>
                     </td>
                     </tr>
