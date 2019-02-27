@@ -7,6 +7,7 @@ class About extends Public_Controller {
 	{
 		//data yg di ambil dari databse di tampung dalam satu variable $data, kemudian akan di tampilakn di file antawijaya
 		$data['abouts'] = $this->About_model->get_about();
-        $this->template->load('public', 'default', 'about/index', $data);
-    }
-}
+		$data['vmisi'] = $this->Visimisi_model->get_visimisi();
+		$this->template->load('public', 'default', 'about/index', $data);
+		}
+	}

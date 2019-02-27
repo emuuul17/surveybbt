@@ -17,4 +17,17 @@
 		</div>
 	</div>
 </section>
-<!-- //Welcome -->
+
+
+<section class="process py-5 my-lg-5">
+	<div class="container">
+		<div class="row process-grids">
+			<div class="col-lg-6 col-md-6 grid1">
+				<span class="fab fa-digital-ocean"></span>
+				<?php foreach($vmisi as $vm) : ?>
+				<h3 class="text-uppercase mt-3"><?=$vm->judul?></h3>
+				<p class="mt-sm-5 mt-3"><?=$vm->deskripsi?></p>
+				<?php endforeach; ?>
+				</div>
+				</div>
+			</section>
