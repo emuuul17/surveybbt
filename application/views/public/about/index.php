@@ -30,4 +30,27 @@
 				<?php endforeach; ?>
 				</div>
 				</div>
-			</section>
+</section>
+
+<section class="help">
+	<div class="layer py-5">
+		<div class="container py-lg-5">
+		<h3 class="heading text-center text-capitalize mb-5">NILAI-NILAI </h3>
+			<div class="row help_grids">
+				<div class="col-sm-4">
+					<div class="row">
+						<div class="col-lg-3 mb-lg-0 mb-4 icon">
+							<i class="fas fa-briefcase"></i>
+						</div>
+						<div class="col-lg-9">
+						<?php foreach($nilai as $n) : ?>
+							<h4 class="text-uppercase mb-3"><?=$n->judul?></h4>
+							<p class="mt-sm-5 mt-3"><?=$n->deskripsi?></p>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
