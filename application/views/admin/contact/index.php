@@ -8,8 +8,8 @@
 
 <div class="card mb-3">
     <div class="card-header text-white bg-primary ">
-       <b><?= $title ?></b>
-         <?= anchor('admin/contact/add', 'Add', 'class="btn btn-sm btn-success float-sm-right"'); ?>
+    <i class="fa fa-list"></i><b> <?= $title ?></b>
+         <?= anchor('admin/contact/add', '<i class="fa fa-plus-circle" aria-hidden="true"> Add</i>', 'class="btn btn-sm btn-success float-sm-right"'); ?>
 	    </div>
     <div class="card-body table-responsive table-hover">
         <?php if($kontak) : ?>
@@ -28,8 +28,8 @@
                     <td><?= $user->nama; ?></td>
                     <td><?= $user->no_tlp; ?></td>
                     <td>
-                        <?= anchor('admin/contact/edit/'.$user->id.'', 'Edit', 'class="btn btn-sm btn-warning"'); ?>
-                        <?= anchor('admin/contact/delete/'.$user->id.'', 'Delete', 'class="btn btn-sm btn-danger"'); ?>
+                        <?= anchor('admin/contact/edit/'.$user->id.'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
+                        <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
                     </tr>
         <?php 
@@ -40,4 +40,28 @@
             <p>No Data</p>
         <?php endif; ?>
         </div>
-    </div>
+
+        <!-- Modal HTML -->
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="icon-box">
+                            <i class="material-icons"></i>
+                        </div>				
+                        <h4 class="modal-title">Are you sure?</h4>	
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you really want to delete these records? This process cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                        <?= anchor('admin/contact/delete/'.$user->id.'', 'Delete', 'class="btn btn-danger"'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>   
+            </div>
+
+    
