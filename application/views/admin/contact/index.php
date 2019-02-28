@@ -12,7 +12,7 @@
          <?= anchor('admin/contact/add', '<i class="fa fa-plus-circle" aria-hidden="true"> Add</i>', 'class="btn btn-sm btn-success float-sm-right"'); ?>
 	    </div>
     <div class="card-body table-responsive table-hover">
-        <?php if($kontak) : ?>
+        <?php if($ListData) : ?>
             <table class="table table-bordered" cellspacing="0">
                 <tr>
                     <th>No</th>
@@ -22,19 +22,22 @@
                 </tr>
         <?php 
         $i = 1;
-        foreach($kontak as $user) : ?>
+        foreach($ListData as $user) : ?>
                 <tr>
                     <td><?php echo $i; ?></td>
-                    <td><?= $user->nama; ?></td>
-                    <td><?= $user->no_tlp; ?></td>
+                    <td><?= $user['nama']; ?></td>
+                    <td><?= $user['no_tlp']; ?></td>
                     <td>
-                        <?= anchor('admin/contact/edit/'.$user->id.'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
+                        <?= anchor('admin/contact/edit/'.$user['id'].'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
                         <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
                     </tr>
         <?php 
+        $paging=(!empty($pagermessage) ? $pagermessage : '');
         $i++;
-            endforeach; ?>
+            endforeach; 
+            echo "<tr><td colspan='9'><div style='background:000;'>$paging &nbsp;".$this->pagination->create_links()."</div></td></tr>";
+            ?>
                 </table>
         <?php else : ?> 
             <p>No Data</p>
@@ -57,7 +60,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
-                        <?= anchor('admin/contact/delete/'.$user->id.'', 'Delete', 'class="btn btn-danger"'); ?>
+                        <?= anchor('admin/contact/delete/'.$user['id'].'', 'Delete', 'class="btn btn-danger"'); ?>
                     </div>
                 </div>
             </div>
