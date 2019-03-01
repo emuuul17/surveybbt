@@ -8,7 +8,7 @@ class Service_model extends CI_MODEL {
     public function get_all()
     {
          // active record
-         $query = $this->db->get($this->table);
-         return $query->result();
+        //  $query = $this->db->get($this->table);
+        //  return $query->result();
     }
 }
