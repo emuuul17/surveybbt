@@ -112,9 +112,22 @@
                 <?= form_input($data); ?>
                 </div>
 
+                <div class="form-group col-md-6">
+                <?= form_label('Foto', 'img');  ?>
+                <?php
+                    $data = array(
+                        'name' => 'img',
+                        'id' => 'img',
+                        'class' => 'form-control',
+                        'value' => set_value('img')
+                    );  
+                ?>
+                <?= form_upload($data); ?>
+                </div>
+
             </div>
-    <?= form_submit('mysubmit', 'Add', array('class' => 'btn btn-success'));  ?>
-    <?= anchor('admin/feature/product', 'Back', 'class="btn btn-danger"'); ?>
+        <?= form_submit('mysubmit', 'Add', array('class' => 'btn btn-success'));  ?>
+        <?= anchor('admin/feature/product', 'Back', 'class="btn btn-danger"'); ?>
     <?= form_close(); ?>
         </div>
     </div>

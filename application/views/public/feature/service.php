@@ -1,6 +1,6 @@
 <div class="container pt-3">
         <div class="row py-sm-5">
-           <?php foreach($produk as $pro) : ?>
+           <!-- <?php foreach($produk as $pro) : ?> -->
            <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-header p-0">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <?php endforeach; ?>
+            <!-- <?php endforeach; ?> -->
 		</div>
 
 <!-- blog -->
