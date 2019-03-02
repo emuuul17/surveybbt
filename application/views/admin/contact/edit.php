@@ -36,7 +36,7 @@
                 </div>
             </div>
         <?= form_submit('mysubmit', 'Update', array('class' => 'btn btn-success'));  ?>
+        <?= anchor('admin/contact', 'Back', 'class="btn btn-danger"'); ?>
         <?= form_close(); ?>
-
         </div>
     </div>
