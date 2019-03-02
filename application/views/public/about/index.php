@@ -72,4 +72,20 @@
 		</div>
 	</div>
 </section>
-<!-- //About us -->
+
+<section class="about py-5 my-lg-5">
+	<div class="container">
+		<h3 class="heading text-center text-capitalize-bold mb-5">FILOSOFI</h3>
+			<div class="spldishes-grids">
+				<!-- Owl-Carousel -->
+				<div id="owl-demo" class="owl-carousel agileinfo-gallery-row">
+						<?php foreach($filo as $f) : ?>
+						<h4 class="mt-4 text"><?=$f->judul?></h4>
+						<?php endforeach; ?>
+						</div>
+					</div> 
+			</div>  
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</section>
