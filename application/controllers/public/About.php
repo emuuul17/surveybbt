@@ -9,6 +9,9 @@ class About extends Public_Controller {
 		$data['abouts'] = $this->About_model->get_about();
 		$data['vmisi'] = $this->Visimisi_model->get_visimisi();
 		$data['nilai'] = $this->Nilai_model->get_nilai();
+		$data['metod'] = $this->Metodologi_model->get_metod();
+		$data['filo'] = $this->Filosofi_model->get_filo();
 		$this->template->load('public', 'default', 'about/index', $data);
 		}
 	}
+

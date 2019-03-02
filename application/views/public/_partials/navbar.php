@@ -41,19 +41,7 @@
 								<?= anchor('about', 'Tentang Kami', 'title="About Us"');?>
 							</li>
 							<li>
-								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/visimisi">Visi Misi</a>
-							</li>
-							<li>
-								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/nilai">Nilai</a>
-							</li>
-							<li>
-								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/sasaran">Sasaran</a>
-							</li>
-							<li>
-								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/metodologi">Metodologi</a>
-							</li>
-							<li>
-								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/filosofi">Filosofi</a>
+								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/metodologi">Sasaran Kami</a>
 							</li>
 							<li>
 								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/tim">Tim Kami</a>

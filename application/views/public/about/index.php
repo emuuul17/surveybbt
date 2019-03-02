@@ -19,38 +19,80 @@
 </section>
 
 
-<section class="process py-5 my-lg-5">
+<section class="contact py-5 my-lg-5">
 	<div class="container">
-		<div class="row process-grids">
-			<div class="col-lg-6 col-md-6 grid1">
-				<span class="fab fa-digital-ocean"></span>
-				<?php foreach($vmisi as $vm) : ?>
+	<div class="row contact_information">
+		<?php foreach($vmisi as $vm) : ?>
+			<div class="col-md-6">
+				<div class="mt-5 information">
+					<div class="row">
+						<div class="col-sm-2 mb-sm-0 mb-3">
+							<i class="fas fa-comments"></i>
+						</div>
+			<div class="col-sm-10">
 				<h3 class="text-uppercase mt-3"><?=$vm->judul?></h3>
 				<p class="mt-sm-5 mt-3"><?=$vm->deskripsi?></p>
-				<?php endforeach; ?>
 				</div>
-				</div>
-</section>
-
-<section class="help">
-	<div class="layer py-5">
-		<div class="container py-lg-5">
-		<h3 class="heading text-center text-capitalize mb-5">NILAI-NILAI </h3>
-			<div class="row help_grids">
-				<div class="col-sm-4">
-					<div class="row">
-						<div class="col-lg-3 mb-lg-0 mb-4 icon">
-							<i class="fas fa-briefcase"></i>
-						</div>
-						<div class="col-lg-9">
-						<?php foreach($nilai as $n) : ?>
-							<h4 class="text-uppercase mb-3"><?=$n->judul?></h4>
-							<p class="mt-sm-5 mt-3"><?=$n->deskripsi?></p>
-							<?php endforeach; ?>
-						</div>
-					</div>
 				</div>
 			</div>
+		</div>
+				<?php endforeach; ?>
+</div>
+</section>
+
+<section class="contact py-5 my-lg-5">
+	<div class="container">
+		<h3 class="heading text-center text-capitalize font-weight-bold mb-5">NILAI-NILAI</h3>
+		<div class="row contact_information">
+        <?php foreach($nilai as $n) : ?>
+			<div class="col-md-6">
+				<div class="mt-5 information">
+					<div class="row">
+						<div class="col-sm-2 mb-sm-0 mb-3">
+							<i class="fas fa-plus"></i>
+						</div>
+						<div class="col-sm-10">
+							<h4 class="text-uppercase mb-4"><?=$n->judul?></h4>
+							<p class="mb-3 text-capitalize"><?=$n->deskripsi?></p>
+                            </div>
+						</div>
+					</div>
+			</div>
+            <?php endforeach; ?>
+		</div>
+</section>
+ 
+<section class="about py-5 my-lg-5">
+	<div class="container">
+		<h3 class="heading text-center text-capitalize font-weight-bold mb-5">METHODOLOGY</h3>
+			<div class="spldishes-grids">
+				<!-- Owl-Carousel -->
+				<div id="owl-demo" class="owl-carousel agileinfo-gallery-row">
+						<?php foreach($metod as $m) : ?>
+						<h4 class="mt-4 text"><?=$m->judul?></h4>
+						<?php endforeach; ?>
+						</div>
+					
+				</div> 
+			</div>  
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</section>
+
+<section class="about py-5 my-lg-5">
+	<div class="container">
+		<h3 class="heading text-center text-capitalize font-weight-bold mb-5">FILOSOFI</h3>
+			<div class="spldishes-grids">
+				<!-- Owl-Carousel -->
+				<div id="owl-demo" class="owl-carousel agileinfo-gallery-row">
+						<?php foreach($filo as $f) : ?>
+						<h4 class="mt-4 text"><?=$f->judul?></h4>
+						<?php endforeach; ?>
+						</div>
+					</div> 
+			</div>  
+			<div class="clearfix"> </div>
 		</div>
 	</div>
 </section>
