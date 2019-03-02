@@ -13,3 +13,5 @@ $route['about'] = 'public/about';
 $route['product'] = 'public/product';
 $route['feature'] = 'public/feature';
 $route['sasaran'] = 'public/target';
+$route['tim'] = 'public/team';
+

@@ -45,7 +45,8 @@
 								<?= anchor('sasaran', 'Sasaran Kami', 'title="About Us"');?>
 								</li>
 							<li>
-								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/tim">Tim Kami</a>
+								<a class="active" class="nav-link">
+								<?= anchor('tim', 'Tim Kami', 'title="Our Team"');?>
 							</li>
 						</ul>
 						<li class="nav-item">
