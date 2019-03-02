@@ -32,7 +32,12 @@
             </div>
             <div class="col-lg-6 mt-lg-0 mt-5">
             <h2 class="blog-title card-title font-weight-bold"><?php echo $produk->judul ?></h2>
-                <p class="my-3"><?php echo $produk->deskripsi ?></p>
+                <h3> <?php echo $produk->sub_judul  ?></h3>
+                    <p class="my-15"><?php echo $produk->deskripsi; ?></p>
+                    <p class="my-3"></p><h3><?php echo $produk->sub_judul_2; ?></h3>
+                    <p class="my-15"><?php echo $produk->deskripsi_2; ?></p>
+                    <p class="my-3"></p><h3><?php echo $produk->sub_judul_3; ?></h3>
+                    <p class="my-15"><?php echo $produk->deskripsi_3; ?></p>
             </div>
         </div>
     </div>

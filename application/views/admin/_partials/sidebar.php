@@ -12,7 +12,20 @@
       <li class="nav-item active">
         <?= anchor('admin/contact', ' Contact', array('class' => 'nav-link far fa-address-book'));?>
       </li> 
-        <li class="nav-item dropdown active">
+      
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Features</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Features:</h6>
+          <?= anchor('admin/feature/product', ' Products', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/feature/service', ' Services', array('class' => 'dropdown-item'));?>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
           <span>Settings</span>
@@ -22,4 +35,5 @@
           <?= anchor('admin/users', ' Users', array('class' => 'dropdown-item'));?>
         </div>
       </li>
+
     </ul>
