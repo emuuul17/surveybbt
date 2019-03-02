@@ -54,3 +54,22 @@
 		</div>
 	</div>
 </section>
+
+<section class="about py-5 my-lg-5">
+	<div class="container">
+		<h3 class="heading text-center text-capitalize-bold mb-5">METHODOLOGY</h3>
+			<div class="spldishes-grids">
+				<!-- Owl-Carousel -->
+				<div id="owl-demo" class="owl-carousel agileinfo-gallery-row">
+						<?php foreach($metod as $m) : ?>
+						<h4 class="mt-4 text"><?=$m->judul?></h4>
+						<?php endforeach; ?>
+						</div>
+					
+				</div> 
+			</div>  
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</section>
+<!-- //About us -->
