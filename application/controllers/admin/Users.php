@@ -187,7 +187,7 @@ class Users extends Admin_Controller {
 				$this->session->set_flashdata('error', 'Invalid login');
 
 				// redirect
-				redirect('admin/users/login');
+				redirect('admin/login');
 			}
 			
 		}
@@ -204,6 +204,6 @@ class Users extends Admin_Controller {
 		// msg
 		$this->session->set_flashdata('success', 'You are logged out');
 
-		redirect('admin/users/login');
+		redirect('admin/login');
 	}
 }
