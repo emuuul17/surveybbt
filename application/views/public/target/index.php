@@ -9,7 +9,7 @@
 				<div class="mt-5 information">
 					<div class="row">
 						<div class="col-sm-2 mb-sm-0 mb-3">
-							<i class="fas fa-plus"></i>
+							<i class="fas fa-check-square"></i>
 						</div>
 						<div class="col-sm-10">
 							<h4 class="text-uppercase mb-4"><?=$s->judul?></h4>
