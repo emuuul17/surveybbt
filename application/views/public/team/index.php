@@ -1,7 +1,7 @@
 <!-- team -->
 <section class="contact py-5 my-lg-5">
 	<div class="container">
-		<h3 class="heading text-center text-capitalize font-weight-bold mb-5">NILAI-NILAI</h3>
+		<h3 class="heading text-center text-capitalize font-weight-bold mb-5">TIM KAMI</h3>
 		<div class="row contact_information">
         <?php foreach($team as $t) : ?>
 			<div class="col-md-6">
