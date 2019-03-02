@@ -17,22 +17,8 @@
 		</div>
 	</div>
 </section>
-<!--
-<section class="process py-5 my-lg-5">
-	<div class="container">
-		<div class="row process-grids">
-			<div class="col-lg-6 col-md-6 grid1">
-				<span class="fab fa-digital-ocean"></span>
-				<h3 class="text-uppercase mt-3">Visi</h3>
-				<p class="mt-sm-5 mt-3">Menjadi perusahaan training provider terdepan untuk menciptakan sumber daya manusia yang unggul, memiliki kompentensi dan kemampuan berinovasi sesuai perkembangan jaman.</p>
-							</div>
-			<div class="col-lg-6 col-md-6 grid1 mt-md-0 mt-5">
-				<span class="fab fa-digital-ocean"></span>
-				<h3 class="text-uppercase mt-3">Misi</h3>
-				<p class="mt-sm-5 mt-3">Menciptakan kondisi terbaik pada performa personal, organisasi industri, pemerintah, dan publik dengan menyediakan jasa pelatihan berkualitas tinggi, inovatif, pelayanan prima serta dengan dukungan sumber daya manusia profesional, berintegritas, visioner dan berbasis teknologi terdepan saat ini.</p>
-				</div>
-</section> 
--->
+
+
 <section class="contact py-5 my-lg-5">
 	<div class="container">
 	<div class="row contact_information">
@@ -54,32 +40,31 @@
 </div>
 </section>
 
-<section class="help">
-	<div class="layer py-5">
-		<div class="container py-lg-5">
-		<h3 class="heading text-center text-capitalize mb-5">NILAI-NILAI </h3>
-			<div class="row help_grids">
-				<div class="col-sm-4">
+<section class="contact py-5 my-lg-5">
+	<div class="container">
+		<h3 class="heading text-center text-capitalize font-weight-bold mb-5">NILAI-NILAI</h3>
+		<div class="row contact_information">
+        <?php foreach($nilai as $n) : ?>
+			<div class="col-md-6">
+				<div class="mt-5 information">
 					<div class="row">
-						<div class="col-lg-3 mb-lg-0 mb-4 icon">
-							<i class="fas fa-briefcase"></i>
+						<div class="col-sm-2 mb-sm-0 mb-3">
+							<i class="fas fa-plus"></i>
 						</div>
-						<div class="col-lg-9">
-						<?php foreach($nilai as $n) : ?>
-							<h4 class="text-uppercase mb-3"><?=$n->judul?></h4>
-							<p class="mt-sm-5 mt-3"><?=$n->deskripsi?></p>
-							<?php endforeach; ?>
+						<div class="col-sm-10">
+							<h4 class="text-uppercase mb-4"><?=$n->judul?></h4>
+							<p class="mb-3 text-capitalize"><?=$n->deskripsi?></p>
+                            </div>
 						</div>
 					</div>
-				</div>
 			</div>
+            <?php endforeach; ?>
 		</div>
-	</div>
 </section>
-
+ 
 <section class="about py-5 my-lg-5">
 	<div class="container">
-		<h3 class="heading text-center text-capitalize-bold mb-5">METHODOLOGY</h3>
+		<h3 class="heading text-center text-capitalize font-weight-bold mb-5">METHODOLOGY</h3>
 			<div class="spldishes-grids">
 				<!-- Owl-Carousel -->
 				<div id="owl-demo" class="owl-carousel agileinfo-gallery-row">
@@ -97,7 +82,7 @@
 
 <section class="about py-5 my-lg-5">
 	<div class="container">
-		<h3 class="heading text-center text-capitalize-bold mb-5">FILOSOFI</h3>
+		<h3 class="heading text-center text-capitalize font-weight-bold mb-5">FILOSOFI</h3>
 			<div class="spldishes-grids">
 				<!-- Owl-Carousel -->
 				<div id="owl-demo" class="owl-carousel agileinfo-gallery-row">
