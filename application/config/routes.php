@@ -12,3 +12,4 @@ $route['contact'] = 'public/contact';
 $route['about'] = 'public/about';
 $route['product'] = 'public/product';
 $route['feature'] = 'public/feature';
+$route['sasaran'] = 'public/target';

@@ -41,8 +41,9 @@
 								<?= anchor('about', 'Tentang Kami', 'title="About Us"');?>
 							</li>
 							<li>
-								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/metodologi">Sasaran Kami</a>
-							</li>
+								<a class="active" class="nav-link">
+								<?= anchor('sasaran', 'Sasaran Kami', 'title="About Us"');?>
+								</li>
 							<li>
 								<a class="active" class="nav-link" href="<?php echo base_url();?>index.php/antawijaya/tim">Tim Kami</a>
 							</li>
