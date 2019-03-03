@@ -72,8 +72,7 @@
 						<h4 class="mt-4 text"><?=$m->judul?></h4>
 						<?php endforeach; ?>
 						</div>
-					
-				</div> 
+					</div> 
 			</div>  
 			<div class="clearfix"> </div>
 		</div>

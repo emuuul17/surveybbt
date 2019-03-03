@@ -30,6 +30,5 @@ $route['contact'] = 'public/contact';
 $route['about'] = 'public/about';
 $route['product'] = 'public/product';
 $route['feature'] = 'public/feature';
-/*
-    END PUBLIC SECTION
-*/   
+$route['sasaran'] = 'public/target';
+$route['tim'] = 'public/team';
