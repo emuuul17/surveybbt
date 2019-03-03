@@ -112,6 +112,24 @@
                 <?= form_input($data); ?>
                 </div>
 
+                <div class="form-group col-md-6">
+                <?= form_label('Foto', 'img');  ?>
+                <?php
+                    $data = array(
+                        'name' => 'img',
+                        'id' => 'img',
+                        'class' => 'form-control',
+                        'value' => set_value('img')
+                    );  
+                ?>
+                <?= form_upload($data); ?>
+                </div>
+
+                <div class="form-group col-md-6">
+                <input type="hidden" name="old_img" value="<?= $item->img ?>" >
+                    <img src="<?= base_url();?>/assets/upload/feature/<?= $item->img ?>" class="img-fluid" alt="Card image cap"/>
+                </div>
+
             </div>
     <?= form_submit('mysubmit', 'Update', array('class' => 'btn btn-success'));  ?>
     <?= anchor('admin/feature/product', 'Back', 'class="btn btn-danger"'); ?>

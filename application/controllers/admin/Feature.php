@@ -76,9 +76,6 @@ class Feature extends Admin_Controller
         $this->template->load('admin', 'default', 'feature/product/add');
   
       }else{
-
-      
-
         $judul = $this->input->post('judul');
         $sub_judul = $this->input->post('sub_judul');
         $sub_judul_2 = $this->input->post('sub_judul_2');
@@ -125,6 +122,13 @@ class Feature extends Admin_Controller
         $data['item'] = $this->Product_model->get($id);
         $this->template->load('admin', 'default', 'feature/product/edit', $data);
       }else{
+
+        if(!empty($_FILES['img']['name'])) {
+          $img = $this->_upload();
+        } else {
+          $img = $this->input->post('old_img');
+        }
+
         $judul = $this->input->post('judul');
         $sub_judul = $this->input->post('sub_judul');
         $sub_judul_2 = $this->input->post('sub_judul_2');
@@ -142,7 +146,8 @@ class Feature extends Admin_Controller
           'sub_judul_3' => $sub_judul_3,
           'deskripsi' => $this->input->post('deskripsi'),
           'deskripsi_2' => $this->input->post('deskripsi_2'),
-          'deskripsi_3' => $this->input->post('deskripsi_3')
+          'deskripsi_3' => $this->input->post('deskripsi_3'),
+          'img' => $img
         );
 
 
@@ -158,6 +163,7 @@ class Feature extends Admin_Controller
       $name = $this->Product_model->get($id)->judul;
 
       // Delete subject
+      $this->_deleteimgproduct($id);
       $this->Product_model->delete($id);
 
       // set msg
@@ -187,6 +193,15 @@ class Feature extends Admin_Controller
       }else{
         $datafile = $this->upload->data();
         return $datafile['file_name'];
+      }
+    }
+
+    public function _deleteimgproduct($id)
+    {
+      $product = $this->Product_model->get($id);
+      if($product->img != 'default.png') {
+        $filename = explode(".", $product->img)[0];
+        return array_map('unlink', glob(FCPATH."/assets/upload/feature/$filename.*"));
       }
     }
 }
