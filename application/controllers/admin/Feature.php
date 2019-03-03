@@ -70,7 +70,6 @@ class Feature extends Admin_Controller
       $this->form_validation->set_rules('deskripsi_2', 'Deskripsi 2', 'trim|min_length[10]');
       $this->form_validation->set_rules('sub_judul_3', 'Sub Judul 3', 'trim|min_length[3]');
       $this->form_validation->set_rules('deskripsi_3', 'Deskripsi 3', 'trim|min_length[10]');
-      $this->form_validation->set_rules('img', 'Foto', 'required');
 
       if($this->form_validation->run() == FALSE){
 
@@ -78,24 +77,7 @@ class Feature extends Admin_Controller
   
       }else{
 
-        $upload_path = './assets/upload/feature/';
-
-        $config['upload_path']          = $upload_path;
-        $config['allowed_types']        = 'jpg|png';
-        $config['file_name']            = 'Feature'.'-'.date('YmdHis');
-        $config['overwrite']			      = true;
-        $config['max_size']             = 2048;
-        
-        $this->load->library('upload', $config);
-        $this->upload->initialize($config);
-  
-        if (!$this->upload->do_upload('img'))
-        {
-          $error = array('error' => $this->upload->display_errors());
-          return print_r($error);
-        }else{
-          $datafile = $this->upload->data();
-        }
+      
 
         $judul = $this->input->post('judul');
         $sub_judul = $this->input->post('sub_judul');
@@ -115,7 +97,7 @@ class Feature extends Admin_Controller
           'deskripsi' => $this->input->post('deskripsi'),
           'deskripsi_2' => $this->input->post('deskripsi_2'),
           'deskripsi_3' => $this->input->post('deskripsi_3'),
-          'img' => $datafile['file_name']
+          'img' => $this->_upload()
         );
 
         $this->Product_model->add($data);
@@ -141,10 +123,6 @@ class Feature extends Admin_Controller
             
       if($this->form_validation->run() == FALSE){
         $data['item'] = $this->Product_model->get($id);
-  
-        // var_dump($id);
-        // die();
-        // load template
         $this->template->load('admin', 'default', 'feature/product/edit', $data);
       }else{
         $judul = $this->input->post('judul');
@@ -191,7 +169,24 @@ class Feature extends Admin_Controller
 
     public function _upload()
     {
-     
+      $upload_path = './assets/upload/feature/';
 
+      $config['upload_path']          = $upload_path;
+      $config['allowed_types']        = 'jpg|png';
+      $config['file_name']            = 'Feature'.'-'.date('YmdHis');
+      $config['overwrite']			      = true;
+      $config['max_size']             = 2048;
+      
+      $this->load->library('upload', $config);
+      $this->upload->initialize($config);
+
+      if (!$this->upload->do_upload('img'))
+      {
+        $error = array('error' => $this->upload->display_errors());
+        return 'default.png';
+      }else{
+        $datafile = $this->upload->data();
+        return $datafile['file_name'];
+      }
     }
 }
