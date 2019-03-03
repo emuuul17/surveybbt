@@ -15,7 +15,7 @@
       
       <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
+          <i class="far fa-star"></i>
           <span>Features</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
