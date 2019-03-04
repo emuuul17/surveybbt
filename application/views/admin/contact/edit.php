@@ -29,6 +29,7 @@
                         'id' => 'no_tlp',
                         'maxlength' => '50',
                         'class' => 'form-control',
+                        'type' => 'number',
                         'value' => $item->no_tlp
                     );  
                 ?>
