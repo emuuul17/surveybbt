@@ -1,7 +1,15 @@
 <?php $atts = array('id' => 'login_form', 'role' => 'form'); ?>
 <?= form_open('admin/users/login', $atts); ?>
 
-        <?php if($this->session->flashdata('success')) : ?>
+        
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Antawijaya Sign In</h5>
+
+            <?php if($this->session->flashdata('success')) : ?>
                 <?= '<div class="alert alert-dismissable alert-success">'.$this->session->flashdata('success').'</div>'  ?>
             <?php endif; ?>
             <?php if($this->session->flashdata('error')) : ?>
@@ -15,12 +23,6 @@
             <?php if($this->session->flashdata('error')) : ?>
                 <?= '<div class="alert alert-dismissable alert-danger">'.$this->session->flashdata('error').'</div>'  ?>
         <?php endif; ?>
-<div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">Antawijaya Sign In</h5>
             <form class="form-signin">
               <div class="form-label-group">
                 <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
