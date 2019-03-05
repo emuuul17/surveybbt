@@ -8,9 +8,9 @@
     <?php endif; ?>
 
 		<div class="card mb-3">
-        <!-- <?= form_open('admin/settings/index/'. $settings->id); ?> -->
+        <?= form_open('admin/settings/index/'. $settings->id); ?>
 
-			<div class="card-header text-white bg-primary"> <i class="fa fa-list"></i><b> Setting</b> </div>
+			<div class="card-header text-white bg-primary"> <i class="fas fa-list"></i><b><?= $title ?></b> </div>
 
 			<div class="card-body">
 				<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">

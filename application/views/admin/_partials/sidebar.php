@@ -27,13 +27,13 @@
 
       <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
+          <i class="fas fa-tools"></i>
           <span>Settings</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Settings:</h6>
           <?= anchor('admin/users', ' Users', array('class' => 'dropdown-item'));?>
-          <?= anchor('admin/settings', ' Settings', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/settings', ' Footer', array('class' => 'dropdown-item'));?>
         </div>
       </li>
 

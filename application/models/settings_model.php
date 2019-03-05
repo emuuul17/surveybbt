@@ -2,7 +2,7 @@
 class Settings_model extends CI_MODEL {
     function __construct(){
         parent::__construct();
-        $this->table = 'settings';
+        $this->table = 'footer';
     }
 
     public function get_all()
