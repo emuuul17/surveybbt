@@ -32,8 +32,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Settings:</h6>
+          <?= anchor('admin/settings/banner', ' Banner', array('class' => 'dropdown-item'));?>
           <?= anchor('admin/users', ' Users', array('class' => 'dropdown-item'));?>
-          <?= anchor('admin/settings', ' Footer', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/settings/footer', ' Footer', array('class' => 'dropdown-item'));?>
         </div>
       </li>
 
