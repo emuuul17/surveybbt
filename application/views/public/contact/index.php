@@ -11,7 +11,7 @@
 						</div>
 						<div class="col-sm-10">
 							<h4 class="text-uppercase mb-4"><?= $k->nama; ?></h4>
-							<p class="mb-3 text-capitalize"><?= $k->no_tlp; ?></p>
+							<p class="mb-3 text-capitalize"><?= $k->no_telp; ?></p>
                             </div>
 						</div>
 					</div>
