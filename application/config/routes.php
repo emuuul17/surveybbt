@@ -19,6 +19,11 @@ $route['admin/feature/product/pages/{$id}'] = 'admin/feature/index';
 /* service */
 $route['admin/service'] = 'admin/feature/service';
 
+/* banner */
+$route['admin/settings/banner'] = 'admin/settings/banner';
+$route['admin/settings/addBanner'] = 'admin/settings/add_banner';
+$route['admin/settings/banner/pages/{$id}'] = 'admin/settings/index';
+
 /*
     END ADMIN SECTION
 */    
