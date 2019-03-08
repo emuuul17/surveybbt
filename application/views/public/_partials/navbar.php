@@ -48,6 +48,10 @@
 								<a class="active" class="nav-link">
 								<?= anchor('tim', 'Tim Kami', 'title="Our Team"');?>
 							</li>
+							<li>
+								<a class="active" class="nav-link">
+								<?= anchor('foto', 'Foto Kegiatan', 'title="Our Activity"');?>
+							</li>
 						</ul>
 						<li class="nav-item">
 							<?= anchor('feature', 'Produk & Jasa', 'title="Service & Products"');?>

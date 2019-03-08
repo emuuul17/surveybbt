@@ -30,7 +30,7 @@
 							<i class="fas fa-comments"></i>
 						</div>
 			<div class="col-sm-10">
-				<h3 class="text-uppercase mt-3"><?=$vm->judul?></h3>
+				<h3 class="heading text-left text-capitalize font-weight-bold mb-5"><?=$vm->judul?></h3>
 				<p class="mt-sm-5 mt-3"><?=$vm->deskripsi?></p>
 				</div>
 				</div>
@@ -95,3 +95,4 @@
 		</div>
 	</div>
 </section>
+
