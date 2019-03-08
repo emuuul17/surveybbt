@@ -1,5 +1,4 @@
 <section class="section py-5">
-<?php var_dump() ?>
 <?php
     $i = 0;
     foreach($service as $serv) : $i++ ?>

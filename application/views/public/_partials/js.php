@@ -64,18 +64,15 @@
 	
 	<!-- FlexSlider-JavaScript -->
 	<script defer src="<?php echo base_url();?>assets/js/public/jquery.flexslider.js"></script>
-	<!-- <script type="text/javascript">
-		$(function(){
-			SyntaxHighlighter.all();
-				});
-				$(window).load(function(){
-				$('.flexslider').flexslider({
+	<script type="text/javascript">
+		$(window).load(function(){
+			$('.flexslider').flexslider({
 					animation: "slide",
 					start: function(slider){
 						$('body').removeClass('loading');
 					}
 			});
 		});
-	</script> -->
+	</script>
 	<!-- //FlexSlider-JavaScript -->
 <!-- //js-scripts -->
