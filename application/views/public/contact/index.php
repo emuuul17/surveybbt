@@ -1,3 +1,4 @@
+
 <section class="contact py-5 my-lg-5">
 	<div class="container">
 		<h3 class="heading text-center text-capitalize font-weight-bold mb-5">KONTAK KAMI</h3>
@@ -11,7 +12,7 @@
 						</div>
 						<div class="col-sm-10">
 							<h4 class="text-uppercase mb-4"><?= $k->nama; ?></h4>
-							<p class="mb-3 text-capitalize"><?= $k->no_tlp; ?></p>
+							<p class="mb-3 text-capitalize"><?= $k->no_telp; ?></p>
                             </div>
 						</div>
 					</div>
