@@ -1,7 +1,8 @@
 <!-- js-scripts -->		
 
 	<!-- js -->
-	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/public/jquery-2.1.4.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="<?php echo base_url();?>/assets/js/public/jquery-2.1.4.min.js"></script> -->
 	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/public/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
 	<!-- //js -->	
 	
@@ -65,7 +66,7 @@
 	<!-- FlexSlider-JavaScript -->
 	<script defer src="<?php echo base_url();?>assets/js/public/jquery.flexslider.js"></script>
 	<script type="text/javascript">
-		$(window).load(function(){
+		$(window).on('load', function(){
 			$('.flexslider').flexslider({
 					animation: "slide",
 					start: function(slider){
