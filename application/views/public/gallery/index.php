@@ -1,24 +1,7 @@
 <!--gallery  -->
 <section class="wthree-row w3-gallery py-sm-5 py-3" id="section3">
 	<div class="container-fluid py-md-5 py-3 text-center">
-	<h3 class="heading text-center text-capitalize mb-5">Projects</h3>
-		<ul class="portfolio-categ filter mb-5 text-center">
-			<li class="port-filter all active">
-				<a href="#">All</a>
-			</li>
-			<li class="cat-item-1">
-				<a href="#" title="Category 1">Business</a>
-			</li>
-			<li class="cat-item-2">
-				<a href="#" title="Category 2">Technology</a>
-			</li>
-			<li class="cat-item-3">
-				<a href="#" title="Category 3">Development</a>
-			</li>
-			<li class="cat-item-4">
-				<a href="#" title="Category 4">Design</a>
-			</li>
-		</ul>
+	<h3 class="heading text-center text-capitalize mb-5">FOTO KEGIATAN</h3>
 		<ul class="portfolio-area clearfix">
 			<li class="portfolio-item2" data-id="id-0" data-type="cat-item-4">
 				<div>

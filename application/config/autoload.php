@@ -148,5 +148,6 @@ $autoload['model'] = array(
     'Target_model',
     'Team_model', 
     'Settings_model',
-    'Banner_model'
+    'Banner_model',
+    'Gallery_model'
 );
