@@ -104,37 +104,27 @@ class Settings extends Admin_Controller {
         redirect('admin/login');
       }
 
-      $this->form_validation->set_rules('judul', 'Judul', 'trim|required|min_length[3]');
-      $this->form_validation->set_rules('sub_judul', 'Sub Judul', 'trim|min_length[3]');
-      $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required|min_length[10]');
-      $this->form_validation->set_rules('sub_judul_2', 'Sub Judul 2', 'trim|min_length[3]');
-      $this->form_validation->set_rules('deskripsi_2', 'Deskripsi 2', 'trim|min_length[10]');
-      $this->form_validation->set_rules('sub_judul_3', 'Sub Judul 3', 'trim|min_length[3]');
-      $this->form_validation->set_rules('deskripsi_3', 'Deskripsi 3', 'trim|min_length[10]');
+      $this->form_validation->set_rules('title', 'Judul', 'trim|required|min_length[3]');
+      $this->form_validation->set_rules('sub_title', 'Sub Judul', 'trim|min_length[3]');
+      $this->form_validation->set_rules('content', 'Deskripsi', 'trim|required|min_length[10]');
 
       if($this->form_validation->run() == FALSE){
 
         $this->template->load('admin', 'default', 'settings/banner/add');
   
       }else{
-        $judul = $this->input->post('judul');
-        $sub_judul = $this->input->post('sub_judul');
-        $sub_judul_2 = $this->input->post('sub_judul_2');
-        $sub_judul_3 = $this->input->post('sub_judul_3');
+        $title = $this->input->post('title');
+        $sub_title = $this->input->post('sub_title');
+        $content = $this->input->post('content');
 
-        $judul = ucwords($judul);
-        $sub_judul = ucwords($sub_judul);
-        $sub_judul_2 = ucwords($sub_judul_2);
-        $sub_judul_3 = ucwords($sub_judul_3);
+        $title = ucwords($title);
+        $sub_title = ucwords($sub_title);
+        $content = ucwords($content);
 
         $data = array(
-          'judul' => $judul,
-          'sub_judul' => $sub_judul,
-          'sub_judul_2' => $sub_judul_2,
-          'sub_judul_3' => $sub_judul_3,
-          'deskripsi' => $this->input->post('deskripsi'),
-          'deskripsi_2' => $this->input->post('deskripsi_2'),
-          'deskripsi_3' => $this->input->post('deskripsi_3'),
+          'title' => $title,
+          'sub_title' => $sub_title,
+          'content' => $content,
           'img' => $this->_upload()
         );
 
@@ -150,15 +140,10 @@ class Settings extends Admin_Controller {
       if(!$this->session->userdata('logged_in')){
         redirect('admin/login');
       }
+      $this->form_validation->set_rules('title', 'Judul', 'trim|required|min_length[3]');
+      $this->form_validation->set_rules('sub_title', 'Sub Judul', 'trim|min_length[3]');
+      $this->form_validation->set_rules('content', 'Deskripsi', 'trim|required|min_length[10]');
 
-      $this->form_validation->set_rules('judul', 'Judul', 'trim|required|min_length[3]');
-      $this->form_validation->set_rules('sub_judul', 'Sub Judul', 'trim|min_length[3]');
-      $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required|min_length[10]');
-      $this->form_validation->set_rules('sub_judul_2', 'Sub Judul 2', 'trim|min_length[3]');
-      $this->form_validation->set_rules('deskripsi_2', 'Deskripsi 2', 'trim|min_length[10]');
-      $this->form_validation->set_rules('sub_judul_3', 'Sub Judul 3', 'trim|min_length[3]');
-      $this->form_validation->set_rules('deskripsi_3', 'Deskripsi 3', 'trim|min_length[10]');
-            
       if($this->form_validation->run() == FALSE){
         $data['item'] = $this->Banner_model->get($id);
         $this->template->load('admin', 'default', 'settings/banner/edit', $data);
@@ -170,27 +155,20 @@ class Settings extends Admin_Controller {
           $img = $this->input->post('old_img');
         }
 
-        $judul = $this->input->post('judul');
-        $sub_judul = $this->input->post('sub_judul');
-        $sub_judul_2 = $this->input->post('sub_judul_2');
-        $sub_judul_3 = $this->input->post('sub_judul_3');
+        $title = $this->input->post('title');
+        $sub_title = $this->input->post('sub_title');
+        $content = $this->input->post('content');
 
-        $judul = ucwords($judul);
-        $sub_judul = ucwords($sub_judul);
-        $sub_judul_2 = ucwords($sub_judul_2);
-        $sub_judul_3 = ucwords($sub_judul_3);
+        $title = ucwords($title);
+        $sub_title = ucwords($sub_title);
+        $content = ucwords($content);
 
         $data = array(
-          'judul' => $judul,
-          'sub_judul' => $sub_judul,
-          'sub_judul_2' => $sub_judul_2,
-          'sub_judul_3' => $sub_judul_3,
-          'deskripsi' => $this->input->post('deskripsi'),
-          'deskripsi_2' => $this->input->post('deskripsi_2'),
-          'deskripsi_3' => $this->input->post('deskripsi_3'),
+          'title' => $title,
+          'sub_title' => $sub_title,
+          'content' => $content,
           'img' => $img
         );
-
 
         $this->Banner_model->update($id, $data);
         $this->session->set_flashdata('success', 'Data Berhasil Di Perbaharui!');
@@ -201,7 +179,7 @@ class Settings extends Admin_Controller {
 
     public function deletebanner($id)
     {
-      $name = $this->Banner_model->get($id)->judul;
+      $name = $this->Banner_model->get($id)->title;
 
       // Delete subject
       $this->_deleteimg($id);

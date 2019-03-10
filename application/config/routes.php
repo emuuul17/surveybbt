@@ -17,7 +17,9 @@ $route['admin/feature/addProduct'] = 'admin/feature/add_product';
 $route['admin/feature/product/pages/{$id}'] = 'admin/feature/index';
 
 /* service */
-$route['admin/service'] = 'admin/feature/service';
+$route['admin/feature/service'] = 'admin/feature/service';
+$route['admin/feature/addService'] = 'admin/feature/add_service';
+$route['admin/feature/service/pages/{$id}'] = 'admin/feature/index';
 
 /* banner */
 $route['admin/settings/banner'] = 'admin/settings/banner';
