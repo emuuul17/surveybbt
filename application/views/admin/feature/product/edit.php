@@ -30,7 +30,6 @@
                         'id' => 'sub_judul',
                         'maxlength' => '50',
                         'class' => 'form-control',
-                        'required' => 'required',
                         'value' => $item->sub_judul
                     );  
                 ?>
