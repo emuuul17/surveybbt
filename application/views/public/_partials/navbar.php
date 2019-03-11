@@ -28,8 +28,8 @@
 
 			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="<?php echo base_url(); ?>">Beranda <span class="sr-only">(current)</span></a>
+				<li class="nav-item">
+							<?= anchor('home', 'Beranda', 'title="Beranda"');?>
 					</li>
 					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Tentang Kami
