@@ -11,4 +11,10 @@ class Target_model extends CI_MODEL {
          $query = $this->db->get($this->table);
          return $query->result();
     }
+
+    public function get($id)
+    {
+        $query = $this->db->get_where($this->table, array('id' => $id));
+        return $query->row();
+    }
 }

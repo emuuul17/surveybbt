@@ -8,4 +8,10 @@ class Target extends Public_Controller {
         $data['sasaran'] = $this->Target_model->get_sasaran();
         $this->template->load('public', 'default', 'target/index', $data);
     }
+
+    public function show($id)
+    {
+        $data['item'] = $this->Target_model->get($id);
+        $this->template->load('public', 'default', 'target/page', $data);
+    }
 }

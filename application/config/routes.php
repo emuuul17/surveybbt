@@ -38,6 +38,7 @@ $route['about'] = 'public/about';
 $route['product'] = 'public/product';
 $route['feature'] = 'public/feature';
 $route['sasaran'] = 'public/target';
+$route['sasaran/show/(:any)'] = 'public/target/show/$1';
 $route['tim'] = 'public/team';
 $route['foto'] = 'public/gallery';
 $route['home'] = 'public/home';

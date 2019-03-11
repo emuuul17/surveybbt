@@ -13,7 +13,7 @@
 						</div>
 						<div class="col-sm-10">
 							<h4 class="text-uppercase mb-4"><?=$s->judul?></h4>
-                            <a href="">Read More</a>
+                <?= anchor('sasaran/show/'.$s->id.'', 'Read More', 'title="Service & Products"');?>
                             </div>
 						</div>
 					</div>
