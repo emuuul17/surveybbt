@@ -8,7 +8,7 @@
     <?php endif; ?>
 
 		<div class="card mb-3">
-        <?= form_open('admin/settings/index/'. $settings->id); ?>
+        <?= form_open('admin/settings/footer/'. $settings->id); ?>
 
 			<div class="card-header text-white bg-primary"> <i class="fas fa-list"></i><b><?= $title ?></b> </div>
 
