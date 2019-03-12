@@ -20,4 +20,12 @@ class Home_model extends CI_MODEL {
          $query = $this->db->get($this->table);
          return $query->result();
     }
+    public function get_data_testi()
+    {
+        
+         // active record
+         $this->table = 'home_testi';
+         $query = $this->db->get($this->table);
+         return $query->result();
+    }
 }
