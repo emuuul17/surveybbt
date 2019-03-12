@@ -14,6 +14,8 @@
           <?= anchor('admin/about/welcome', ' Welcome', array('class' => 'dropdown-item'));?>
           <?= anchor('admin/about/vimi', ' Visi Misi', array('class' => 'dropdown-item'));?>
           <?= anchor('admin/about/nilai', ' Nilai', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/about/metodologi', ' Metodologi', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/about/filosofi', ' Filosofi', array('class' => 'dropdown-item'));?>
         </div>
       </li>
 

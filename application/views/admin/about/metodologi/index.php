@@ -9,7 +9,7 @@
 <div class="card mb-3">
     <div class="card-header text-white bg-primary ">
     <i class="fa fa-list"></i><b> <?= $title ?></b>
-         <?= anchor('admin/about/addnilai', '<i class="fa fa-plus-circle" aria-hidden="true"> Add</i>', 'class="btn btn-sm btn-success float-sm-right"'); ?>
+         <?= anchor('admin/about/addmetodologi', '<i class="fa fa-plus-circle" aria-hidden="true"> Add</i>', 'class="btn btn-sm btn-success float-sm-right"'); ?>
 	    </div>
     <div class="card-body table-responsive table-hover">
         <?php if($ListData) : ?>
@@ -17,18 +17,16 @@
                 <tr>
                     <th>No</th>
                     <th>Judul</th>
-                    <th>Deskripsi</th>
                     <th>Tindakan</th>
                 </tr>
         <?php 
         $i = 1;
-        foreach($ListData as $nilai) : ?>
+        foreach($ListData as $metodologi) : ?>
                 <tr>
                     <td><?php echo $i; ?></td>
-                    <td><?= $nilai['judul']; ?></td>
-                    <td><?= $nilai['deskripsi']; ?></td>
+                    <td><?= $metodologi['judul']; ?></td>
                     <td>
-                        <?= anchor('admin/about/editnilai/'.$nilai['id'].'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
+                        <?= anchor('admin/about/editmetodologi/'.$metodologi['id'].'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
                         <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
                     </tr>
@@ -60,7 +58,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
-                        <?= anchor('admin/about/deletenilai/'.$nilai['id'].'', 'Delete', 'class="btn btn-danger"'); ?>
+                        <?= anchor('admin/about/deletemetodologi/'.$metodologi['id'].'', 'Delete', 'class="btn btn-danger"'); ?>
                     </div>
                 </div>
             </div>
