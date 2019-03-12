@@ -66,14 +66,14 @@
 			</div>
 			<?php foreach($testi as $tsti) : ?>
 			<div class="row pt-4">
-				<div class="col-lg-4 testi-sections mb-4">
+			<div class="col-md-4 col-sm-6 text-center testi-sections mb-4">
 					<div class="testimonials_grid">
 						<p class="sub-test"><?=$tsti->testimoni?></p>
 						<div class="row mt-sm-5 mt-4">
 							<div class="col-3 testi-img-res text-lg-left text-right">
 							<img src="<?= base_url();?>/assets/upload/testi/<?= $tsti->img ?>" class="img-fluid" alt="Card image cap"/>
 							</div>
-							<div class="col-7 testi_grid">
+							<div class="col-md-6 testi_grid">
 								<h5><?=$tsti->nama?></h5>
 								<p><?=$tsti->sub_nama?></p>
 							</div>
