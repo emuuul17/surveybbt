@@ -12,7 +12,10 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">About:</h6>
           <?= anchor('admin/about/welcome', ' Welcome', array('class' => 'dropdown-item'));?>
-          <?= anchor('admin/feature/service', ' Services', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/about/vimi', ' Visi Misi', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/about/nilai', ' Nilai', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/about/metodologi', ' Metodologi', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/about/filosofi', ' Filosofi', array('class' => 'dropdown-item'));?>
         </div>
       </li>
 
