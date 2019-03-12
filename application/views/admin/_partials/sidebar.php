@@ -13,6 +13,7 @@
           <h6 class="dropdown-header">About:</h6>
           <?= anchor('admin/about/welcome', ' Welcome', array('class' => 'dropdown-item'));?>
           <?= anchor('admin/about/vimi', ' Visi Misi', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/about/nilai', ' Nilai', array('class' => 'dropdown-item'));?>
         </div>
       </li>
 
