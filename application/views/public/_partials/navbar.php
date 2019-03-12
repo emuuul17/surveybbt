@@ -57,7 +57,7 @@
 							<?= anchor('feature', 'Produk & Jasa', 'title="Service & Products"');?>
 							</li>
 							<li class="nav-item">
-								<a href="<?php echo base_url();?>index.php/antawijaya/produk">Jadwal</a>
+								<?= anchor('jadwal', 'Jadwal', 'title="Our Schedule"');?>
 							</li>
 							<li class="nav-item">
 								<?= anchor('contact', 'Kontak Kami', 'title="Contact Us"');?>

@@ -77,11 +77,11 @@
 								<h5><?=$tsti->nama?></h5>
 								<p><?=$tsti->sub_nama?></p>
 							</div>
-							<?php endforeach; ?>
-						</div>
-					</div>
+							</div>
 				</div>
-						</div>
+				</div>
+				<?php endforeach; ?>
+				</div>
 					</div>
 				</div>
 			</div>

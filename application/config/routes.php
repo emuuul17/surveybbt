@@ -42,4 +42,4 @@ $route['sasaran/show/(:any)'] = 'public/target/show/$1';
 $route['tim'] = 'public/team';
 $route['foto'] = 'public/gallery';
 $route['home'] = 'public/home';
-
+$route['jadwal'] = 'public/schedule';
