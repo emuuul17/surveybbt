@@ -1,6 +1,6 @@
 <div class="card mb-3">
     <div class="card-header text-white bg-success ">
-        <b>Add New Product</b>
+        <b>Add New Sasaran</b>
 	    </div>
     <div class="card-body">
         <?= validation_errors('<p class="alert alert-danger" role="alert">'); ?>
