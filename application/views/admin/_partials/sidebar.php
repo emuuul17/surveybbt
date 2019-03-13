@@ -16,6 +16,7 @@
           <?= anchor('admin/about/nilai', ' Nilai', array('class' => 'dropdown-item'));?>
           <?= anchor('admin/about/metodologi', ' Metodologi', array('class' => 'dropdown-item'));?>
           <?= anchor('admin/about/filosofi', ' Filosofi', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/about/sasaran', ' Target', array('class' => 'dropdown-item'));?>
         </div>
       </li>
 
