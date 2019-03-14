@@ -63,23 +63,19 @@
 <section class="text-center my-5 p-1">
   <!-- Section heading -->
   <h2 class="h1-responsive font-weight-bold my-5">Testimoni</h2>
-  
   <!-- Section description -->
   <p class="dark-grey-text w-responsive mx-auto mb-5">Ini merupakan testimoni dari sebagian orang hehehe</p>
-
   <!-- Grid row -->
   <div class="row">
-	  
-	 <!--Grid column-->
+	  	 <!--Grid column-->
     <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-	
       <!--Card-->
       <div class="card testimonial-card">
-	  <?php foreach($testi as $tsti) : ?>
         <!--Background color-->
 		<div class="card-up info-color"></div>
 		 <!--Avatar-->
         <div class="avatar mx-auto white">
+		<?php foreach($testi as $tsti) : ?>
 			  <img src="<?= base_url();?>/assets/upload/testi/<?= $tsti->img ?>" class="rounded-circle img-fluid">
         </div>
         <div class="card-body">
@@ -88,19 +84,19 @@
           <hr>
           <!--Quotation-->
 		  <p class="dark-grey-text mt-4"><i class="fas fa-quote-left pr-2"></i><?=$tsti->testimoni?></p>
-		</div>
-</div>
-</div>
-</div>
-		<?php endforeach; ?>
-		</div>
-		
-	  <!--Card-->
-	  
-	</div>
-</section>
+		  
+		  </div>
+		  
+	  </div>
+	  <?php endforeach; ?>
+      <!--Card-->
+    </div>
     <!--Grid column-->
 
+  </div>
+  <!-- Grid row -->
+
+</section>
 <!-- Section: Testimonials v.1 -->
 
 	<!-- project -->
