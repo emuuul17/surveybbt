@@ -57,39 +57,48 @@
 				</div>
 	</div>
 </section>
+
 <!-- Testimonials -->
+<!-- Section: Testimonials v.1 -->
+<section class="text-center my-5 p-1">
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold my-5">Testimoni</h2>
+  <!-- Section description -->
+  <p class="dark-grey-text w-responsive mx-auto mb-5">Ini merupakan testimoni dari sebagian orang hehehe</p>
+  <!-- Grid row -->
+  <div class="row">
+	  	 <!--Grid column-->
+    <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+      <!--Card-->
+      <div class="card testimonial-card">
+        <!--Background color-->
+		<div class="card-up info-color"></div>
+		 <!--Avatar-->
+        <div class="avatar mx-auto white">
+		<?php foreach($testi as $tsti) : ?>
+			  <img src="<?= base_url();?>/assets/upload/testi/<?= $tsti->img ?>" class="rounded-circle img-fluid">
+        </div>
+        <div class="card-body">
+          <!--Name-->
+          <h4 class="font-weight-bold mb-4"><?=$tsti->nama?></h4>
+          <hr>
+          <!--Quotation-->
+		  <p class="dark-grey-text mt-4"><i class="fas fa-quote-left pr-2"></i><?=$tsti->testimoni?></p>
+		  
+		  </div>
+		  
+	  </div>
+	  <?php endforeach; ?>
+      <!--Card-->
+    </div>
+    <!--Grid column-->
 
+  </div>
+  <!-- Grid row -->
 
-	<!-- testimonials -->
-	<div class="testimonials py-5" id="testi">
-		<div class="container pb-xl-5 pb-lg-3">
-			<div class="price-sty position-relative mb-5">
-				<h3 class="tittle font-weight-bold text-center text-bl mb-2">TESTIMONI</h3>
-			</div>
-			<?php foreach($testi as $tsti) : ?>
-			<div class="row pt-4">
-			<div class="col-md-4 col-sm-6 text-center testi-sections mb-4">
-					<div class="testimonials_grid">
-						<p class="sub-test"><?=$tsti->testimoni?></p>
-						<div class="row mt-sm-5 mt-4">
-							<div class="col-3 testi-img-res text-lg-left text-right">
-							<img src="<?= base_url();?>/assets/upload/testi/<?= $tsti->img ?>" class="img-fluid" alt="Card image cap"/>
-							</div>
-							<div class="col-md-6 testi_grid">
-								<h5><?=$tsti->nama?></h5>
-								<p><?=$tsti->sub_nama?></p>
-							</div>
-							</div>
-						</div>
-				</div>
-			<?php endforeach; ?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //testimonials -->
+</section>
+<!-- Section: Testimonials v.1 -->
+
 	<!-- project -->
 <section class="project py-5 text-center">
 	<div class="container">
