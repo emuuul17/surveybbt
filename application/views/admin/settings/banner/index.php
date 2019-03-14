@@ -9,7 +9,7 @@
 <div class="card mb-3">
     <div class="card-header text-white bg-primary ">
     <i class="fa fa-list"></i><b> <?= $title ?></b>
-         <?= anchor('admin/settings/addBanner', '<i class="fa fa-plus-circle" aria-hidden="true"> Add</i>', 'class="btn btn-sm btn-success float-sm-right"'); ?>
+         <!-- <?= anchor('admin/settings/addBanner', '<i class="fa fa-plus-circle" aria-hidden="true"> Add</i>', 'class="btn btn-sm btn-success float-sm-right"'); ?> -->
 	    </div>
     <div class="card-body table-responsive table-hover">
         <?php if($ListData) : ?>
@@ -30,11 +30,12 @@
                     <td><?= $banner['title']; ?></td>
                     <td><?= $banner['sub_title']; ?></td>
                     <td><?= $banner['content']; ?></td>
-                    <td> <img src="<?= base_url();?>/assets/upload/banner/<?= $banner['img']; ?>" class="img-fluid" alt="Card image cap"/></td>
+                    <td> <img src="<?= base_url();?>/assets/css/images/<?= $banner['img']; ?>" class="img-fluid" alt="Card image cap"/></td>
                     <td>
                         <?= anchor('admin/settings/editBanner/'.$banner['id'].'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
-                        <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
+
+                        <!-- <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
                     </tr>
         <?php 
         $paging=(!empty($pagermessage) ? $pagermessage : '');

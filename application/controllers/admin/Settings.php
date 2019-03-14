@@ -149,11 +149,30 @@ class Settings extends Admin_Controller {
         $this->template->load('admin', 'default', 'settings/banner/edit', $data);
       }else{
 
-        if(!empty($_FILES['img']['name'])) {
-          $img = $this->_upload();
-        } else {
-          $img = $this->input->post('old_img');
+      $upload_path = './assets/css/images/';
+
+      $config['upload_path']          = $upload_path;
+      $config['allowed_types']        = 'jpg';
+      $config['file_name']            = $id.'banner';
+      $config['overwrite']			      = true;
+      $config['max_size']             = 2048;
+      
+      $this->load->library('upload', $config);
+      $this->upload->initialize($config);
+
+      if(!empty($_FILES['img']['name'])) {
+       if (!$this->upload->do_upload('img'))
+        {
+          $error = array('error' => $this->upload->display_errors());
+          $img = 'default.png';
+        }else{
+          $datafile = $this->upload->data();
+          $img = $datafile['file_name'];
         }
+      }else {
+        $img = $id.$this->input->post('old_img');
+      }
+
 
         $title = $this->input->post('title');
         $sub_title = $this->input->post('sub_title');
@@ -194,11 +213,11 @@ class Settings extends Admin_Controller {
 
     public function _upload()
     {
-      $upload_path = './assets/upload/banner/';
+      $upload_path = './assets/css/images/';
 
       $config['upload_path']          = $upload_path;
-      $config['allowed_types']        = 'jpg|png';
-      $config['file_name']            = 'Banner'.'-'.date('YmdHis');
+      $config['allowed_types']        = 'jpg';
+      $config['file_name']            = 'Banner';
       $config['overwrite']			      = true;
       $config['max_size']             = 2048;
       

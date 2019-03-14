@@ -66,7 +66,7 @@
 
                 <div class="form-group col-md-6">
                 <input type="hidden" name="old_img" value="<?= $item->img ?>" >
-                    <img src="<?= base_url();?>/assets/upload/banner/<?= $item->img ?>" class="img-fluid" alt="Card image cap"/>
+                    <img src="<?= base_url();?>/assets/css/images/<?= $item->img ?>" class="img-fluid" alt="Card image cap"/>
                 </div>
 
             </div>
