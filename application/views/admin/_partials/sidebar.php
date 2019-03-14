@@ -6,7 +6,7 @@
 
       <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="far fa-star"></i>
+          <i class="fas fa-building"></i>
           <span>About</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -22,20 +22,14 @@
         </div>
       </li>
 
-      <!-- <li class="nav-item">
-        <?= anchor('admin/pages', ' Pages', array('class' => 'nav-link fas fa-fw fa-chart-area'));?>
-      </li> -->
-      <!-- <li class="nav-item">
-        <?= anchor('admin/subjects', ' Subjects', array('class' => 'nav-link fas fa-fw fa-table'));?>
-        </li> -->
       <li class="nav-item active">
         <?= anchor('admin/contact', ' Contact', array('class' => 'nav-link far fa-address-book'));?>
       </li> 
       <li class="nav-item active">
-        <?= anchor('admin/register', ' Pendaftaran', array('class' => 'nav-link far fa-address-book'));?>
+        <?= anchor('admin/register', ' Pendaftaran', array('class' => 'nav-link fas fa-registered'));?>
       </li> 
       <li class="nav-item active">
-        <?= anchor('admin/schedule', ' Jadwal', array('class' => 'nav-link far fa-address-book'));?>
+        <?= anchor('admin/schedule', ' Jadwal', array('class' => 'nav-link fas fa-table'));?>
       </li> 
       
       <li class="nav-item dropdown active">
