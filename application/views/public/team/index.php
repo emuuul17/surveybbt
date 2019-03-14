@@ -10,9 +10,9 @@
 						<img src="<?= base_url();?>/assets/upload/tim/<?= $t->img ?>" alt=" " class="img-responsive" />
 						<figcaption>
 							<ul class="agileits_social_list">
-								<li><a href="#" class="w3_agile_facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="agile_twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="w3_agile_dribble"><i class="fab fa-dribbble" aria-hidden="true"></i></a></li>
+								<li><a href="<?= $t->linkedin ?>" class="w3_agile_facebook"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+								<li><a href="<?= $t->twitter ?>" class="agile_twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="<?= $t->website ?>" class="w3_agile_dribble"><i class="fab fa-dribbble" aria-hidden="true"></i></a></li>
 							</ul>
 						</figcaption>			
 					</figure>
