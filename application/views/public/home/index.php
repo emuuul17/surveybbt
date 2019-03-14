@@ -80,10 +80,10 @@
 								<p><?=$tsti->sub_nama?></p>
 							</div>
 							</div>
+						</div>
 				</div>
-				</div>
-				<?php endforeach; ?>
-				</div>
+			<?php endforeach; ?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -93,7 +93,7 @@
 	<!-- project -->
 <section class="project py-5 text-center">
 	<div class="container">
-		<h3 class="text-capitalize mb-5">BERGABUNG BERSAMA KAMI??</h3>
+		<h3 class="text-capitalize mb-5">INGIN BERGABUNG BERSAMA KAMI??</h3>
 		<a href="<?php echo base_url();?>index.php/register" class="text-uppercase"><i></i>DAFTAR YA hehehe </a>
 	</div>
 </section>
