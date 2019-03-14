@@ -815,6 +815,137 @@ class About extends Admin_Controller {
       redirect('admin/about/tim');
     }
 
+    public function kegiatan($offset = 0)
+    {
+      if(!$this->session->userdata('logged_in')){
+          redirect('admin/login');
+        }
+        $qry = 'select * from about_foto';
+        $per_page = 31;
+        $qry.= " order by id";
+        $offset                    = ($this->uri->segment(4) != '' ? $this->uri->segment(4):0);
+        $config['total_rows']      = $this->db->query($qry)->num_rows();
+        $config['per_page']        = $per_page;
+        $config['full_tag_open']   = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close']  = '</ul></nav></div>';
+        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+        $config['num_tag_close']    = '</span></li>';
+        $config['cur_tag_open']    = '<li class="page-item active"><span class="page-link">';
+        $config['cur_tag_close']   = '<span class="sr-only">(current)</span></span></li>';
+        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['prev_tagl_close']  = '</span>Next</li>';
+        $config['first_link']      = 'First';
+        $config['last_link']       = 'Last';
+        $config['next_link']       = 'Next';
+        $config['prev_link']       = 'Previous';
+        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+        $config['first_tagl_close'] = '</span></li>';
+        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['last_tagl_close']  = '</span></li>';
+        $config['uri_segment']     = 4;
+        $config['base_url']        = base_url().'admin/about/kegiatan';
+  
+            $this->pagination->initialize($config);
+  
+        $data['paginglinks']       = $this->pagination->create_links();
+        $data['per_page']          = $this->uri->segment(4);
+        $data['offset']            = $offset;
+        if($data['paginglinks']!= '') {
+          $data['pagermessage'] = 'Showing '.((($this->pagination->cur_page-1)*$this->pagination->per_page)+1).' to '.($this->pagination->cur_page*$this->pagination->per_page).' of '.$this->db->query($qry)->num_rows();
+        }
+        $qry .= " limit {$per_page} offset {$offset} ";
+
+        $data['ListData'] = $this->db->query($qry)->result_array();
+        $data['kegiatan'] = $this->Gallery_model->get_all();
+        $data['title'] = "Foto Kegiatan";
+  
+        $this->template->load('admin', 'default', 'about/kegiatan/index', $data);
+    }
+
+    public function addkegiatan()
+    {
+
+      if(!$this->session->userdata('logged_in')){
+        redirect('admin/login');
+      }
+
+      $this->form_validation->set_rules('title', 'Judul Kegiatan', 'trim|required|min_length[2]');
+
+
+      if($this->form_validation->run() == FALSE){
+
+        $this->template->load('admin', 'default', 'about/kegiatan/add');
+  
+      }else{
+        $title = $this->input->post('title');
+        $title = ucwords($title);
+
+        $data = array(
+          'title' => $title,
+          'img' => $this->_uploadkegiatan()
+        );
+
+        $this->Gallery_model->add($data);
+        $this->session->set_flashdata('success', 'Data baru Ditambahkan!');
+
+        redirect('admin/about/kegiatan');
+      }
+    }
+
+    public function editkegiatan($id)
+    {
+      if(!$this->session->userdata('logged_in')){
+        redirect('admin/login');
+      }
+
+      $this->form_validation->set_rules('title', 'Judul Kegiatan', 'trim|required|min_length[2]');
+
+      if($this->form_validation->run() == FALSE){
+
+        $data['item'] = $this->Gallery_model->get($id);
+        $this->template->load('admin', 'default', 'about/kegiatan/edit', $data);
+
+      }else{
+
+        if(!empty($_FILES['img']['name'])) {
+          $img = $this->_uploadkegiatan();
+        } else {
+          $img = $this->input->post('old_img');
+        }
+    
+        $title = $this->input->post('title');
+        $title = ucwords($title);
+
+
+        $data = array(
+          'title' => $title,
+          'img' => $this->_uploadkegiatan()
+        );
+
+        $this->Gallery_model->update($id, $data);
+        $this->session->set_flashdata('success', 'Data Telah Di Perbaharui!');
+
+        redirect('admin/about/kegiatan');
+      }
+    }
+
+    public function deletekegiatan($id)
+    {
+      $name = $this->Gallery_model->get($id)->judul;
+
+      $this->_deleteimgkegiatan($id);
+      // Delete subject
+      $this->Gallery_model->delete($id);
+
+      // set msg
+      $this->session->set_flashdata('success', 'Data Telah Di Hapus!');
+
+      // redirect
+      redirect('admin/about/kegiatan');
+    }
+
 
     
     public function _upload()
@@ -910,6 +1041,38 @@ class About extends Admin_Controller {
       if($tim->img != 'default.png') {
         $filename = explode(".", $tim->img)[0];
         return array_map('unlink', glob(FCPATH."/assets/upload/tim/$filename.*"));
+      }
+    }
+
+    public function _uploadkegiatan()
+    {
+      $upload_path = './assets/upload/kegiatan/';
+
+      $config['upload_path']          = $upload_path;
+      $config['allowed_types']        = 'jpg|png';
+      $config['file_name']            = 'Kegiatan'.'-'.date('YmdHis');
+      $config['overwrite']			      = true;
+      $config['max_size']             = 2048;
+      
+      $this->load->library('upload', $config);
+      $this->upload->initialize($config);
+
+      if (!$this->upload->do_upload('img'))
+      {
+        $error = array('error' => $this->upload->display_errors());
+        return 'default.png';
+      }else{
+        $datafile = $this->upload->data();
+        return $datafile['file_name'];
+      }
+    }
+
+    public function _deleteimgkegiatan($id)
+    {
+      $kegiatan = $this->Gallery_model->get($id);
+      if($kegiatan->img != 'default.png') {
+        $filename = explode(".", $kegiatan->img)[0];
+        return array_map('unlink', glob(FCPATH."/assets/upload/kegiatan/$filename.*"));
       }
     }
 }
