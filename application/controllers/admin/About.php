@@ -954,7 +954,7 @@ class About extends Admin_Controller {
 
       $config['upload_path']          = $upload_path;
       $config['allowed_types']        = 'jpg|png';
-      $config['file_name']            = 'Banner'.'-'.date('YmdHis');
+      $config['file_name']            = 'Welcome'.'-'.date('YmdHis');
       $config['overwrite']			      = true;
       $config['max_size']             = 2048;
       

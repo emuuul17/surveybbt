@@ -53,11 +53,6 @@
                             <div class="row">
 
                                 <div class="form-group col-md-6">
-                                <input type="hidden" name="old_img" value="<?= $welcome->img ?>" >
-                                    <img src="<?= base_url();?>/assets/upload/welcome/<?= $welcome->img ?>" class="img-fluid" alt="Card image cap"/>
-                                </div>
-
-                                <div class="form-group col-md-6">
                                 <?= form_label('Foto', 'img');  ?>
                                 <?php
                                     $data = array(
@@ -68,6 +63,11 @@
                                     );  
                                 ?>
                                 <?= form_upload($data); ?>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                <input type="hidden" name="old_img" value="<?= $welcome->img ?>" >
+                                    <img src="<?= base_url();?>/assets/upload/welcome/<?= $welcome->img ?>" class="img-fluid" alt="Card image cap"/>
                                 </div>
 
                             </div>
