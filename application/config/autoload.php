@@ -152,5 +152,6 @@ $autoload['model'] = array(
     'Gallery_model',
     'Home_model',
     'Schedule_model',
-    'Register_model'
+    'Register_model',
+    'Owner_model'
 );

@@ -1,13 +1,12 @@
 <?php
-class Home_model extends CI_MODEL {
+class Owner_model extends CI_MODEL {
     function __construct(){
         parent::__construct();
-        $this->table = 'home_testi';
+         $this->table = 'home_owner';
     }
-
-    public function get_data_testi()
-    {
-         // active record
+    
+    public function get_data_owner()
+    {   
          $query = $this->db->get($this->table);
          return $query->result();
     }
@@ -34,4 +33,5 @@ class Home_model extends CI_MODEL {
         $this->db->where('id', $id);
         $this->db->delete($this->table);
     }
+    
 }
