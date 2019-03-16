@@ -1,7 +1,21 @@
 <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active <?= $this->uri->segment(2) == '' ? 'active': '' ?>">
-          <?= anchor('admin', ' Home', array('class' => 'nav-link fas fa-fw fa-tachometer-alt'));?>
+          <?= anchor('admin', ' Dashboard', array('class' => 'nav-link fas fa-fw fa-tachometer-alt'));?>
+      </li>
+
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-building"></i>
+          <span>Home</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">About:</h6>
+          <?= anchor('admin/about/welcome', ' Welcome', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/home/owner', ' Owner', array('class' => 'dropdown-item'));?>
+          <?= anchor('admin/home/testimoni', ' Testimoni', array('class' => 'dropdown-item'));?>
+         
+        </div>
       </li>
 
       <li class="nav-item dropdown active">
@@ -11,7 +25,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">About:</h6>
-          <?= anchor('admin/about/welcome', ' Welcome', array('class' => 'dropdown-item'));?>
+          <!-- <?= anchor('admin/about/welcome', ' Welcome', array('class' => 'dropdown-item'));?> -->
           <?= anchor('admin/about/vimi', ' Visi Misi', array('class' => 'dropdown-item'));?>
           <?= anchor('admin/about/nilai', ' Nilai', array('class' => 'dropdown-item'));?>
           <?= anchor('admin/about/metodologi', ' Metodologi', array('class' => 'dropdown-item'));?>

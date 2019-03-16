@@ -13,8 +13,8 @@ class Home extends Admin_Controller {
       if(!$this->session->userdata('logged_in')){
         redirect('admin/login');
       }
-      $qry = 'select * from home_testimoni ';
-      $per_page = 10;
+      $qry = 'select * from home_testi ';
+      $per_page = 31;
       $qry.= " order by id";
       $offset                    = ($this->uri->segment(4) != '' ? $this->uri->segment(4):0);
       $config['total_rows']      = $this->db->query($qry)->num_rows();
@@ -38,7 +38,7 @@ class Home extends Admin_Controller {
       $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
       $config['last_tagl_close']  = '</span></li>';
       $config['uri_segment']     = 4;
-      $config['base_url']        = base_url().'admin/contact/index';
+      $config['base_url']        = base_url().'admin/home/testimoni';
 
 		 $this->pagination->initialize($config);
 
@@ -51,13 +51,13 @@ class Home extends Admin_Controller {
      $qry .= " limit {$per_page} offset {$offset} ";
      $data['ListData'] = $this->db->query($qry)->result_array();
       
-      $data['kontak'] = $this->Contact_model->get_all();
-      $data['title'] = "Contact";
+      $data['kontak'] = $this->Home_model->get_all();
+      $data['title'] = "Testimoni";
 
-      $this->template->load('admin', 'default', 'contact/index', $data);
+      $this->template->load('admin', 'default', 'home/testimoni/index', $data);
     }
 
-    public function add()
+    public function addtestimoni()
     {
 
       if(!$this->session->userdata('logged_in')){
@@ -65,71 +65,118 @@ class Home extends Admin_Controller {
       }
 
       $this->form_validation->set_rules('nama', 'Nama', 'trim|required|min_length[2]');
-      $this->form_validation->set_rules('no_tlp', 'No Telepon', 'trim|required|min_length[8]|integer');
+      $this->form_validation->set_rules('sub_nama', 'Pekerjaan', 'trim|required|min_length[3]');
+      $this->form_validation->set_rules('testimoni', 'Testimoni', 'trim|required|min_length[10]');
 
       if($this->form_validation->run() == FALSE){
 
-        $this->template->load('admin', 'default', 'contact/add');
+        $this->template->load('admin', 'default', 'home/testimoni/add');
   
       }else{
         $name = $this->input->post('nama');
+        $pekerjaan = $this->input->post('sub_nama');
         $name = ucwords($name);
+        $pekerjaan = ucwords($pekerjaan);
 
         $data = array(
           'nama' => $name,
-          'no_tlp' => $this->input->post('no_tlp')
+          'sub_nama' => $pekerjaan,
+          'testimoni' => $this->input->post('testimoni'),
+          'img' => $this->_upload()
         );
 
-        $this->Contact_model->add($data);
-        $this->session->set_flashdata('success', 'Contact baru Ditambahkan!');
+        $this->Home_model->add($data);
+        $this->session->set_flashdata('success', 'Data baru Ditambahkan!');
 
-        redirect('admin/contact/index');
+        redirect('admin/home/testimoni');
       }
     }
 
-    public function edit($id)
+    public function edittestimoni($id)
     {
       if(!$this->session->userdata('logged_in')){
         redirect('admin/login');
       }
 
       $this->form_validation->set_rules('nama', 'Nama', 'trim|required|min_length[2]');
-      $this->form_validation->set_rules('no_tlp', 'No Telepon', 'trim|required|min_length[8]|integer');
-        //     var_dump($id);
-        // die();
+      $this->form_validation->set_rules('sub_nama', 'Pekerjaan', 'trim|required|min_length[3]');
+      $this->form_validation->set_rules('testimoni', 'Testimoni', 'trim|required|min_length[10]');
+        
       if($this->form_validation->run() == FALSE){
-        $data['item'] = $this->Contact_model->get($id);
+        $data['item'] = $this->Home_model->get($id);
   
         // load template
-        $this->template->load('admin', 'default', 'contact/edit', $data);
+        $this->template->load('admin', 'default', 'home/testimoni/edit', $data);
       }else{
+
+        if(!empty($_FILES['img']['name'])) {
+            $img = $this->_upload();
+          } else {
+            $img = $this->input->post('old_img');
+          }
     
-        $name = $this->input->post('nama');
-        $name = ucwords($name);
+          $name = $this->input->post('nama');
+          $pekerjaan = $this->input->post('sub_nama');
+          $name = ucwords($name);
+          $pekerjaan = ucwords($pekerjaan);
 
-        $data = array(
-          'nama' => $name,
-          'no_tlp' => $this->input->post('no_tlp')
-        );
+          $data = array(
+            'nama' => $name,
+            'sub_nama' => $pekerjaan,
+            'testimoni' => $this->input->post('testimoni'),
+            'img' => $img
+          );
 
-        $this->Contact_model->update($id, $data);
+        $this->Home_model->update($id, $data);
         $this->session->set_flashdata('success', 'Data Telah Di Perbaharui!');
 
-        redirect('admin/contact/index');
+        redirect('admin/home/testimoni');
       }
     }
 
-    public function delete($id)
+    public function deletetestimoni($id)
     {
-      $name = $this->Contact_model->get($id)->nama;
+      $name = $this->Home_model->get($id)->nama;
 
-      // Delete subject
-      $this->Contact_model->delete($id);
+      $this->_deleteimg($id);
+      $this->Home_model->delete($id);
 
       // set msg
       $this->session->set_flashdata('success', 'Data Telah Di Hapus!');
 
       // redirect
-      redirect('admin/contact/index');
+      redirect('admin/home/testimoni');
+    }
+
+    public function _upload()
+    {
+      $upload_path = './assets/upload/testimoni/';
+
+      $config['upload_path']          = $upload_path;
+      $config['allowed_types']        = 'jpg|png';
+      $config['file_name']            = 'Testimoni'.'-'.date('YmdHis');
+      $config['overwrite']			      = true;
+      $config['max_size']             = 2048;
+      
+      $this->load->library('upload', $config);
+      $this->upload->initialize($config);
+
+      if (!$this->upload->do_upload('img'))
+      {
+        $error = array('error' => $this->upload->display_errors());
+        return 'default.png';
+      }else{
+        $datafile = $this->upload->data();
+        return $datafile['file_name'];
+      }
+    }
+
+    public function _deleteimg($id)
+    {
+      $testimoni = $this->Home_model->get($id);
+      if($testimoni->img != 'default.png') {
+        $filename = explode(".", $testimoni->img)[0];
+        return array_map('unlink', glob(FCPATH."/assets/upload/testimoni/$filename.*"));
+      }
     }
 }
