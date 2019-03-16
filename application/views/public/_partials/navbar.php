@@ -29,7 +29,7 @@
 			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-							<?= anchor('home', 'Beranda', 'title="Beranda"');?>
+							<?= anchor('', 'Beranda', 'title="Beranda"');?>
 					</li>
 					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Tentang Kami

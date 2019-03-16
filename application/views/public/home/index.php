@@ -8,12 +8,12 @@
             	<?php foreach($tentang as $atc) : ?>
             		<!-- title dan deskripsi dari nama field yang ada di database -->
 					<p class="my-2 initial font-italic"><?=$atc->judul?></p>
-					<p class="mb-5 mt-4"><?=$atc->deskripsi?></p>
-            	<?php endforeach; ?>
+					<p class="mb-5 mt-4" align="justify"><?=$atc->deskripsi?></p>
 				</div>
-			<div class="col-lg-5 welcome_right">
-				<img src="<?php echo base_url();?>/assets/web/images/antawijaya.jpeg" alt="" class="img-fluid">
+			<div class="col-lg-5">
+				<img src="<?php echo base_url();?>/assets/upload/welcome/<?= $atc->img ?>" alt="" class="img-fluid">
 			</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>
@@ -34,16 +34,9 @@
 									</div>
 									<div class="col-sm-8">
 										<h5 class="my-2"><?=$ow->nama?></h5>
-										<ul class="rating mt-2">
-											<li class="mx-1"><span class="fas fa-star"></span></li>
-											<li class="mx-1"><span class="fas fa-star"></span></li>
-											<li class="mx-1"><span class="fas fa-star"></span></li>
-											<li class="mx-1"><span class="fas fa-star"></span></li>
-											<li class="mx-1"><span class="fas fa-star"></span></li>
-										</ul>
 									</div>
 								</div>
-								<p class="my-4"><?=$ow->gelar?></p>
+								<p class="my-4" align="justify"><?=$ow->gelar?></p>
 								</li>
 							</ul>
 					</div>
@@ -52,7 +45,7 @@
 			<!-- //Clients -->
 			<div class="col-lg-6 mt-lg-0 mt-5 px-sm-5 px-4">
 				<h3 class="mb-9 text-capitalize"><?=$ow->nama?></h3>
-				<p class="mb-5 mt-4"><?=$ow->deskripsi?></p>
+				<p class="mb-5 mt-4" align="justify"><?=$ow->deskripsi?></p>
                 <?php endforeach; ?>
 				</div>
 	</div>
@@ -102,8 +95,8 @@
 	<!-- project -->
 <section class="project py-5 text-center">
 	<div class="container">
-		<h3 class="text-capitalize mb-5">INGIN BERGABUNG BERSAMA KAMI??</h3>
-		<a href="<?php echo base_url();?>index.php/register" class="text-uppercase"><i></i>DAFTAR YA hehehe </a>
+		<h3 class="text-capitalize mb-5">BERGABUNG BERSAMA KAMI??</h3>
+		<a href="<?php echo base_url();?>index.php/register" class="text-uppercase"><i></i>DAFTAR </a>
 	</div>
 </section>
 <!-- //project -->
