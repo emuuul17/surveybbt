@@ -30,7 +30,7 @@
 								<div class="client row">
 									<div class="col-sm-4">
                                     <?php foreach($owner as $ow) : ?>
-										<img src="<?php echo base_url();?>/assets/web/images/coach.jpg" alt="" />
+										<img src="<?php echo base_url();?>/assets/upload/owner/<?= $ow->img ?>" alt="" />
 									</div>
 									<div class="col-sm-8">
 										<h5 class="my-2"><?=$ow->nama?></h5>
