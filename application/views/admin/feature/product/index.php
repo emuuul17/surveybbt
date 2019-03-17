@@ -19,7 +19,7 @@
                     <th>Judul</th>
                     <th>Sub Judul</th>
                     <th>Deskripsi</th>
-                    <th>Gambar</th>
+                    <!-- <th>Gambar</th> -->
                     <th>Tindakan</th>
                 </tr>
         <?php 
@@ -30,7 +30,7 @@
                     <td><?= $produk['judul']; ?></td>
                     <td><?= $produk['sub_judul']; ?></td>
                     <td><?= $produk['deskripsi']; ?></td>
-                    <td> <img src="<?= base_url();?>/assets/upload/feature/<?= $produk['img']; ?>" class="img-fluid" alt="Card image cap"/></td>
+                    <!-- <td> <img src="<?= base_url();?>/assets/upload/feature/<?= $produk['img']; ?>" class="img-fluid" alt="Card image cap"/></td> -->
                     <td>
                         <?= anchor('admin/feature/editProduct/'.$produk['id'].'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
                         <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>

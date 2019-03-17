@@ -18,7 +18,7 @@
                     <th>No</th>
                     <th>Judul</th>
                     <th>Sub Judul</th>
-                    <th>Gambar</th>
+                    <!-- <th>Gambar</th> -->
                     <th>Tindakan</th>
                 </tr>
         <?php 
@@ -28,7 +28,7 @@
                     <td><?php echo $i; ?></td>
                     <td><?= $service['judul']; ?></td>
                     <td><?= $service['sub_judul']; ?></td>
-                    <td> <img src="<?= base_url();?>/assets/upload/feature/<?= $service['img']; ?>" class="img-fluid" alt="Card image cap"/></td>
+                    <!-- <td> <img src="<?= base_url();?>/assets/upload/feature/<?= $service['img']; ?>" class="img-fluid" alt="Card image cap"/></td> -->
                     <td>
                         <?= anchor('admin/feature/editService/'.$service['id'].'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
                         <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>

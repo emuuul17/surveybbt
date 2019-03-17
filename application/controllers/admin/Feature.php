@@ -15,7 +15,7 @@ class Feature extends Admin_Controller
         redirect('admin/login');
       }
       $qry = 'select * from product ';
-      $per_page = 10;
+      $per_page = 31;
       $qry.= " order by id";
       $offset                    = ($this->uri->segment(5) != '' ? $this->uri->segment(5):0);
       $config['total_rows']      = $this->db->query($qry)->num_rows();
@@ -62,7 +62,7 @@ class Feature extends Admin_Controller
         redirect('admin/login');
       }
       $qry = 'select * from service ';
-      $per_page = 10;
+      $per_page = 31;
       $qry.= " order by id";
       $offset                    = ($this->uri->segment(5) != '' ? $this->uri->segment(5):0);
       $config['total_rows']      = $this->db->query($qry)->num_rows();
@@ -266,6 +266,7 @@ class Feature extends Admin_Controller
       }else{
 
         if(!empty($_FILES['img']['name'])) {
+          $this->_deleteimgproduct($id);
           $img = $this->_upload();
         } else {
           $img = $this->input->post('old_img');
@@ -330,6 +331,7 @@ class Feature extends Admin_Controller
       }else{
 
         if(!empty($_FILES['img']['name'])) {
+          $this->_deleteimgservice($id);
           $img = $this->_upload();
         } else {
           $img = $this->input->post('old_img');
@@ -435,7 +437,7 @@ class Feature extends Admin_Controller
       $upload_path = './assets/upload/feature/';
 
       $config['upload_path']          = $upload_path;
-      $config['allowed_types']        = 'jpg|png';
+      $config['allowed_types']        = 'jpg|png|jpeg';
       $config['file_name']            = 'Feature'.'-'.date('YmdHis');
       $config['overwrite']			      = true;
       $config['max_size']             = 2048;

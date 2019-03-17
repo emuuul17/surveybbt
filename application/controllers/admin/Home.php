@@ -250,6 +250,7 @@ class Home extends Admin_Controller {
       }else{
 
         if(!empty($_FILES['img']['name'])) {
+           $this->_deleteimgowner($id);
             $img = $this->_uploadowner();
           } else {
             $img = $this->input->post('old_img');
