@@ -27,6 +27,7 @@ class About extends Admin_Controller {
           $title = ucwords($title);
 
           if(!empty($_FILES['img']['name'])) {
+            $this->_deleteimg($id);
             $img = $this->_upload();
           } else {
             $img = $this->input->post('old_img');
@@ -630,6 +631,7 @@ class About extends Admin_Controller {
       }else{
 
         if(!empty($_FILES['img']['name'])) {
+          $this->_deleteimgtarget($id);
           $img = $this->_uploadtarget();
         } else {
           $img = $this->input->post('old_img');
@@ -774,6 +776,7 @@ class About extends Admin_Controller {
       }else{
 
         if(!empty($_FILES['img']['name'])) {
+          $this->_deleteimgtim($id);
           $img = $this->_uploadtim();
         } else {
           $img = $this->input->post('old_img');
@@ -910,6 +913,7 @@ class About extends Admin_Controller {
       }else{
 
         if(!empty($_FILES['img']['name'])) {
+          $this->_deleteimgkegiatan($id);
           $img = $this->_uploadkegiatan();
         } else {
           $img = $this->input->post('old_img');
@@ -953,7 +957,7 @@ class About extends Admin_Controller {
       $upload_path = './assets/upload/welcome/';
 
       $config['upload_path']          = $upload_path;
-      $config['allowed_types']        = 'jpg|png';
+      $config['allowed_types']        = 'jpg|png|jpeg';
       $config['file_name']            = 'Welcome'.'-'.date('YmdHis');
       $config['overwrite']			      = true;
       $config['max_size']             = 2048;
@@ -985,7 +989,7 @@ class About extends Admin_Controller {
       $upload_path = './assets/upload/target/';
 
       $config['upload_path']          = $upload_path;
-      $config['allowed_types']        = 'jpg|png';
+      $config['allowed_types']        = 'jpg|png|jpeg';
       $config['file_name']            = 'Target'.'-'.date('YmdHis');
       $config['overwrite']			      = true;
       $config['max_size']             = 2048;
@@ -1017,7 +1021,7 @@ class About extends Admin_Controller {
       $upload_path = './assets/upload/tim/';
 
       $config['upload_path']          = $upload_path;
-      $config['allowed_types']        = 'jpg|png';
+      $config['allowed_types']        = 'jpg|png|jpeg';
       $config['file_name']            = 'Tim'.'-'.date('YmdHis');
       $config['overwrite']			      = true;
       $config['max_size']             = 2048;
@@ -1049,7 +1053,7 @@ class About extends Admin_Controller {
       $upload_path = './assets/upload/kegiatan/';
 
       $config['upload_path']          = $upload_path;
-      $config['allowed_types']        = 'jpg|png';
+      $config['allowed_types']        = 'jpg|png|jpeg';
       $config['file_name']            = 'Kegiatan'.'-'.date('YmdHis');
       $config['overwrite']			      = true;
       $config['max_size']             = 2048;
