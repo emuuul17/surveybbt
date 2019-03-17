@@ -17,8 +17,8 @@
                 <tr>
                     <th>No</th>
                     <th>Judul</th>
-                    <th>Deskripsi</th>
-                    <th>Gambar</th>
+                    <!-- <th>Deskripsi</th>
+                    <th>Gambar</th> -->
                     <th>Tindakan</th>
                 </tr>
         <?php 
@@ -27,8 +27,8 @@
                 <tr>
                     <td><?php echo $i; ?></td>
                     <td><?= $sasaran['judul']; ?></td>
-                    <td><?= $sasaran['deskripsi']; ?></td>
-                    <td> <img src="<?= base_url();?>/assets/upload/target/<?= $sasaran['img']; ?>" class="img-fluid" alt="Card image cap"/></td>
+                    <!-- <td><?= $sasaran['deskripsi']; ?></td> -->
+                    <!-- <td> <img src="<?= base_url();?>/assets/upload/target/<?= $sasaran['img']; ?>" class="img-fluid" alt="Card image cap"/></td> -->
                     <td>
                         <?= anchor('admin/about/editsasaran/'.$sasaran['id'].'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
                         <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>

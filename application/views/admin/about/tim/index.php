@@ -18,7 +18,7 @@
                     <th>No</th>
                     <th>Nama</th>
                     <th>Jabatan</th>
-                    <th>Foto</th>
+                    <!-- <th>Foto</th> -->
                     <th>Tindakan</th>
                 </tr>
         <?php 
@@ -28,7 +28,7 @@
                     <td><?php echo $i; ?></td>
                     <td><?= $tim['nama']; ?></td>
                     <td><?= $tim['jabatan']; ?></td>
-                    <td> <img src="<?= base_url();?>/assets/upload/tim/<?= $tim['img']; ?>" class="img-fluid" alt="Card image cap"/></td>
+                    <!-- <td> <img src="<?= base_url();?>/assets/upload/tim/<?= $tim['img']; ?>" class="img-fluid" alt="Card image cap"/></td> -->
                     <td>
                         <?= anchor('admin/about/edittim/'.$tim['id'].'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
                         <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>

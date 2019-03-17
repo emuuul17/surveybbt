@@ -16,8 +16,8 @@
             <table class="table table-bordered" cellspacing="0">
                 <tr>
                     <th>No</th>
-                    <th>Nama</th>
-                    <th>Foto Kegiatan</th>
+                    <th>Nama Kegiatan</th>
+                    <!-- <th>Foto Kegiatan</th> -->
                     <th>Tindakan</th>
                 </tr>
         <?php 
@@ -26,7 +26,7 @@
                 <tr>
                     <td><?php echo $i; ?></td>
                     <td><?= $kegiatan['title']; ?></td>
-                    <td> <img src="<?= base_url();?>/assets/upload/kegiatan/<?= $kegiatan['img']; ?>" class="img-fluid" alt="Card image cap"/></td>
+                    <!-- <td> <img src="<?= base_url();?>/assets/upload/kegiatan/<?= $kegiatan['img']; ?>" class="img-fluid" alt="Card image cap"/></td> -->
                     <td>
                         <?= anchor('admin/about/editkegiatan/'.$kegiatan['id'].'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
                         <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>

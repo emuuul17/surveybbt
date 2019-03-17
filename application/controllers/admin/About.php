@@ -1016,7 +1016,7 @@ class About extends Admin_Controller {
       }
     }
     
-    public function _uploadttim()
+    public function _uploadtim()
     {
       $upload_path = './assets/upload/tim/';
 
