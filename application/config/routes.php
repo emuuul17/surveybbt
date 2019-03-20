@@ -43,3 +43,4 @@ $route['tim'] = 'public/team';
 $route['foto'] = 'public/gallery';
 $route['home'] = 'public/home';
 $route['jadwal'] = 'public/schedule';
+$route['register'] = 'public/register';

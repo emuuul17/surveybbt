@@ -84,7 +84,7 @@
  <div id="content">
      <h2>Pendaftaran Workshop</h2>
 
-     <?php echo form_open('register');?>
+     <?php echo form_open('public/register/index');?>
 
 	 <table>
 
@@ -110,17 +110,15 @@
 
      <tr><td>Tanggal</td>  <td>:</td>
          <td><div class="input-group date">
-  <input type="text" class="datepicker" name="tanggal_event" class="form-control">
-</div>
+         <input type="text" class="datepicker" name="tanggal_event" class="form-control">
+    </div>
      </td>
      <td> <?php echo form_error('tanggal_event'); ?> </td></tr>
      
      <tr><td>Pembayaran</td><td>:</td>
-       <td><select name="Jenis_kelamin" id="Jenis_kelamin">
-    <option value="">Select</option>
-    <option value="Transfer">Transfer</option>
-    <option value="Tunai">Tunai</option>
-  </select> <font color="#FF0000"><?php echo form_error('pembayaran');?></font></td>
+       
+     <td><input type="text" name="pembayaran" value="<?php echo set_value('pembayaran'); ?>"/></td>
+       <td><?php echo form_error('pembayaran');?></font></td>
    </tr>   
 
 	 <tr></tr><tr></tr><tr></tr>
