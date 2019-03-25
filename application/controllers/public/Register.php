@@ -34,15 +34,11 @@ class Register extends Public_Controller {
             $data['pembayaran'] =    $this->input->post('pembayaran');
 
             $this->kirim_email($sender);
-            // $this->send_email();
-
 
             $this->register_model->daftar($data);
 
             $pesan['message'] =    "Pendaftaran berhasil";
-
-            $this->load->view('public/home/index',$pesan);
-           
+            redirect('home/index');
         }
     }
 
@@ -56,12 +52,7 @@ class Register extends Public_Controller {
             $this->email->subject('Kirim Email Codeigniter');
             $this->email->message('Anda menerima pesan ini karena sudah mengirimkan email dari codeigniter');
 
-             // Tampilkan pesan sukses atau error
-        if ($this->email->send()) {
-            echo 'Sukses! email berhasil dikirim.';
-        } else {
-            echo 'Error! email tidak dapat dikirim.';
-        }
+            return true;
     }
 
     public function send_email() {
