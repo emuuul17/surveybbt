@@ -24,6 +24,8 @@ class Register extends Public_Controller {
             $this->load->view('public/register/index');
         }else{
             $sender= $this->input->post('email');
+            $subject= $this->input->post('jenis_pelatihan') .' '.$this->input->post('company_person');
+            $message= 'Jumlah personal yang mengikuti pelatihan berjumlah :'.$this->input->post('jumlah_personal') .'<br> Pada Tanggal '.$this->input->post('tanggal_event') .'<br> Jenis Pembyaran '.$this->input->post('pembayaran');
 
             $data['nama']   =    $this->input->post('nama');
             $data['email']   =    $this->input->post('email');
@@ -33,26 +35,35 @@ class Register extends Public_Controller {
             $data['tanggal_event']  =    $this->input->post('tanggal_event');
             $data['pembayaran'] =    $this->input->post('pembayaran');
 
-            $this->kirim_email($sender);
+            $this->kirim_email($sender, $subject, $message);
+
+            // $this->send_email();
+
 
             $this->register_model->daftar($data);
 
             $pesan['message'] =    "Pendaftaran berhasil";
+
             redirect('home/index');
-        }
     }
 
-    public function kirim_email($email) {
+    public function kirim_email($email, $subject, $message) {
         $from_email = $email;
-        $to_email = "rive99erlangga@gmail.com";
+        $to_email = "nurikhsan175@gmail.com";
             //Load email library
             $this->load->library('email');
-            $this->email->from($from_email, 'coba.com');
+            $this->email->from($from_email);
             $this->email->to($to_email);
-            $this->email->subject('Kirim Email Codeigniter');
-            $this->email->message('Anda menerima pesan ini karena sudah mengirimkan email dari codeigniter');
+            $this->email->subject($subject);
+            $this->email->message($message);
 
+             // Tampilkan pesan sukses atau error
+        if ($this->email->send()) {
             return true;
+
+        } else {
+            redirect('public/register/index');
+        }
     }
 
     public function send_email() {
