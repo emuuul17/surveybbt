@@ -45,8 +45,6 @@ class Register extends Public_Controller {
             $pesan['message'] =    "Pendaftaran berhasil";
 
             redirect('home/index');
-           
-        }
     }
 
     public function kirim_email($email, $subject, $message) {
