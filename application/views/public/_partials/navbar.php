@@ -19,9 +19,9 @@
             </header>
                 <!--// header-top -->
 
-                <div class="container agile-banner_nav">
+                <div class="container-fluid agile-banner_nav">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="<?php echo base_url(); ?>">Antawijaya<span class="display">Training & Consulting</span></a>
+			<a class="navbar-brand" href="<?php echo base_url(); ?>"><span style="color: red;">A</span>ntawijaya<span class="display">Training & Consulting</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -55,13 +55,16 @@
 						</ul>
 						<li class="nav-item">
 							<?= anchor('feature', 'Produk & Jasa', 'title="Service & Products"');?>
-							</li>
-							<li class="nav-item">
-								<?= anchor('jadwal', 'Jadwal', 'title="Our Schedule"');?>
-							</li>
-							<li class="nav-item">
-								<?= anchor('contact', 'Kontak Kami', 'title="Contact Us"');?>
-							</li>
+						</li>
+						<li class="nav-item">
+							<?= anchor('jadwal', 'Jadwal', 'title="Our Schedule"');?>
+						</li>
+						<li class="nav-item">
+							<?= anchor('contact', 'Kontak Kami', 'title="Contact Us"');?>
+						</li>
+						<li class="nav-item">
+							<?= anchor('customer', 'Partner Kami', 'title="Contact Us"');?>
+						</li>
 							
 				</div>
 		  </nav>
