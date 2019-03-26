@@ -235,11 +235,13 @@ class About extends Admin_Controller {
   
       }else{
         $judul = $this->input->post('judul');
+        $isi = $this->input->post('deskripsi');
         $judul = strtoupper($judul);
+        $isi = ucfirst($isi);
 
         $data = array(
           'judul' => $judul,
-          'deskripsi' => $this->input->post('deskripsi')
+          'deskripsi' => $isi
         );
 
         $this->Nilai_model->add($data);
@@ -266,11 +268,13 @@ class About extends Admin_Controller {
       }else{
     
         $judul = $this->input->post('judul');
+        $isi = $this->input->post('deskripsi');
         $judul = strtoupper($judul);
+        $isi = ucfirst($isi);
 
         $data = array(
           'judul' => $judul,
-          'deskripsi' => $this->input->post('deskripsi')
+          'deskripsi' => $isi
         );
 
         $this->Nilai_model->update($id, $data);

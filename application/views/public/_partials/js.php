@@ -36,7 +36,7 @@
 	<!-- //odometer-script -->
 
 	<!-- start-smoth-scrolling -->
-	<script src="<?php echo base_url();?>assets/js/public/SmoothScroll.min.js"></script>
+	<!-- <script src="<?php echo base_url();?>assets/js/public/SmoothScroll.min.js"></script> -->
 	<script type="text/javascript" src="<?php echo base_url();?>assets/js/public/move-top.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/js/public/easing.js"></script>
 	<script type="text/javascript">

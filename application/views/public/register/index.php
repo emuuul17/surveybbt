@@ -129,7 +129,7 @@
      <?php echo form_close();?>
 
      <tr><td>
-     Kembali ke beranda, Silakan klik <?php echo anchor(site_url().'beranda','di sini..'); ?>
+     Kembali ke beranda, Silakan klik <?= anchor('', 'Beranda', 'title="Beranda"');?>
      </td></tr>
 	 </table>
 	</div>

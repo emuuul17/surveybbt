@@ -46,6 +46,7 @@ class Register extends Public_Controller {
 
             redirect('home/index');
     }
+}
 
     public function kirim_email($email, $subject, $message) {
         $from_email = $email;

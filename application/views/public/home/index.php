@@ -61,7 +61,7 @@
   <!-- Grid row -->
   <div class="row">
 	  	 <!--Grid column-->
-    <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+    <div class="col-lg-6 col-md-6 mb-lg-6 mb-4">
       <!--Card-->
       <div class="card testimonial-card">
         <!--Background color-->
