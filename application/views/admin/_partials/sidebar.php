@@ -58,6 +58,10 @@
         </div>
       </li>
 
+      <li class="nav-item active">
+        <?= anchor('admin/customer', ' Partner', array('class' => 'nav-link fas fa-user'));?>
+      </li> 
+
       <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-tools"></i>
