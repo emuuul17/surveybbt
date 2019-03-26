@@ -73,8 +73,8 @@ class Register extends Public_Controller {
             'charset'   => 'utf-8',
             'protocol'  => 'smtp',
             'smtp_host' => 'ssl://smtp.mailgun.org',
-            'smtp_user' => 'postmaster@sandboxb109992dbdaa4c31b545e69101c6b46f.mailgun.org',    // Ganti dengan email gmail kamu
-            'smtp_pass' => 'f9d93c029f81b4f9fa1fef8d3e60798e-3939b93a-e8919f99',      // Password gmail kamu
+            'smtp_user' => 'postmaster@sandbox66386da546e4423b9ee1c1a01f7aeb6a.mailgun.org',    // Ganti dengan email gmail kamu
+            'smtp_pass' => '08dc71e9c931f36c2dcca226a58e4f3c-985b58f4-4d5bc7e7',      // Password gmail kamu
             'smtp_port' => 465,
             'crlf'      => "\r\n",
             'newline'   => "\r\n"
