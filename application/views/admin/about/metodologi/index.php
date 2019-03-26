@@ -27,7 +27,8 @@
                     <td><?= $metodologi['judul']; ?></td>
                     <td>
                         <?= anchor('admin/about/editmetodologi/'.$metodologi['id'].'', '<i class="fa fa-tasks" aria-hidden="true"></i>', 'class="btn btn-sm btn-warning"'); ?>
-                        <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        <?= anchor('admin/about/deletemetodologi/'.$metodologi['id'].'', '<i class="fa fa-trash" aria-hidden="true"></i>', array('class="btn btn-sm btn-danger"','onclick'=>"return confirm('Yakin untuk menghapus data ini?')")); ?>                                               
+                        <!-- <a href="#myModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
                     </td>
                     </tr>
         <?php 
@@ -41,28 +42,4 @@
             <p>No Data</p>
         <?php endif; ?>
         </div>
-
-        <!-- Modal HTML -->
-        <div id="myModal" class="modal fade">
-            <div class="modal-dialog modal-confirm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="icon-box">
-                            <i class="material-icons"></i>
-                        </div>				
-                        <h4 class="modal-title">Yakin Untuk Menghapus Data ini?</h4>	
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Data yang dihapus tidak dapat dibalikan kembali.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
-                        <?= anchor('admin/about/deletemetodologi/'.$metodologi['id'].'', 'Delete', 'class="btn btn-danger"'); ?>
-                    </div>
-                </div>
-            </div>
-        </div>   
-            </div>
-
     
