@@ -52,7 +52,7 @@
 						</div>
 						<div class="col-sm-10">
 							<h4 class="text-uppercase mb-4"><?=$n->judul?></h4>
-							<p class="mb-3 text-capitalize"><?=$n->deskripsi?></p>
+							<p class="mb-3"><?=$n->deskripsi?></p>
                             </div>
 						</div>
 					</div>
