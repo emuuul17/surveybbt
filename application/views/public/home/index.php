@@ -29,7 +29,7 @@
 							<li>
 								<div class="client row">
 									<div class="col-sm-4">
-                                    <?php foreach($owner as $ow) : ?>
+                    <?php foreach($owner as $ow) : ?>
 										<img src="<?php echo base_url();?>/assets/upload/owner/<?= $ow->img ?>" alt="" />
 									</div>
 									<div class="col-sm-8">
@@ -51,48 +51,36 @@
 	</div>
 </section>
 
-<!-- Testimonials -->
-<!-- Section: Testimonials v.1 -->
-<section class="text-center my-5 p-1">
-  <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold my-5">Testimoni</h2>
-  <!-- Section description -->
-  <p class="dark-grey-text w-responsive mx-auto mb-5">Ini merupakan testimoni dari sebagian orang hehehe</p>
-  <!-- Grid row -->
-  <div class="row">
-	  	 <!--Grid column-->
-    <div class="col-lg-6 col-md-6 mb-lg-6 mb-4">
-      <!--Card-->
-      <div class="card testimonial-card">
-        <!--Background color-->
-		<div class="card-up info-color"></div>
-		 <!--Avatar-->
-        <div class="avatar mx-auto white">
-		<?php foreach($testi as $tsti) : ?>
-			  <img src="<?= base_url();?>/assets/upload/testi/<?= $tsti->img ?>" class="rounded-circle img-fluid">
-        </div>
-        <div class="card-body">
-          <!--Name-->
-          <h4 class="font-weight-bold mb-4"><?=$tsti->nama?></h4>
-          <hr>
-          <!--Quotation-->
-		  <p class="dark-grey-text mt-4"><i class="fas fa-quote-left pr-2"></i><?=$tsti->testimoni?></p>
-		  
-		  </div>
-		  
-	  </div>
-	  <?php endforeach; ?>
-      <!--Card-->
-    </div>
-    <!--Grid column-->
-
-  </div>
-  <!-- Grid row -->
-
+<!-- testimonials -->
+<section class="feedback" id="testimonials">
+	<div class="feedback-layer py-5">
+		<div class="container py-lg-5">
+		<h3 class="heading text-center mb-sm-5 mb-4">Testimonials</h3>
+			<?php foreach($testi as $tsti) : ?>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+					<div class="feedback-info">
+						<div class="feedback-top p-4">
+							<span class="fa fa-quote-right"></span> 
+								<p><?=$tsti->testimoni?></p>
+							<div class="clearfix"></div>
+						</div>
+						<div class="feedback-grids">
+							<div class="feedback-img">
+								<img src="<?= base_url();?>/assets/upload/testi/<?= $tsti->img ?> class="img-fluid" alt="">
+							</div>
+							<div class="feedback-img-info">
+								<h5><?=$tsti->nama?></h5>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					</div>
+					<?php endforeach; ?>
 </section>
-<!-- Section: Testimonials v.1 -->
+<!-- //testimonials -->
 
-	<!-- project -->
+<!-- project -->
 <section class="project py-5 text-center">
 	<div class="container">
 		<h3 class="text-capitalize mb-5">BERGABUNG BERSAMA KAMI??</h3>
