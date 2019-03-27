@@ -56,8 +56,8 @@
 	<div class="feedback-layer py-5">
 		<div class="container py-lg-5">
 		<h3 class="heading text-center mb-sm-5 mb-4">Testimonials</h3>
-			<?php foreach($testi as $tsti) : ?>
 			<div class="row">
+			<?php foreach($testi as $tsti) : ?>
 				<div class="col-lg-4 col-md-6 mt-md-0 mt-5">
 					<div class="feedback-info">
 						<div class="feedback-top p-4">
@@ -71,12 +71,14 @@
 							</div>
 							<div class="feedback-img-info">
 								<h5><?=$tsti->nama?></h5>
+								<p><?=$tsti->sub_nama?></p>
 							</div>
 							<div class="clearfix"></div>
 						</div>
 					</div>
 					</div>
 					<?php endforeach; ?>
+</div>
 </section>
 <!-- //testimonials -->
 
