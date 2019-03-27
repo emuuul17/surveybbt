@@ -53,7 +53,7 @@
 <!-- Testimonials -->
 <section class="text-center my-5 p-1">
   <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold my-5">Testimoni</h2>
+  <h2 class="h1-responsive font-weight-bold my-5">TESTIMONI</h2>
   <div class="row">
 	  	 <!--Grid column-->
 	<?php foreach($testi as $tsti) : ?>
