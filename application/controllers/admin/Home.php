@@ -126,7 +126,7 @@ class Home extends Admin_Controller {
             'testimoni' => $this->input->post('testimoni'),
             'img' => $img
           );
-
+          
         $this->Home_model->update($id, $data);
         $this->session->set_flashdata('success', 'Data Telah Di Perbaharui!');
 
