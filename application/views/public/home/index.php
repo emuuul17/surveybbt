@@ -55,7 +55,7 @@
 <section class="feedback" id="testimonials">
 	<div class="feedback-layer py-5">
 		<div class="container py-lg-5">
-		<h3 class="heading text-center mb-sm-5 mb-4">Testimonials</h3>
+		<h3 class="heading text-center mb-sm-5 mb-4">TESTIMONI</h3>
 			<div class="row">
 			<?php foreach($testi as $tsti) : ?>
 				<div class="col-lg-4 col-md-6 mt-md-0 mt-5">
