@@ -25,7 +25,8 @@ class Register extends Public_Controller {
         }else{
             $sender= $this->input->post('email');
             $subject= $this->input->post('jenis_pelatihan') .' '.$this->input->post('company_person');
-            $message= 'Jumlah personal yang mengikuti pelatihan berjumlah :'.$this->input->post('jumlah_personal') .'<br> Pada Tanggal '.$this->input->post('tanggal_event') .'<br> Jenis Pembyaran '.$this->input->post('pembayaran');
+            $message= 'Jumlah personal yang mengikuti pelatihan berjumlah :'.$this->input->post('jumlah_personal') .
+            '<br> Pada Tanggal '.$this->input->post('tanggal_event') .'<br> Jenis Pembayaran '.$this->input->post('pembayaran');
 
             $data['nama']   =    $this->input->post('nama');
             $data['email']   =    $this->input->post('email');
@@ -50,7 +51,7 @@ class Register extends Public_Controller {
 
     public function kirim_email($email, $subject, $message) {
         $from_email = $email;
-        $to_email = "nurikhsan175@gmail.com";
+        $to_email = "antawijayatraining@gmail.com";
             //Load email library
             $this->load->library('email');
             $this->email->from($from_email);
@@ -73,8 +74,8 @@ class Register extends Public_Controller {
             'charset'   => 'utf-8',
             'protocol'  => 'smtp',
             'smtp_host' => 'ssl://smtp.mailgun.org',
-            'smtp_user' => 'postmaster@sandbox66386da546e4423b9ee1c1a01f7aeb6a.mailgun.org',    // Ganti dengan email gmail kamu
-            'smtp_pass' => '08dc71e9c931f36c2dcca226a58e4f3c-985b58f4-4d5bc7e7',      // Password gmail kamu
+            'smtp_user' => 'postmaster@sandbox6cc8ad21fe9a4643aa11e892623220c4.mailgun.org',    // Ganti dengan email gmail kamu
+            'smtp_pass' => '3451cc68aedac82c0b584ce38547651f-e51d0a44-b7627bfc',      // Password gmail kamu
             'smtp_port' => 465,
             'crlf'      => "\r\n",
             'newline'   => "\r\n"
@@ -87,7 +88,7 @@ class Register extends Public_Controller {
         $this->email->from('no-reply@masrud.com', 'MasRud.com | M. Rudianto');
 
         // Email penerima
-        $this->email->to('nurikhsan175@gmail.com'); // Ganti dengan email tujuan kamu
+        $this->email->to('antawijayatraining@gmail.com'); // Ganti dengan email tujuan kamu
 
         // Lampiran email, isi dengan url/path file
         // $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
