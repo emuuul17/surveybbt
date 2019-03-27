@@ -48,55 +48,41 @@
 				<p class="mb-5 mt-4" align="justify"><?=$ow->deskripsi?></p>
                 <?php endforeach; ?>
 				</div>
-	</div>
 </section>
 
 <!-- Testimonials -->
-<!-- Section: Testimonials v.1 -->
 <section class="text-center my-5 p-1">
   <!-- Section heading -->
   <h2 class="h1-responsive font-weight-bold my-5">Testimoni</h2>
-  <!-- Section description -->
-  <p class="dark-grey-text w-responsive mx-auto mb-5">Ini merupakan testimoni dari sebagian orang hehehe</p>
-  <!-- Grid row -->
   <div class="row">
 	  	 <!--Grid column-->
+	<?php foreach($testi as $tsti) : ?>
     <div class="col-lg-6 col-md-6 mb-lg-6 mb-4">
       <!--Card-->
       <div class="card testimonial-card">
-        <!--Background color-->
-		<div class="card-up info-color"></div>
-		 <!--Avatar-->
-        <div class="avatar mx-auto white">
-		<?php foreach($testi as $tsti) : ?>
-			  <img src="<?= base_url();?>/assets/upload/testi/<?= $tsti->img ?>" class="rounded-circle img-fluid">
-        </div>
-        <div class="card-body">
-          <!--Name-->
-          <h4 class="font-weight-bold mb-4"><?=$tsti->nama?></h4>
-          <hr>
-          <!--Quotation-->
-		  <p class="dark-grey-text mt-4"><i class="fas fa-quote-left pr-2"></i><?=$tsti->testimoni?></p>
-		  
-		  </div>
-		  
-	  </div>
-	  <?php endforeach; ?>
+			<!--Avatar-->
+					<div class="avatar mx-auto white">
+			 	 		<img src="<?= base_url();?>assets/upload/testimoni/<?= $tsti->img ?>" class="img-fluid">
+        		</div>
+        		<div class="card-body">
+							<!--Name-->
+							<h4 class="font-weight-bold mb-4"><?=$tsti->nama?></h4>
+          	<hr>
+          	<!--Quotation-->
+		  			<p class="dark-grey-text mt-4"><i class="fas fa-quote-left pr-2"></i><?=$tsti->testimoni?></p>
+		  		</div>
+	  		</div>
       <!--Card-->
     </div>
+	<?php endforeach; ?>
     <!--Grid column-->
-
   </div>
   <!-- Grid row -->
-
 </section>
 <!-- Section: Testimonials v.1 -->
 
-	<!-- project -->
-<section class="project py-5 text-center">
-	<div class="container">
-		<h3 class="text-capitalize mb-5">BERGABUNG BERSAMA KAMI??</h3>
-		<a href="<?php echo base_url();?>register" class="text-uppercase"><i></i>DAFTAR </a>
 	</div>
-</section>
+	</div>
+	<!-- project -->
+
 <!-- //project -->

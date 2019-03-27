@@ -84,7 +84,7 @@
 
  <div id="wrap" class="container-fluid p-3 mb-5 ">
  <div id="" >
- <h2 class="heading text-center text-capitalize mb-2">Form Pendaftaran</h2>
+ <h2 class="heading text-center text-capitalize mb-2">Form Pendaftaran Pelatihan</h2>
      <?php echo form_open('public/register/index');?>
   <div class="col-md-11">
 	 <table>

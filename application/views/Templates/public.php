@@ -14,6 +14,7 @@
           </div>
       </div>
     </div> <!-- /container -->
+  <?php $this->load->view("public/_partials/register.php") ?>
   </body>
 
   <?php $this->load->view("public/_partials/footer.php") ?>

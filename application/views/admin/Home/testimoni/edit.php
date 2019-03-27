@@ -4,7 +4,7 @@
 	    </div>
     <div class="card-body">
         <?= validation_errors('<p class="alert alert-danger" role="alert">'); ?>
-        <?= form_open_multipart('admin/home/edittestimoni'); ?>
+        <?= form_open_multipart('admin/home/edittestimoni/'.$item->id); ?>
 
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -69,7 +69,7 @@
                 </div>
 
             </div>
-        <?= form_submit('mysubmit', 'Add', array('class' => 'btn btn-success'));  ?>
+        <?= form_submit('mysubmit', 'Update', array('class' => 'btn btn-success'));  ?>
         <?= anchor('admin/home/testimoni', 'Back', 'class="btn btn-danger"'); ?>
     <?= form_close(); ?>
         </div>
