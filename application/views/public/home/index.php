@@ -29,7 +29,7 @@
 							<li>
 								<div class="client row">
 									<div class="col-sm-4">
-                                    <?php foreach($owner as $ow) : ?>
+                    <?php foreach($owner as $ow) : ?>
 										<img src="<?php echo base_url();?>/assets/upload/owner/<?= $ow->img ?>" alt="" />
 									</div>
 									<div class="col-sm-8">
@@ -53,7 +53,7 @@
 <!-- Testimonials -->
 <section class="text-center my-5 p-1">
   <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold my-5">Testimoni</h2>
+  <h2 class="h1-responsive font-weight-bold my-5">TESTIMONI</h2>
   <div class="row">
 	  	 <!--Grid column-->
 	<?php foreach($testi as $tsti) : ?>
@@ -78,11 +78,9 @@
     <!--Grid column-->
   </div>
   <!-- Grid row -->
+	</DIV>
+	</DIV>
+	</DIV>
 </section>
-<!-- Section: Testimonials v.1 -->
+<!-- //testimonials -->
 
-	</div>
-	</div>
-	<!-- project -->
-
-<!-- //project -->
