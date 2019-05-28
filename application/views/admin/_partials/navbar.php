@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top" style="background: #448aff !important">
 
     <a class="navbar-brand mr-1" href="/sparkup/admin"><?= SITE_NAME ?></a>
 
@@ -32,7 +32,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li> -->
-      <li class="nav-item dropdown no-arrow mx-1" style="margin-top: 8px">
+      <li class="nav-item dropdown no-arrow mx-1" style="margin-top: 8px;">
             <?= anchor('/', '<i class="fas fa-newspaper"></i>', 'target="_blank"');?>
           <!-- <i class="fas fa-newspaper"></i> -->
       </li>

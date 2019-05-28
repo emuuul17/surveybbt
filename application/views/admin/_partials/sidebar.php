@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
+    <ul class="sidebar navbar-nav" style="background: #2979ff">
       <li class="nav-item active <?= $this->uri->segment(2) == '' ? 'active': '' ?>">
           <?= anchor('admin', ' Dashboard', array('class' => 'nav-link fas fa-fw fa-tachometer-alt'));?>
       </li>

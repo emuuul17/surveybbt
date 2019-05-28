@@ -22,7 +22,12 @@
                 <?= form_input($data); ?>
                 </div>
 
-                <div class="form-group col-md-6">
+            <div class="container">
+                <button type="button" class="btn btn-block btn-primary collapsed" data-toggle="collapse" data-target="#content">Tampilkan Sub Judul</button>
+                <div id="content" class="collapse">
+                    <div class="form-row">
+
+                    <div class="form-group col-md-6">
                 <?= form_label('Sub Judul', 'sub_judul');  ?>
                 <?php
                     $data = array(
@@ -65,7 +70,10 @@
                 ?>
                 <?= form_input($data); ?>
                 </div>
-
+            
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group col-md-12">
                 <?= form_label('Deskripsi', 'deskripsi');  ?>
@@ -81,7 +89,12 @@
                 <?= form_textarea($data); ?>
                 </div>
 
-                <div class="form-group col-md-6">
+                <div class="container">
+                <button type="button" class="btn btn-block btn-primary collapsed" data-toggle="collapse" data-target="#content">Tampilkan Deskripsi Lainnya</button>
+                <div id="content" class="collapse">
+                    <div class="form-row">
+
+                    <div class="form-group col-md-6">
                 <?= form_label('Deskripsi 2', 'deskripsi_2');  ?>
                 <?php
                     $data = array(
@@ -111,6 +124,12 @@
                 <?= form_input($data); ?>
                 </div>
 
+                 
+            
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group col-md-6">
                 <?= form_label('Foto', 'img');  ?>
                 <?php
@@ -133,5 +152,6 @@
     <?= form_submit('mysubmit', 'Update', array('class' => 'btn btn-success'));  ?>
     <?= anchor('admin/feature/product', 'Back', 'class="btn btn-danger"'); ?>
     <?= form_close(); ?>
+    
         </div>
     </div>
