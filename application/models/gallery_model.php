@@ -1,22 +1,24 @@
 <?php
-class Gallery_model extends CI_MODEL {
-    function __construct(){
+class Gallery_model extends CI_MODEL
+{
+    function __construct()
+    {
         parent::__construct();
         $this->table = 'about_foto';
     }
 
     public function get_foto()
     {
-         // active record
-         $query = $this->db->get($this->table);
-         return $query->result();
+        // active record
+        $query = $this->db->get($this->table);
+        return $query->result();
     }
 
     public function get_all()
     {
-         // active record
-         $query = $this->db->get($this->table);
-         return $query->result();
+        // active record
+        $query = $this->db->get($this->table);
+        return $query->result();
     }
 
     public function add($data)
@@ -42,3 +44,4 @@ class Gallery_model extends CI_MODEL {
         $this->db->delete($this->table);
     }
 }
+

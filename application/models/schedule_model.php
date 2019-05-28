@@ -1,22 +1,25 @@
 <?php
-class Schedule_model extends CI_MODEL {
-    function __construct(){
+class Schedule_model extends CI_MODEL
+{
+    function __construct()
+    {
         parent::__construct();
         $this->table = 'schedule';
     }
 
-    public function get_jadwal()
+    public function get_jadwal($bulan)
     {
-         // active record
-         $query = $this->db->get($this->table);
-         return $query->result();
+        // active record
+        $q = "SELECT * FROM schedule WHERE MONTH(tanggal) = $bulan";
+        $query = $this->db->query($q);
+        return $query->result();
     }
 
     public function get_all()
     {
-         // active record
-         $query = $this->db->get($this->table);
-         return $query->result();
+        // active record
+        $query = $this->db->get($this->table);
+        return $query->result();
     }
 
     public function add($data)

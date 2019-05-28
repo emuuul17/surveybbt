@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 $route['default_controller'] = 'home/index';
 $route['404_override'] = '';
@@ -7,7 +7,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 /*
     START ADMIN SECTION
-*/    
+*/
 $route['admin'] = 'admin/dashboard';
 $route['admin/login'] = 'admin/users/login';
 
@@ -28,11 +28,11 @@ $route['admin/settings/banner/pages/{$id}'] = 'admin/settings/index';
 
 /*
     END ADMIN SECTION
-*/    
+*/
 
 /*
     START PUBLIC SECTION
-*/    
+*/
 $route['contact'] = 'public/contact';
 $route['about'] = 'public/about';
 $route['product'] = 'public/product';
@@ -43,5 +43,6 @@ $route['tim'] = 'public/team';
 $route['foto'] = 'public/gallery';
 $route['home'] = 'public/home';
 $route['jadwal'] = 'public/schedule';
+$route['jadwalBulan'] = 'public/schedule/getMonth';
 $route['register'] = 'public/register';
 $route['customer'] = 'public/customer';

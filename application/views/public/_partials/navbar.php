@@ -7,65 +7,65 @@
                 <!-- header-top -->
                 <div class="row border-bottom py-lg-4 py-3">
                     <div class="col-xl-9 col-lg-9 header_agileits_left">
-                     <p class="mr-15">
-                      <span class="fa fa-map-marker mr-2"><a href="https://www.bing.com/maps?q=jl.+kuningan+xi+no.4+antapani.+bandung&FORM=HDRSC4">    Jl. Kuningan XI no.4 Antapani. Bandung</a></span></p>
-                           <p>
-                                <i class="fa fa-phone mr-2"></i>(022) 20547800
-                            </p>
-                    </div>
-                        </div>
+                        <p class="mr-15">
+                            <span class="fa fa-map-marker mr-2"><a href="https://www.bing.com/maps?q=jl.+kuningan+xi+no.4+antapani.+bandung&FORM=HDRSC4"> Jl. Kuningan XI no.4 Antapani. Bandung</a></span></p>
+                        <p>
+                            <i class="fa fa-phone mr-2"></i>(022) 20547800
+                        </p>
                     </div>
                 </div>
-            </header>
-                <!--// header-top -->
+            </div>
+        </div>
+    </header>
+    <!--// header-top -->
 
-                <div class="container-fluid agile-banner_nav">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="<?php echo base_url(); ?>"><span style="color: red;">A</span>ntawijaya<span class="display">Training & Consulting</span></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-			</button>
+    <div class="container-fluid agile-banner_nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="<?php echo base_url(); ?>"><span style="color: red;">A</span>ntawijaya<span class="display">Training & Consulting</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-				<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-							<?= anchor('', 'Beranda', 'title="Beranda"');?>
-					</li>
-					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Tentang Kami
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu agile_short_dropdown">
-							<li>
-								<a class="active" class="nav-link">
-								<?= anchor('about', 'Tentang Kami', 'title="About Us"');?>
-							</li>
-							<li>
-								<a class="active" class="nav-link">
-								<?= anchor('sasaran', 'Sasaran Kami', 'title="About Us"');?>
-								</li>
-							<li>
-								<a class="active" class="nav-link">
-								<?= anchor('tim', 'Tim Kami', 'title="Our Team"');?>
-							</li>
-							<li>
-								<a class="active" class="nav-link">
-								<?= anchor('foto', 'Foto Kegiatan', 'title="Our Activity"');?>
-							</li>
-						</ul>
-						<li class="nav-item">
-							<?= anchor('feature', 'Produk & Jasa', 'title="Service & Products"');?>
-						</li>
-						<li class="nav-item">
-							<?= anchor('jadwal', 'Jadwal', 'title="Our Schedule"');?>
-						</li>
-						<li class="nav-item">
-							<?= anchor('contact', 'Kontak Kami', 'title="Contact Us"');?>
-						</li>
-						<li class="nav-item">
-							<?= anchor('customer', 'Partner Kami', 'title="Contact Us"');?>
-						</li>
-							
-				</div>
-		  </nav>
-	</div>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <?= anchor('', 'Beranda', 'title="Beranda"'); ?>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Tentang Kami
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu agile_short_dropdown">
+                            <li>
+                                <a class="active" class="nav-link">
+                                    <?= anchor('about', 'Tentang Kami', 'title="About Us"'); ?>
+                            </li>
+                            <li>
+                                <a class="active" class="nav-link">
+                                    <?= anchor('sasaran', 'Sasaran Kami', 'title="About Us"'); ?>
+                            </li>
+                            <li>
+                                <a class="active" class="nav-link">
+                                    <?= anchor('tim', 'Tim Kami', 'title="Our Team"'); ?>
+                            </li>
+                            <li>
+                                <a class="active" class="nav-link">
+                                    <?= anchor('foto', 'Foto Kegiatan', 'title="Our Activity"'); ?>
+                            </li>
+                        </ul>
+                    <li class="nav-item">
+                        <?= anchor('feature', 'Produk & Jasa', 'title="Service & Products"'); ?>
+                    </li>
+                    <li class="nav-item">
+                        <?= anchor('jadwal', 'Jadwal', 'title="Our Schedule"'); ?>
+                    </li>
+                    <li class="nav-item">
+                        <?= anchor('contact', 'Kontak Kami', 'title="Contact Us"'); ?>
+                    </li>
+                    <li class="nav-item">
+                        <?= anchor('customer', 'Partner Kami', 'title="Contact Us"'); ?>
+                    </li>
+
+            </div>
+        </nav>
+    </div> 
