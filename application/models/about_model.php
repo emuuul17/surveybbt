@@ -1,17 +1,19 @@
 <?php
-class About_model extends CI_MODEL {
-    function __construct(){
+class About_model extends CI_MODEL
+{
+    function __construct()
+    {
         parent::__construct();
         $this->table = 'about_atc';
     }
 
     public function get_about()
     {
-         // active record
-         $query = $this->db->get($this->table);
-         return $query->result();
+        // active record
+        $query = $this->db->get($this->table);
+        return $query->result();
     }
-    
+
     public function get($id)
     {
         $query = $this->db->get_where($this->table, array('id' => $id));
