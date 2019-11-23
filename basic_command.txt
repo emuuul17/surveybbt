@@ -1,0 +1,4 @@
+nama komend, fungsi
+
+git status, melihat perubahan
+git add .
