@@ -1,4 +1,9 @@
 nama komend, fungsi
 
 git status, melihat perubahan
-git add .
+git add ., menambah file yang sudah dirubah untuk di push ke repo
+git commit -m "keterangan", menambahakan keterangan ketika push ke repo
+git push origin <development> -u , melakukan push ke repo
+git pull origin <development>, menarik data dari repo
+git fecth origin, refresh repo
+git branch , melihat aktif branch
