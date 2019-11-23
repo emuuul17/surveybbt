@@ -13,7 +13,7 @@ class Register extends Admin_Controller {
       if(!$this->session->userdata('logged_in')){
         redirect('admin/login');
       }
-      $qry = 'select * from register ';
+      $qry = 'select * from tb_responden ';
       $per_page = 31;
       $qry.= " order by id";
       $offset                    = ($this->uri->segment(4) != '' ? $this->uri->segment(4):0);

@@ -154,5 +154,16 @@ $autoload['model'] = array(
     'Schedule_model',
     'Register_model',
     'Owner_model',
-    'Customer_model'
+    'Customer_model',
+    'Pertanyaan_model',
+    'Pelatihan_model',
+    'Pengujian_model',
+    'Rancang_model',
+    'Unsurpelatihan_model',
+    'Unsurpengujian_model',
+    'Unsurrancang_model',
+    'laporan_model',
+    'laporanpelatihan_model',
+    'laporanpengujian_model',
+    'laporanrancang_model'
 );

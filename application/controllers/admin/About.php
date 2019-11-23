@@ -19,7 +19,7 @@ class About extends Admin_Controller {
 
       if($this->form_validation->run() == FALSE){
         $data['welcome'] = $this->About_model->get($id);
-        $data['title'] = " Welcome To Antawijaya";
+        $data['title'] = " Welcome To Balai Besar Tekstil";
   
         $this->template->load('admin', 'default', 'about/welcome', $data);
       }else{

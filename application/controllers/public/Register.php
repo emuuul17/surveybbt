@@ -14,100 +14,128 @@ class Register extends Public_Controller
 
     public function index()
     {
-
         $this->form_validation->set_rules('nama', 'nama', 'required');
-        $this->form_validation->set_rules('email', 'email', 'required|valid_email');
-        $this->form_validation->set_rules('company_person', 'company_person', 'required');
-        $this->form_validation->set_rules('jumlah_personal', 'jumlah_personal', 'required');
-        $this->form_validation->set_rules('jenis_pelatihan', 'jenis_pelatihan', 'required');
-        $this->form_validation->set_rules('tanggal_event', 'tanggal_event', 'required');
-        $this->form_validation->set_rules('pembayaran', 'pembayaran', 'required');
+        $this->form_validation->set_rules('jenis_kelamin', 'jenis_kelamin', 'required');
+        $this->form_validation->set_rules('nama_perusahaan', 'nama_perusahaan', 'required');
+        $this->form_validation->set_rules('alamat', 'alamat', 'required');
+        $this->form_validation->set_rules('kota', 'kota', 'required');
+        $this->form_validation->set_rules('provinsi', 'provinsi', 'required');
+        $this->form_validation->set_rules('no_tlp', 'no_tlp', 'required');
+        $this->form_validation->set_rules('jenis_jasa', 'jenis_jasa', 'required');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('public/register/index');
         } else {
-            $sender = $this->input->post('email');
-            $subject = $this->input->post('jenis_pelatihan') . ' ' . $this->input->post('company_person');
-            $message = 'Jumlah personal yang mengikuti pelatihan berjumlah :' . $this->input->post('jumlah_personal') .
-                '<br> Pada Tanggal ' . $this->input->post('tanggal_event') . '<br> Jenis Pembayaran ' . $this->input->post('pembayaran');
-
+            
             $data['nama']   =    $this->input->post('nama');
-            $data['email']   =    $this->input->post('email');
-            $data['company_person']   =    $this->input->post('company_person');
-            $data['jumlah_personal']   =    $this->input->post('jumlah_personal');
-            $data['jenis_pelatihan']   =    $this->input->post('jenis_pelatihan');
-            $data['tanggal_event']  =    $this->input->post('tanggal_event');
-            $data['pembayaran'] =    $this->input->post('pembayaran');
+            $data['jenis_kelamin']   =    $this->input->post('jenis_kelamin');
+            $data['nama_perusahaan']   =    $this->input->post('nama_perusahaan');
+            $data['alamat']   =    $this->input->post('alamat');
+            $data['kota']   =    $this->input->post('kota');
+            $data['provinsi']   =    $this->input->post('provinsi');
+            $data['no_tlp']   =    $this->input->post('no_tlp');
+            $data['jenis_jasa']   =    $this->input->post('jenis_jasa');
+            $tanggal = date('Y-m-d', strtotime("now"));
+            $data['tanggal']  =    $tanggal;
+    
+            $getRegisterId = $this->Register_model->add($data);
+            $jenis = $this->input->post('jenis_jasa');
+            // var_dump($save);die;
+            // $data['registerId'] = $getRegisterId;
 
-            $this->kirim_email($sender, $subject, $message);
+            $this->getSurvey($getRegisterId, $jenis);
 
-            // $this->send_email();
+            // $pesan['message'] ="Pendaftaran berhasil";
 
+            // redirect('public/register/index');
 
-            $this->register_model->daftar($data);
-
-            $pesan['message'] =    "Pendaftaran berhasil";
-
-            redirect('home/index');
+            // $this->template->load('public', 'default', 'register/index', $data);
         }
     }
 
-    public function kirim_email($email, $subject, $message)
+    private function getSurvey($id, $jenis)
     {
-        $from_email = $email;
-        $to_email = "antawijayatraining@gmail.com";
-        //Load email library
-        $this->load->library('email');
-        $this->email->from($from_email);
-        $this->email->to($to_email);
-        $this->email->subject($subject);
-        $this->email->message($message);
+         $Pelatihan = 'Pelatihan';
+         $Rancang = 'RancangBangun';
+         $Pengujian = 'Pengujian';
 
-        // Tampilkan pesan sukses atau error
-        if ($this->email->send()) {
-            return true;
-        } else {
+        if($jenis == $Pelatihan){
+            $data['id'] = $id;
+            $data['jenis'] = $jenis;
+            $data['pelatihan'] = $this->Pelatihan_model->get_all();
+            // $this->template->load('public', 'default', 'survey/pelatihan', $data);
+            $this->load->view('public/survey/pelatihan', $data);
+        }
+        if($jenis == $Rancang){
+            $data['id'] = $id;
+            $data['jenis'] = $jenis;
+            $data['rancang'] = $this->Rancang_model->get_all();
+
+            // $this->template->load('public', 'default', 'survey/rancang', $data);
+            $this->load->view('public/survey/rancang', $data);
+
+        }
+        if($jenis == $Pengujian){
+            $data['id'] = $id;
+            $data['jenis'] = $jenis;
+            $data['pengujian'] = $this->Pengujian_model->get_all();
+
+           $this->load->view('public/survey/pengujian', $data);
+        }
+    }
+
+    public function save($pelanggan, $jenis)
+    {
+         $Pelatihan = 'Pelatihan';
+         $Rancang = 'RancangBangun';
+         $Pengujian = 'Pengujian';
+
+         if($jenis == $Pelatihan){
+                $data['id_pelanggan'] = (int) $pelanggan;
+                $data['unsur_1']   =    $this->input->post('radio-1');
+                $data['unsur_2']   =    $this->input->post('radio-2');
+                $data['unsur_3']   =    $this->input->post('radio-3');
+                $data['unsur_4']   =    $this->input->post('radio-4');
+                $data['unsur_5']   =    $this->input->post('radio-5');
+                $data['unsur_6']   =    $this->input->post('radio-6');
+                $data['unsur_7']   =    $this->input->post('radio-7');
+                $tanggal = date('Y-m-d', strtotime("now"));
+                $data['tanggal']  =    $tanggal;
+
+                $save = $this->Unsurpelatihan_model->add($data);
+                redirect('public/register/index');
+        }
+        if($jenis == $Rancang){
+            $data['id_pelanggan'] = (int) $pelanggan;
+            $data['unsur_1']   =    $this->input->post('radio-1');
+            $data['unsur_2']   =    $this->input->post('radio-2');
+            $data['unsur_3']   =    $this->input->post('radio-3');
+            $data['unsur_4']   =    $this->input->post('radio-4');
+            $data['unsur_5']   =    $this->input->post('radio-5');
+            $data['unsur_6']   =    $this->input->post('radio-6');
+            $data['unsur_7']   =    $this->input->post('radio-7');
+            $tanggal = date('Y-m-d', strtotime("now"));
+            $data['tanggal']  =    $tanggal;
+
+            $save = $this->Unsurrancang_model->add($data);
             redirect('public/register/index');
         }
-    }
+        if($jenis == $Pengujian){
+            $data['id_pelanggan'] = (int) $pelanggan;
+            $data['unsur_1']   =    $this->input->post('radio-1');
+            $data['unsur_2']   =    $this->input->post('radio-2');
+            $data['unsur_3']   =    $this->input->post('radio-3');
+            $data['unsur_4']   =    $this->input->post('radio-4');
+            $data['unsur_5']   =    $this->input->post('radio-5');
+            $data['unsur_6']   =    $this->input->post('radio-6');
+            $data['unsur_7']   =    $this->input->post('radio-7');
+            $tanggal = date('Y-m-d', strtotime("now"));
+            $data['tanggal']  =    $tanggal;
 
-    public function send_email()
-    {
-        $config = [
-            'mailtype'  => 'html',
-            'charset'   => 'utf-8',
-            'protocol'  => 'smtp',
-            'smtp_host' => 'ssl://smtp.mailgun.org',
-            'smtp_user' => 'postmaster@sandbox6cc8ad21fe9a4643aa11e892623220c4.mailgun.org',    // Ganti dengan email gmail kamu
-            'smtp_pass' => '3451cc68aedac82c0b584ce38547651f-e51d0a44-b7627bfc',      // Password gmail kamu
-            'smtp_port' => 465,
-            'crlf'      => "\r\n",
-            'newline'   => "\r\n"
-        ];
-
-        // Load library email dan konfigurasinya
-        $this->load->library('email', $config);
-
-        // Email dan nama pengirim
-        $this->email->from('no-reply@masrud.com', 'MasRud.com | M. Rudianto');
-
-        // Email penerima
-        $this->email->to('antawijayatraining@gmail.com'); // Ganti dengan email tujuan kamu
-
-        // Lampiran email, isi dengan url/path file
-        // $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
-
-        // Subject email
-        $this->email->subject('Kirim Email dengan SMTP Gmail | MasRud.com');
-
-        // Isi email
-        $this->email->message("Ini adalah contoh email CodeIgniter yang dikirim menggunakan SMTP email Google (Gmail).<br><br> Klik <strong><a href='https://masrud.com/post/kirim-email-dengan-smtp-gmail' target='_blank' rel='noopener'>disini</a></strong> untuk melihat tutorialnya.");
-
-        // Tampilkan pesan sukses atau error
-        if ($this->email->send()) {
-            echo 'Sukses! email berhasil dikirim.';
-        } else {
-            echo 'Error! email tidak dapat dikirim.';
+            $save = $this->Unsurpengujian_model->add($data);
+            redirect('public/register/index');
         }
+
     }
+
 }

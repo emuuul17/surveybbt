@@ -34,14 +34,14 @@
 				
 			</div>
 
-			<div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
+<!-- 			<div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
 				<h3 class="text-uppercase mb-3">Links</h3>
 				<div class="links">
 					<a class="pt-2 text-capitalize" <?= anchor('', 'Beranda', 'title="Beranda"');?> ><i class="fas fa-angle-right"></i> Beranda</a>
 					<a class="pt-2 text-capitalize" <?= anchor('about', 'Tentang Kami', 'title="About Us"');?>><i class="fas fa-angle-right"></i> Visi-Misi</a>
 					<a class="pt-2 text-capitalize" <?= anchor('feature', 'Produk & Jasa', 'title="Service & Products"');?>><i class="fas fa-angle-right"></i> Produk & Jasa</a>
 					<a class="pt-2 text-capitalize" <?= anchor('contact', 'Kontak Kami', 'title="Contact Us"');?>><i class="fas fa-angle-right"></i>Kontak Kami</a>
-				</div>	
+				</div>	 -->
 				
 
 
@@ -56,7 +56,7 @@
 	<div class="container">
 		<div class="copyrightgrids row">
 			<div class="col-lg-6 col-12">
-				<p>© 2019 Antawijaya Training & Consulting . All Rights Reserved </a></p>
+				<p>© 2019 Balai Besar Tekstil Bandung . All Rights Reserved </a></p>
 			</div>
 			<div class="col-lg-6 col-12">
 				<ul class="social text-right mt-lg-0 mt-3">
@@ -78,7 +78,7 @@
 </div>
 
 <!-- //Vertically centered Modal -->
-<script>
+<!-- <script>
 var mymap = L.map('mapid').setView([-6.9151596,107.6587686,17], 13);
 var marker = L.marker([-6.9151596,107.6587686,17]).addTo(mymap);
 
@@ -91,4 +91,4 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 marker.bindPopup("<b>Antawijaya</b><br>Jl. Kuningan XI no.4 Antapani. Bandung").openPopup();
 
-</script>
+</script> -->

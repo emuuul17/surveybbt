@@ -1,5 +1,5 @@
 <head>
-<title>Antawijaya Training & Consulting</title>
+<title>BALAI BESAR TEKSTIL BANDUNG</title>
 	
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">

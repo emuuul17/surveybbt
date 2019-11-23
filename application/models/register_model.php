@@ -4,12 +4,12 @@
   class Register_model extends CI_Model{
      function __construct(){
           parent::__construct();
-          $this->table = 'register';
+          $this->table = 'tb_responden';
       }
 
        function daftar($data)
        {
-            $this->db->insert('register',$data);
+            $this->db->insert('tb_responden',$data);
        }
 
        public function get_all()
@@ -22,6 +22,8 @@
        public function add($data)
        {
            $this->db->insert($this->table, $data);
+           $id = $this->db->insert_id();
+           return $id;
        }
    
        public function get($id)

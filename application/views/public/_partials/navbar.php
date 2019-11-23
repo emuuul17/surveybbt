@@ -1,27 +1,10 @@
 <!-- banner -->
 <div class="bannerbg-w3l">
-    <!-- header -->
-    <header>
-        <div class="header_topw3layouts_bar">
-            <div class="container">
-                <!-- header-top -->
-                <div class="row border-bottom py-lg-4 py-3">
-                    <div class="col-xl-9 col-lg-9 header_agileits_left">
-                        <p class="mr-15">
-                            <span class="fa fa-map-marker mr-2"><a href="https://www.bing.com/maps?q=jl.+kuningan+xi+no.4+antapani.+bandung&FORM=HDRSC4"> Jl. Kuningan XI no.4 Antapani. Bandung</a></span></p>
-                        <p>
-                            <i class="fa fa-phone mr-2"></i>(022) 20547800
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!--// header-top -->
+    
 
     <div class="container-fluid agile-banner_nav">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="<?php echo base_url(); ?>"><span style="color: red;">A</span>ntawijaya<span class="display">Training & Consulting</span></a>
+            <a class="navbar-brand" href="<?php echo base_url(); ?>"><span style="color: red;">B</span>ALAI BESAR TEKSTIL<span class="display">B A N D U N G</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,11 +14,11 @@
                     <li class="nav-item">
                         <?= anchor('', 'Beranda', 'title="Beranda"'); ?>
                     </li>
-                    <li class="dropdown nav-item">
+                   <!--  <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Tentang Kami
                             <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu agile_short_dropdown">
+                        </a> -->
+<!--                         <ul class="dropdown-menu agile_short_dropdown">
                             <li>
                                 <a class="active" class="nav-link">
                                     <?= anchor('about', 'Tentang Kami', 'title="About Us"'); ?>
@@ -52,18 +35,18 @@
                                 <a class="active" class="nav-link">
                                     <?= anchor('foto', 'Foto Kegiatan', 'title="Our Activity"'); ?>
                             </li>
-                        </ul>
-                    <li class="nav-item">
+                        </ul> -->
+<!--                     <li class="nav-item">
                         <?= anchor('feature', 'Produk & Jasa', 'title="Service & Products"'); ?>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+<!--                     <li class="nav-item">
                         <?= anchor('jadwal', 'Jadwal', 'title="Our Schedule"'); ?>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+<!--                     <li class="nav-item">
                         <?= anchor('contact', 'Kontak Kami', 'title="Contact Us"'); ?>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <?= anchor('customer', 'Partner Kami', 'title="Contact Us"'); ?>
+                        <?= anchor('register', 'Survey Kepuasan', 'title="Survey Kepuasan"'); ?>
                     </li>
 
             </div>

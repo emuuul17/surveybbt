@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <head>
     <meta charset="UTF-8">
     <title>
-        Register Akun
+        Survey
     </title>
 
     <style>
@@ -76,6 +76,54 @@ defined('BASEPATH') or exit('No direct script access allowed');
             color: #000;
             font-weight: bold;
         }
+        .cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.cc-selector-2 input{
+    position:absolute;
+    z-index:999;
+}
+
+.visa{background-image:url(http://i.imgur.com/lXzJ1eB.png);}
+.mastercard{background-image:url(http://i.imgur.com/SJbRQF7.png);}
+
+.cc-selector-2 input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector-2 input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}
+* { font-family:monospace; }
+.cc-selector-2 input{ margin: 5px 0 0 12px; }
+.cc-selector-2 label{ margin-left: 7px; }
+span.cc{ color:#6d84b4 }
     </style>
     <?php $this->load->view("public/_partials/header.php") ?>
 </head>
@@ -85,75 +133,98 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     <div id="wrap" class="container-fluid p-3 mb-5 ">
         <div id="">
-            <h2 class="heading text-center text-capitalize mb-2">Form Pendaftaran Pelatihan</h2>
+            <h2 class="heading text-center text-capitalize mb-2">Form Data Survey</h2>
             <?php echo form_open('public/register/index'); ?>
             <div class="col-md-11">
+                
                 <table>
+                    <br>
                     <tr>
-                        <td>Nama</td>
-                        <td>:</td>
-                        <td><input type="text" name="nama" value="<?php echo set_value('nama'); ?>" /></td>
-                        <td> <?php echo form_error('nama'); ?> </td>
+                        <td style="font-size: 20px">Nama</td>
+                        <td style="font-size: 20px">:</td>
+                        <td style="font-size: 20px"><input type="text" name="nama" value="<?php echo set_value('nama'); ?>" /></td>
+                        <td style="font-size: 20px"> <?php echo form_error('nama'); ?> </td>
                     </tr>
 
                     <tr>
-                        <td>Email</td>
-                        <td>:</td>
-                        <td><input type="text" name="email" value="<?php echo set_value('email'); ?>" /></td>
-                        <td> <?php echo form_error('email'); ?> </td>
-                    </tr>
-
-                    <tr>
-                        <td>Nama Perusahaan/Personal</td>
-                        <td>:</td>
-                        <td><textarea type="text" name="company_person" value="<?php echo set_value('company_person'); ?>" rows="2" cols="15"></textarea></td>
-                        <td> <?php echo form_error('company_person'); ?> </td>
-                    </tr>
-
-                    <tr>
-                        <td>Jumlah Personal</td>
-                        <td>:</td>
-                        <td><input type="text" name="jumlah_personal" value="<?php echo set_value('jumlah_personal'); ?>" /></td>
-                        <td> <?php echo form_error('jumlah_personal'); ?> </td>
-                    </tr>
-
-                    <tr>
-                        <td>Jenis Pelatihan / Judul Pelatihan</td>
-                        <td>:</td>
-                        <td><input type="text" name="jenis_pelatihan" value="<?php echo set_value('jenis_pelatihan'); ?>" /></td>
-                        <td> <?php echo form_error('jenis_pelatihan'); ?> </td>
-                    </tr>
-
-                    <tr>
-                        <td>Tanggal</td>
-                        <td>:</td>
-                        <td>
-                            <div class="input-group date">
-                                <input type="date" class="datepicker" name="tanggal_event" class="form-control">
-                            </div>
-                        </td>
-                        <td> <?php echo form_error('tanggal_event'); ?> </td>
-                    </tr>
-
-                    <tr>
-                        <td>Pembayaran</td>
-                        <td>:</td>
-                        <td><select name="pembayaran" id="pembayaran">
+                        <td style="font-size: 20px">Jenis Kelamin</td>
+                        <td style="font-size: 20px">:</td>
+                        <td style="font-size: 20px"><select name="jenis_kelamin" id="jenis_kelamin">
                                 <option value="">Select</option>
-                                <option value="Tunai">Tunai</option>
-                                <option value="Transfer">Transfer</option>
-                            </select>
-                            <font color="#FF0000"><?php echo form_error('pembayaran'); ?></font>
+                                <option value="Pria">Pria</option>
+                                <option value="Wanita">Wanita</option>
+                              </select>
+                            <font color="#FF0000"><?php echo form_error('jenis_kelamin'); ?></font>
                         </td>
                     </tr>
 
-                    <tr></tr>
+                    <tr>
+                        <td style="font-size: 20px">Nama Perusahaan / Personal</td>
+                        <td style="font-size: 20px">:</td>
+                        <td style="font-size: 20px"><input type="text" name="nama_perusahaan" value="<?php echo set_value('nama_perusahaan'); ?>" /></td>
+                        <td style="font-size: 20px"> <?php echo form_error('nama_perusahaan'); ?> </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-size: 20px">Alamat</td>
+                        <td style="font-size: 20px">:</td>
+                        <td style="font-size: 20px"><input type="text" name="alamat" value="<?php echo set_value('alamat'); ?>" /></td>
+                        <td style="font-size: 20px"> <?php echo form_error('alamat'); ?> </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-size: 20px">Kota</td>
+                        <td style="font-size: 20px">:</td>
+                        <td style="font-size: 20px"><input type="text" name="kota" value="<?php echo set_value('kota'); ?>" /></td>
+                        <td style="font-size: 20px"> <?php echo form_error('kota'); ?> </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-size: 20px">Provinsi</td>
+                        <td style="font-size: 20px">:</td>
+                        <td style="font-size: 20px"><input type="text" name="provinsi" value="<?php echo set_value('provinsi'); ?>" /></td>
+                        <td style="font-size: 20px"> <?php echo form_error('provinsi'); ?> </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-size: 20px">No Telp</td>
+                        <td style="font-size: 20px">:</td>
+                        <td style="font-size: 20px"><input type="text" name="no_tlp" value="<?php echo set_value('no_tlp'); ?>" /></td>
+                        <td style="font-size: 20px"> <?php echo form_error('no_tlp'); ?> </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-size: 20px">Jenis Jasa Pelayanan Teknik</td>
+                        <td style="font-size: 20px">:</td>
+                        <td style="font-size: 20px"><select name="jenis_jasa" id="jenis_jasa">
+                                <option value="">Select</option>
+                                <option value="Pengujian">Pengujian</option>
+                                <option value="Pelatihan">Pelatihan</option>
+                                <option value="RancangBangun">Rancang Bangun</option>
+                            </select>
+                            <font color="#FF0000"><?php echo form_error('jenis_jasa'); ?></font>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>
+                            <!--    <p>A simple mod:</p> -->
+  <!--   <div class="cc-selector-2">
+        <input id="visa2" type="radio" name="creditcard" value="visa" />
+        <label class="drinkcard-cc visa" for="visa2"></label>
+        <input  checked="checked" id="mastercard2" type="radio" name="creditcard" value="mastercard" />
+        <label class="drinkcard-cc mastercard"for="mastercard2"></label>
+    </div> -->
+                        </td>
+                    </tr>
                     <tr></tr>
                     <tr></tr>
                     <tr>
                         <td></td>
                         <td></td>
-                        <td>
+                        <td style="font-size: 20px">
                             <input type="submit" class="btn-primary" name="btnSubmit" value="Daftar" />
                         </td>
                     </tr>

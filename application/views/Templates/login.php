@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Sparkup CMS | Admin Area</title>
+    <title>Balai Besar Tekstil | Admin Area</title>
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->

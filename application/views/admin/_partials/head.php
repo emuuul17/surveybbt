@@ -14,6 +14,8 @@
   <!-- Page level plugin CSS-->
   <link href="<?= base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
   <!-- Custom styles for this template-->
   <link href="<?= base_url(); ?>assets/css/sb-admin.css" rel="stylesheet">
  

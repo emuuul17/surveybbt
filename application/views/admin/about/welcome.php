@@ -50,7 +50,7 @@
                             <?= form_textarea($data); ?>
                             </div>
 
-                            <div class="row">
+                            <!-- <div class="row">
 
                                 <div class="form-group col-md-6">
                                 <?= form_label('Foto', 'img');  ?>
@@ -70,7 +70,7 @@
                                     <img src="<?= base_url();?>/assets/upload/welcome/<?= $welcome->img ?>" class="img-fluid" alt="Card image cap"/>
                                 </div>
 
-                            </div>
+                            </div> -->
 
 
 				    </div>
