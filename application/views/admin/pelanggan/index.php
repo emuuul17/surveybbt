@@ -9,7 +9,7 @@
 <br>
 <span>
     <button type="button" class="btn btn-info" id="cari">Cari</button>
-    <button type="button" class="btn btn-danger" id="print" target="_BLANK">Print</button>
+    <button type="button" class="btn btn-danger"><a id="print" href="pelanggan/cetak" target="_blank">Print</a></button>
 </span>
 <br><br>
 <div class="row col-md-12">
@@ -117,6 +117,22 @@
     const pelatihan = 'Pelatihan'
     const rancang = 'RancangBangun'
     const pengujian = 'Pengujian'
+
+    $(document).ready(function(){
+    let nama = $('#nama').val()
+    let kelamin = $('#kelamin').val()
+    let perusahaan = $('#perusahaan').val()
+    let alamat = $('#alamat').val()
+    let kota = $('#kota').val()
+    let provinsi = $('#provinsi').val()
+    let tlp = $('#no_tlp').val()
+    let jenis = $('#jenis').val()
+    let anjing = $('#print').attr('href')
+    let coba = anjing+'/'+nama
+    $('#print').attr('href', coba)
+        console.log(coba)
+
+    })
    
 
     $(document).on('click', '#cari', function(){
@@ -134,15 +150,41 @@
 
      $(document).on('click', '#print', function(){
     let nama = $('#nama').val()
+    if(!nama){
+        nama = 'null'
+    }
     let kelamin = $('#kelamin').val()
+    if(!kelamin){
+        kelamin = 'null'
+    }
     let perusahaan = $('#perusahaan').val()
+    if(!perusahaan){
+        perusahaan = 'null'
+    }
     let alamat = $('#alamat').val()
+    if(!alamat){
+        alamat = 'null'
+    }
     let kota = $('#kota').val()
+    if(!kota){
+        kota = 'null'
+    }
     let provinsi = $('#provinsi').val()
+    if(!provinsi){
+        provinsi = 'null'
+    }
     let tlp = $('#no_tlp').val()
+    if(!tlp){
+        tlp = 'null'
+    }
     let jenis = $('#jenis').val()
-
-        print(nama, kelamin, perusahaan, alamat, kota, provinsi, tlp, jenis)
+    if(!jenis){
+        jenis = 'null'
+    }
+    let url = $('#print').attr('href')
+    let data = url+nama+'/'+kelamin+'/'+perusahaan+'/'+alamat+'/'+kota+'/'+provinsi+'/'+tlp+'/'+jenis
+    $('#print').attr('href', data)
+    location.reload();
     })
 
     function search(nama, kelamin, perusahaan, alamat, kota, provinsi, tlp, jenis){
@@ -164,14 +206,15 @@
         });
     };
 
-    function print(nama, kelamin, perusahaan, alamat, kota, provinsi, tlp, jenis){
+    function cetak(nama, kelamin, perusahaan, alamat, kota, provinsi, tlp, jenis){
         $.ajax({
             url:'<?= site_url('admin/pelanggan/cetak') ?>',
             dataType: 'html',
             type: 'POST',
             data: {nama:nama, kelamin: kelamin, perusahaan: perusahaan, alamat: alamat, kota: kota, provinsi: provinsi, tlp: tlp, jenis: jenis},
             success: function(data){
-                window.open(data);
+                console.log(data)
+                // return true
             },
 
             error: function(XMLHttpRequest, textStatus, errorThrown){

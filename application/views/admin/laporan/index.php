@@ -22,6 +22,7 @@
 	<div class="input-group date row bangkit" hidden="true">
 		<div class="col-md-12">
 				<button class="btn btn-danger cari" id="mencari">Cari </button>
+				<button type="button" class="btn btn-danger"><a id="print" href="laporan/cetak" target="_blank">Print</a></button>
 		</div>
 			<div class="col-md-3">
 				Tanggal : 

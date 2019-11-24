@@ -324,4 +324,29 @@ class Laporan extends Admin_Controller {
       $a=date('d-M-Y', strtotime($date));
       return $a;
     }
+
+     function cetak(){
+      $pengujian = $this->uri->segment(1,0);
+       if($pengujian == 'null'){
+        $pengujian = '';
+      }
+      $pelatihan = $this->uri->segment(2,0);
+      if($pelatihan == 'null'){
+        $pelatihan = '';
+      }
+      // var_dump($kelamin);die;
+      $rancang = $this->uri->segment(3,0);
+      if($rancang == 'null'){
+        $rancang = '';
+      }
+
+      
+         $qry = 'select * from tb_responden ';
+         if($nama || $kelamin || $perusahaan || $alamat || $kota || $provinsi || $tlp || $jenis){
+          $qry.="where nama like '%".$nama."%' AND jenis_kelamin like '%".$kelamin."%' and nama_perusahaan like '%".$perusahaan."%'and alamat like '%".$alamat."%' and kota like '%".$kota."%' and provinsi like '%".$provinsi."%' and no_tlp like '%".$tlp."%' and jenis_jasa like '%".$jenis."%' ";
+         }
+        $data['ListData'] = $this->db->query($qry)->result_array();
+        $this->mypdf->generate('admin/laporan/dompdf', $data, 'laporan-responden', 'A4', 'landscape');
+        
+    }
 }

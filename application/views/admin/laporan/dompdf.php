@@ -29,23 +29,24 @@
 
   <hr class="line-title"> 
   <p align="center">
-    LAPORAN DATA RESPONDEN <br>
+    LAPORAN HASIL SURVEY <br>
     <b></b>
   </p>
   <table class="table table-bordered">
     <tr>
-      <th>#</th>
+      <th>No</th>
       <th>Nama</th>
-      <th>Jenis Kelamin</th>
-      <th>Nama Perusahaan</th>
-      <th>Alamat</th>
-      <th>Kota</th>
-      <th>Provinsi</th>
-      <th>No. Telp</th>
-      <th>Jenis Jasa</th>
-      <th>Tanggal</th>
+      <th>Jenis</th>
+      <th>Pertanyaan 1</th>
+      <th>Pertanyaan 2</th>
+      <th>Pertanyaan 3</th>
+      <th>Pertanyaan 4</th>
+      <th>Pertanyaan 5</th>
+      <th>Pertanyaan 6</th>
+      <th>Pertanyaan 7</th>
+      <th>Tanggal Survey</th>
     </tr>
-    <?php 
+    <!-- <?php 
     // echo var_dump($ListData);die;
     $id = 1; foreach ($ListData as $row): ?>
       <tr>
@@ -60,7 +61,7 @@
         <td><?php echo $row['jenis_jasa'] ?></td>
         <td><?php echo $row['tanggal'] ?></td>
       </tr>
-    <?php endforeach ?>
+    <?php endforeach ?> -->
   </table>
 
 </body>

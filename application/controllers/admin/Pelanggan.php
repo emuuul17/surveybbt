@@ -85,22 +85,46 @@ class Pelanggan extends Admin_Controller {
   //   $this->mypdf->generate('Pelanggan/dompdf', $data, 'laporan-responden', 'A4', 'landscape');
   // }
 
-    function cetak($nama=null, $kelamin=null, $perusahaan=null, $alamat=null, $kota=null, $provinsi=null, $tlp=null, $jenis=null){
+    function cetak(){
+      $nama = $this->uri->segment(4,0);
+       if($nama == 'null'){
+        $nama = '';
+      }
+      $kelamin = $this->uri->segment(5,0);
+      if($kelamin == 'null'){
+        $kelamin = '';
+      }
+      // var_dump($kelamin);die;
+      $perusahaan = $this->uri->segment(6,0);
+      if($perusahaan == 'null'){
+        $perusahaan = '';
+      }
 
-      $nama = $this->input->post('nama');
-      $kelamin = $this->input->post('kelamin');
-      $perusahaan = $this->input->post('perusahaan');
-      $alamat = $this->input->post('alamat');
-      $kota = $this->input->post('kota');
-      $provinsi = $this->input->post('provinsi');
-      $tlp = $this->input->post('tlp');
-      $jenis = $this->input->post('jenis');
-
+      $alamat = $this->uri->segment(7,0);
+         if($alamat == 'null'){
+        $alamat = '';
+      }
+      $kota = $this->uri->segment(8,0);
+       if($kota == 'null'){
+        $kota = '';
+      }
+      $provinsi = $this->uri->segment(9,0);
+       if($provinsi == 'null'){
+        $provinsi = '';
+      }
+      $tlp = $this->uri->segment(10,0);
+      if($tlp == 'null'){
+        $tlp = '';
+      }
+      $jenis = $this->uri->segment(11,0);
+       if($jenis == 'null'){
+        $jenis = '';
+      }
          $qry = 'select * from tb_responden ';
          if($nama || $kelamin || $perusahaan || $alamat || $kota || $provinsi || $tlp || $jenis){
           $qry.="where nama like '%".$nama."%' AND jenis_kelamin like '%".$kelamin."%' and nama_perusahaan like '%".$perusahaan."%'and alamat like '%".$alamat."%' and kota like '%".$kota."%' and provinsi like '%".$provinsi."%' and no_tlp like '%".$tlp."%' and jenis_jasa like '%".$jenis."%' ";
          }
-        $data = $this->db->query($qry)->result_array();
+        $data['ListData'] = $this->db->query($qry)->result_array();
         $this->mypdf->generate('admin/pelanggan/dompdf', $data, 'laporan-responden', 'A4', 'landscape');
         
     }
