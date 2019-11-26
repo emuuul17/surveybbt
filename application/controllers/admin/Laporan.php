@@ -326,16 +326,16 @@ class Laporan extends Admin_Controller {
     }
 
      function cetak(){
-      $pengujian = $this->uri->segment(1,0);
+      $pengujian = $this->uri->segment(4,0);
        if($pengujian == 'null'){
         $pengujian = '';
       }
-      $pelatihan = $this->uri->segment(2,0);
+      $pelatihan = $this->uri->segment(5,0);
       if($pelatihan == 'null'){
         $pelatihan = '';
       }
       // var_dump($kelamin);die;
-      $rancang = $this->uri->segment(3,0);
+      $rancang = $this->uri->segment(6,0);
       if($rancang == 'null'){
         $rancang = '';
       }

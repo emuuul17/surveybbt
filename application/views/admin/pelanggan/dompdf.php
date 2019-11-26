@@ -34,7 +34,7 @@
   </p>
   <table class="table table-bordered">
     <tr>
-      <th>#</th>
+      <th>No.</th>
       <th>Nama</th>
       <th>Jenis Kelamin</th>
       <th>Nama Perusahaan</th>
