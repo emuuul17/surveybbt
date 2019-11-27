@@ -5,6 +5,7 @@ class Laporan extends Admin_Controller {
     function __construct(){
         parent::__construct();
         $this->load->library('pagination');
+          $this->load->library('mypdf');
       }
 
     public function index($offset = 0)
@@ -76,20 +77,6 @@ class Laporan extends Admin_Controller {
       }
     }
 
-    // public function delete($id)
-    // {
-    //   $name = $this->Register_model->get($id)->judul;
-
-    //   // Delete subject
-    //   $this->Register_model->delete($id);
-
-    //   // set msg
-    //   $this->session->set_flashdata('success', 'Data Telah Di Hapus!');
-
-    //   // redirect
-    //   redirect('admin/pelanggan/index');
-    // }
-
     public function search_keyword()
     {
         $keyword    =   $this->input->post('keyword');
@@ -99,68 +86,7 @@ class Laporan extends Admin_Controller {
 
     public function view_semua_laporan()
     {
-      $pelatihan = 'Pelatihan';
-      $rancang = 'RancangBangun';
-      $pengujian = 'Pengujian';
-      $anjay = $this->laporan_model->get_all();
-      $arr = [];
-      foreach ($anjay as $key => $value) {
-        if($value->jenis_jasa == $pelatihan){
-            $tmp = [
-              'nama' => $value->nama,
-              'no_tlp' => $value->no_tlp,
-              'nama_perusahaan' => $value->nama_perusahaan,
-              'tanggal_pendaftaran' => $this->tanggal_indo($value->tanggal_pendaftaran),
-              'jenis_jasa' => $value->jenis_jasa,
-              'alamat' => $value->alamat,
-              'pertanyaan_1' => $this->changeToTeks($value->pelatihan_survey_1),
-              'pertanyaan_2' => $this->changeToTeks($value->pelatihan_survey_2),
-              'pertanyaan_3' => $this->changeToTeks($value->pelatihan_survey_3),
-              'pertanyaan_4' => $this->changeToTeks($value->pelatihan_survey_4),
-              'pertanyaan_5' => $this->changeToTeks($value->pelatihan_survey_5),
-              'pertanyaan_6' => $this->changeToTeks($value->pelatihan_survey_6),
-              'pertanyaan_7' => $this->changeToTeks($value->pelatihan_survey_7)              
-            ];
-            array_push($arr, $tmp);
-        }
-        if($value->jenis_jasa == $pengujian){
-          $tmp2 = [
-              'nama' => $value->nama,
-              'no_tlp' => $value->no_tlp,
-              'nama_perusahaan' => $value->nama_perusahaan,
-              'tanggal_pendaftaran' => $this->tanggal_indo($value->tanggal_pendaftaran),
-              'jenis_jasa' => $value->jenis_jasa,
-              'alamat' => $value->alamat,
-              'pertanyaan_1' => $this->changeToTeks($value->pengujian_survey_1),
-              'pertanyaan_2' => $this->changeToTeks($value->pengujian_survey_2),
-              'pertanyaan_3' => $this->changeToTeks($value->pengujian_survey_3),
-              'pertanyaan_4' => $this->changeToTeks($value->pengujian_survey_4),
-              'pertanyaan_5' => $this->changeToTeks($value->pengujian_survey_5),
-              'pertanyaan_6' => $this->changeToTeks($value->pengujian_survey_6),
-              'pertanyaan_7' => $this->changeToTeks($value->pengujian_survey_7)
-          ];
-          array_push($arr, $tmp2);
-        }
-        if($value->jenis_jasa == $rancang){
-          $tmp3 = [
-              'nama' => $value->nama,
-              'no_tlp' => $value->no_tlp,
-              'nama_perusahaan' => $value->nama_perusahaan,
-              'tanggal_pendaftaran' => $this->tanggal_indo($value->tanggal_pendaftaran),
-              'jenis_jasa' => $value->jenis_jasa,
-              'alamat' => $value->alamat,
-              'pertanyaan_1' => $this->changeToTeks($value->rancang_survey_1),
-              'pertanyaan_2' => $this->changeToTeks($value->rancang_survey_2),
-              'pertanyaan_3' => $this->changeToTeks($value->rancang_survey_3),
-              'pertanyaan_4' => $this->changeToTeks($value->rancang_survey_4),
-              'pertanyaan_5' => $this->changeToTeks($value->rancang_survey_5),
-              'pertanyaan_6' => $this->changeToTeks($value->rancang_survey_6),
-              'pertanyaan_7' => $this->changeToTeks($value->rancang_survey_7)
-          ];
-          array_push($arr, $tmp3);
-        }
-      }
-      $data['laporan'] = $arr;
+      $data['laporan'] = $this->qry_semua_laporan();
       $this->load->view('admin/laporan/semua_laporan', $data);
     }
 
@@ -325,28 +251,150 @@ class Laporan extends Admin_Controller {
       return $a;
     }
 
-     function cetak(){
-      $pengujian = $this->uri->segment(4,0);
-       if($pengujian == 'null'){
-        $pengujian = '';
+    public function cetak(){
+      $awal = $this->uri->segment(4,0);
+       if($awal == 'null'){
+        $awal = '';
       }
-      $pelatihan = $this->uri->segment(5,0);
-      if($pelatihan == 'null'){
-        $pelatihan = '';
+      $akhir = $this->uri->segment(5,0);
+      if($akhir == 'null'){
+        $akhir = '';
       }
-      // var_dump($kelamin);die;
-      $rancang = $this->uri->segment(6,0);
-      if($rancang == 'null'){
-        $rancang = '';
-      }
+      $jenis = $this->uri->segment(6,0);
+      if($jenis == 'null'){
+        $jenis = '';
+      }else if ( $jenis == 'Pelatihan'){
+        $tmp_arr = [];
+        $arr_pelatihan = [];
+         $qry = "select * from laporan_pelatihan where tanggal_pendaftaran BETWEEN '".$awal."' AND '".$akhir."'";
+        $pelatihan_qry = $this->db->query($qry)->result_array();
 
-      
-         $qry = 'select * from tb_responden ';
-         if($nama || $kelamin || $perusahaan || $alamat || $kota || $provinsi || $tlp || $jenis){
-          $qry.="where nama like '%".$nama."%' AND jenis_kelamin like '%".$kelamin."%' and nama_perusahaan like '%".$perusahaan."%'and alamat like '%".$alamat."%' and kota like '%".$kota."%' and provinsi like '%".$provinsi."%' and no_tlp like '%".$tlp."%' and jenis_jasa like '%".$jenis."%' ";
-         }
-        $data['ListData'] = $this->db->query($qry)->result_array();
-        $this->mypdf->generate('admin/laporan/dompdf', $data, 'laporan-responden', 'A4', 'landscape');
+        foreach ($pelatihan_qry as $key => $value) {
+          $tmp_arr = [
+            'nama' => $value['nama'],
+            'pelatihan_survey_1' => $this->changeToTeks($value['pelatihan_survey_1']),
+            'pelatihan_survey_2' => $this->changeToTeks($value['pelatihan_survey_2']),
+            'pelatihan_survey_3' => $this->changeToTeks($value['pelatihan_survey_3']),
+            'pelatihan_survey_4' => $this->changeToTeks($value['pelatihan_survey_4']),
+            'pelatihan_survey_5' => $this->changeToTeks($value['pelatihan_survey_5']),
+            'pelatihan_survey_6' => $this->changeToTeks($value['pelatihan_survey_6']),
+            'pelatihan_survey_7' => $this->changeToTeks($value['pelatihan_survey_7']),
+            'tanggal_pendaftaran' => $value['tanggal_pendaftaran']
+          ];
+          array_push($arr_pelatihan, $tmp_arr);
+        }
+        $data['ListData'] = $arr_pelatihan;
+        $this->mypdf->generate('admin/laporan/print/pelatihan', $data, 'laporan-responden', 'A4', 'landscape');
+      }else if ( $jenis == 'Pengujian'){
+        $tmp_arr = [];
+        $arr_pengujian = [];
+         $qry = "select * from laporan_pengujian where tanggal_pendaftaran BETWEEN '".$awal."' AND '".$akhir."'";
+        $pengujian_qry = $this->db->query($qry)->result_array();
+
+        foreach ($pengujian_qry as $key => $value) {
+          $tmp_arr = [
+            'nama' => $value['nama'],
+            'pengujian_survey_1' => $this->changeToTeks($value['pengujian_survey_1']),
+            'pengujian_survey_2' => $this->changeToTeks($value['pengujian_survey_2']),
+            'pengujian_survey_3' => $this->changeToTeks($value['pengujian_survey_3']),
+            'pengujian_survey_4' => $this->changeToTeks($value['pengujian_survey_4']),
+            'pengujian_survey_5' => $this->changeToTeks($value['pengujian_survey_5']),
+            'pengujian_survey_6' => $this->changeToTeks($value['pengujian_survey_6']),
+            'pengujian_survey_7' => $this->changeToTeks($value['pengujian_survey_7']),
+            'tanggal_pendaftaran' => $value['tanggal_pendaftaran']
+          ];
+          array_push($arr_pengujian, $tmp_arr);
+        }
+        $data['ListData'] = $arr_pengujian;
+        $this->mypdf->generate('admin/laporan/print/pengujian', $data, 'laporan-responden', 'A4', 'landscape');
+      }else if( $jenis == 'RancangBangun'){
+        $tmp_arr = [];
+        $arr_rancang = [];
+         $qry = "select * from laporan_rancang where tanggal_pendaftaran BETWEEN '".$awal."' AND '".$akhir."'";
+        $rancang_qry = $this->db->query($qry)->result_array();
+
+        foreach ($rancang_qry as $key => $value) {
+          $tmp_arr = [
+            'nama' => $value['nama'],
+            'rancang_survey_1' => $this->changeToTeks($value['rancang_survey_1']),
+            'rancang_survey_2' => $this->changeToTeks($value['rancang_survey_2']),
+            'rancang_survey_3' => $this->changeToTeks($value['rancang_survey_3']),
+            'rancang_survey_4' => $this->changeToTeks($value['rancang_survey_4']),
+            'rancang_survey_5' => $this->changeToTeks($value['rancang_survey_5']),
+            'rancang_survey_6' => $this->changeToTeks($value['rancang_survey_6']),
+            'rancang_survey_7' => $this->changeToTeks($value['rancang_survey_7']),
+            'tanggal_pendaftaran' => $value['tanggal_pendaftaran']
+          ];
+          array_push($arr_rancang, $tmp_arr);
+        }
+        $data['ListData'] = $arr_rancang;
+        $this->mypdf->generate('admin/laporan/print/rancang', $data, 'laporan-responden', 'A4', 'landscape');
+      }
         
+    }
+
+    private function qry_semua_laporan(){
+      $pelatihan = 'Pelatihan';
+      $rancang = 'RancangBangun';
+      $pengujian = 'Pengujian';
+      $anjay = $this->laporan_model->get_all();
+      $arr = [];
+      foreach ($anjay as $key => $value) {
+        if($value->jenis_jasa == $pelatihan){
+            $tmp = [
+              'nama' => $value->nama,
+              'no_tlp' => $value->no_tlp,
+              'nama_perusahaan' => $value->nama_perusahaan,
+              'tanggal_pendaftaran' => $this->tanggal_indo($value->tanggal_pendaftaran),
+              'jenis_jasa' => $value->jenis_jasa,
+              'alamat' => $value->alamat,
+              'pertanyaan_1' => $this->changeToTeks($value->pelatihan_survey_1),
+              'pertanyaan_2' => $this->changeToTeks($value->pelatihan_survey_2),
+              'pertanyaan_3' => $this->changeToTeks($value->pelatihan_survey_3),
+              'pertanyaan_4' => $this->changeToTeks($value->pelatihan_survey_4),
+              'pertanyaan_5' => $this->changeToTeks($value->pelatihan_survey_5),
+              'pertanyaan_6' => $this->changeToTeks($value->pelatihan_survey_6),
+              'pertanyaan_7' => $this->changeToTeks($value->pelatihan_survey_7)              
+            ];
+            array_push($arr, $tmp);
+        }
+        if($value->jenis_jasa == $pengujian){
+          $tmp2 = [
+              'nama' => $value->nama,
+              'no_tlp' => $value->no_tlp,
+              'nama_perusahaan' => $value->nama_perusahaan,
+              'tanggal_pendaftaran' => $this->tanggal_indo($value->tanggal_pendaftaran),
+              'jenis_jasa' => $value->jenis_jasa,
+              'alamat' => $value->alamat,
+              'pertanyaan_1' => $this->changeToTeks($value->pengujian_survey_1),
+              'pertanyaan_2' => $this->changeToTeks($value->pengujian_survey_2),
+              'pertanyaan_3' => $this->changeToTeks($value->pengujian_survey_3),
+              'pertanyaan_4' => $this->changeToTeks($value->pengujian_survey_4),
+              'pertanyaan_5' => $this->changeToTeks($value->pengujian_survey_5),
+              'pertanyaan_6' => $this->changeToTeks($value->pengujian_survey_6),
+              'pertanyaan_7' => $this->changeToTeks($value->pengujian_survey_7)
+          ];
+          array_push($arr, $tmp2);
+        }
+        if($value->jenis_jasa == $rancang){
+          $tmp3 = [
+              'nama' => $value->nama,
+              'no_tlp' => $value->no_tlp,
+              'nama_perusahaan' => $value->nama_perusahaan,
+              'tanggal_pendaftaran' => $this->tanggal_indo($value->tanggal_pendaftaran),
+              'jenis_jasa' => $value->jenis_jasa,
+              'alamat' => $value->alamat,
+              'pertanyaan_1' => $this->changeToTeks($value->rancang_survey_1),
+              'pertanyaan_2' => $this->changeToTeks($value->rancang_survey_2),
+              'pertanyaan_3' => $this->changeToTeks($value->rancang_survey_3),
+              'pertanyaan_4' => $this->changeToTeks($value->rancang_survey_4),
+              'pertanyaan_5' => $this->changeToTeks($value->rancang_survey_5),
+              'pertanyaan_6' => $this->changeToTeks($value->rancang_survey_6),
+              'pertanyaan_7' => $this->changeToTeks($value->rancang_survey_7)
+          ];
+          array_push($arr, $tmp3);
+        }
+      }
+      return $arr;
     }
 }

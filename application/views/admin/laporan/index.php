@@ -32,7 +32,7 @@
 			<div class="col-md-3"> 
 			<input type="date" class="datepicker" id="tanggal-akhir" class="form-control"></input>
 			</div> 
-	</div>
+		</div>
 	<div id="form_laporan"></div>
 </div>
 </div>
@@ -50,20 +50,24 @@
 	$(document).on('click', '#laporanSemua', function(){
 		$('.cari').attr('id', 'mencari');
 		$('.bangkit').attr('hidden', false);
+		$('#print').attr('hidden', true);
 	});
 
 	$(document).on('click', '#laporanPelatihan', function(){
 			$('.bangkit').attr('hidden', false);
+		$('#print').attr('hidden', false);
 			$('.cari').attr('id', pelatihan);
 	});
 
 	$(document).on('click', '#laporanPengujian', function(){
 			$('.bangkit').attr('hidden', false);
+		$('#print').attr('hidden', false);
 			$('.cari').attr('id', pengujian);
 	});
 
 	$(document).on('click', '#laporanRancang', function(){
 			$('.bangkit').attr('hidden', false);
+		$('#print').attr('hidden', false);
 			$('.cari').attr('id', rancang);
 	});
 
@@ -90,6 +94,30 @@
 		let akhir = $('#tanggal-akhir').val();
 		serachByJenis(rancang,awal,akhir);
 	});
+
+	 $(document).on('click', '#print', function(){
+	    let url = $('#print').attr('href')
+	    $('#print').attr('href', url)
+	 	let awal = $('#tanggal-mulai').val();
+	    if(!awal){
+	        awal = 'null'
+	    }
+		let akhir = $('#tanggal-akhir').val();
+	    if(!akhir){
+	        akhir = 'null'
+	    }
+
+	    // if(awal || akhir == 'null'){
+	    // 	alert('Tanggal Tidak boleh kosong');
+	    // }
+	    let jenis = $('.cari').attr('id')
+	    if(jenis == 'mencari'){
+	        jenis = 'null'
+	    }
+	    let data = url+'/'+awal+'/'+akhir+'/'+jenis
+	    $('#print').attr('href', data)
+	    location.reload();
+	   })
 
 	function view_laporan_semua(){
 		$.ajax({

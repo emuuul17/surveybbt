@@ -57,8 +57,9 @@
                                 <option value="RancangBangun">Rancang Bangun</option>
         </select>
     </div>
-</div>
 <br>
+<br>
+    
 
 <div class="card mb-3" id="form_data">
     <div class="card-header text-white bg-primary ">

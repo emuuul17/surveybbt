@@ -34,7 +34,6 @@
   </p>
   <table class="table table-bordered">
     <tr>
-      <th>No</th>
       <th>Nama</th>
       <th>Jenis</th>
       <th>Pertanyaan 1</th>
@@ -46,22 +45,20 @@
       <th>Pertanyaan 7</th>
       <th>Tanggal Survey</th>
     </tr>
-    <!-- <?php 
+    <?php 
     // echo var_dump($ListData);die;
     $id = 1; foreach ($ListData as $row): ?>
       <tr>
-        <td><?php echo $id++ ?></td>
         <td><?php echo $row['nama'] ?></td>
-        <td><?php echo $row['jenis_kelamin'] ?></td>
-        <td><?php echo $row['nama_perusahaan'] ?></td>
-        <td><?php echo $row['alamat'] ?></td>
-        <td><?php echo $row['kota'] ?></td>
-        <td><?php echo $row['provinsi'] ?></td>
-        <td><?php echo $row['no_tlp'] ?></td>
-        <td><?php echo $row['jenis_jasa'] ?></td>
-        <td><?php echo $row['tanggal'] ?></td>
+        <td><?php echo $row['pertanyaan_1'] ?></td>
+        <td><?php echo $row['pertanyaan_2'] ?></td>
+<!--         <td><?php echo $row['pertanyaan_3'] ?></td>
+        <td><?php echo $row['pertanyaan_4'] ?></td>
+        <td><?php echo $row['pertanyaan_5'] ?></td>
+        <td><?php echo $row['pertanyaan_6'] ?></td>
+        <td><?php echo $row['pertanyaan_7'] ?></td> -->
       </tr>
-    <?php endforeach ?> -->
+    <?php endforeach ?>
   </table>
 
 </body>
