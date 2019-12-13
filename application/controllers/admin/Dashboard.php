@@ -159,15 +159,15 @@ class Dashboard extends Admin_Controller {
 	{
 		$akhir = '';
 		if($data >= 1.00 && $data < 1.80){
-     		$akhir = 'tidak puas';
+     		$akhir = 'Tidak Puas';
      	}elseif($data >= 1.80 && $data < 2.60){
-     		$akhir ='kurang puas';
+     		$akhir ='Kurang Puas';
      	}elseif ($data >= 2.60 && $data < 3.40){
-     		$akhir = 'cukup';
+     		$akhir = 'Cukup Puas';
      	}elseif ($data >= 3.40 && $data < 4.20) {
-     		$akhir = 'puas';
+     		$akhir = 'Puas';
      	}elseif ($data >= 4.20) {
-     		$akhir = 	'sangat puas';
+     		$akhir = 	'Sangat Puas';
      	}
 
      	return $akhir;

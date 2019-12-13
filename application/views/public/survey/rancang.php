@@ -7,7 +7,7 @@
   <?php $this->load->view("public/_partials/navbar.php") ?>
       <div class="card mb-3">
         <div class="card-header text-white bg-warning ">
-        <b>Edit Pertanyaan</b>
+        <b>SURVEY KEPUASAN DIVISI RANCANG BANGUN</b>
         </div>
     <div class="card-body">
         <?= validation_errors('<p class="alert alert-danger" role="alert">'); ?>

@@ -4,6 +4,24 @@
         </div>
   <div class="card-body">
     <div class="row col-md-12">
+        <br>
+<span>
+    <button type="button" class="btn btn-info" id="cari">Cari</button>
+    <button type="button" class="btn btn-danger"><a id="print" href="cetak_rancang" target="_blank">Print</a></button>
+</span>
+<br><br>
+<div class="row col-md-12">
+    <div class="col-md-3">
+        Tingkat Kepuasan 
+        <select name="kesimpulan" id="kesimpulan">
+                                <option value="">Semua Data</option>
+                                <option value="sangatpuas">Sangat Puas</option>
+                                <option value="puas">Puas</option>
+                                <option value="cukuppuas">Cukup Puas</option>
+                                <option value="kurangpuas">Kurang Puas</option>
+                                <option value="tidakpuas">Tidak Puas</option>
+        </select>
+    </div>
 
             </div>
             <?php
@@ -536,4 +554,37 @@
             }
         }
     });
+     $(document).on('click', '#print', function(){
+    let jenis = $('#kesimpulan').val()
+    if(!jenis){
+        jenis = 'null'
+    }
+    let url = $('#print').attr('href')
+    let data = url+'/'+jenis
+    $('#print').attr('href', data)
+    location.reload();
+    })
+
+    $(document).on('click', '#cari', function(){
+        let status = $('#kesimpulan').val() 
+        searchByStatus(status)
+    })
+
+    function searchByStatus(status){
+        $.ajax({
+            url:'<?= site_url('admin/hasilsurvey/cari_rancang/') ?>'+status ,
+            dataType: 'html',
+            type: 'POST',
+            success: function(data){
+                $('#dataTable').empty().html(data);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+                if(XMLHttpRequest.status === 200){
+                    alert(textStatus+ 'errorna' +errorThrown);
+                }else{
+                    alert('Terjadi Kesalahan server')
+                }
+            }
+        });
+    };
 </script>

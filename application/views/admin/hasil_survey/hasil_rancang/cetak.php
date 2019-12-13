@@ -29,12 +29,11 @@
 
   <hr class="line-title"> 
   <p align="center">
-    LAPORAN HASIL SURVEY DIVISI PENGUJIAN<br>
+    LAPORAN HASIL SURVEY DIVISI RANCANG BANGUN<br>
     <b></b>
   </p>
   <table class="table table-bordered">
     <tr>
-      <th>No.</th>
       <th>Nama</th>
       <th>Pertanyaan 1</th>
       <th>Pertanyaan 2</th>
@@ -43,21 +42,23 @@
       <th>Pertanyaan 5</th>
       <th>Pertanyaan 6</th>
       <th>Pertanyaan 7</th>
-      <th>Tanggal Survey</th>
+      <th>Total</th>
+      <th>Kesimpulan</th>
+      
     </tr>
     <?php 
     $id = 1; foreach ($ListData as $row): ?>
       <tr>
-        <td><?php echo $id++ ?></td>
         <td><?php echo $row['nama'] ?></td>
-        <td><?php echo $row['pengujian_survey_1'] ?></td>
-        <td><?php echo $row['pengujian_survey_2'] ?></td>
-        <td><?php echo $row['pengujian_survey_3'] ?></td>
-        <td><?php echo $row['pengujian_survey_4'] ?></td>
-        <td><?php echo $row['pengujian_survey_5'] ?></td>
-        <td><?php echo $row['pengujian_survey_6'] ?></td>
-        <td><?php echo $row['pengujian_survey_7'] ?></td>
-        <td><?php echo $row['tanggal_pendaftaran'] ?></td>
+        <td><?php echo $row['rancang_survey_1'] ?></td>
+        <td><?php echo $row['rancang_survey_2'] ?></td>
+        <td><?php echo $row['rancang_survey_3'] ?></td>
+        <td><?php echo $row['rancang_survey_4'] ?></td>
+        <td><?php echo $row['rancang_survey_5'] ?></td>
+        <td><?php echo $row['rancang_survey_6'] ?></td>
+        <td><?php echo $row['rancang_survey_7'] ?></td>
+        <td><?php echo $row['nilai'] ?></td>
+        <td><?php echo $row['kesimpulan'] ?></td>
       </tr>
     <?php endforeach ?>
   </table>

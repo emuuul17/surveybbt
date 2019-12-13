@@ -20,8 +20,8 @@
     <tr>
       <td align="center">
         <span style="line-height: 1.6; font-weight: bold;">
-          KEMENPERIN BALAI BESAR TEKSTIL
-          <br>BANDUNG INDONESIA
+          <h3>KEMENPERIN BALAI BESAR TEKSTIL</h3>
+          <h5>Jalan Jenderal Ahmad Yani No. 390 Kota Bandung Jawa Barat – Indonesia</h5>
         </span>
       </td>
     </tr>

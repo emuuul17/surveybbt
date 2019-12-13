@@ -1,7 +1,7 @@
 
 <div class="card">
     <div class="card-header text-white bg-primary">
-     <h2 class="page-header">Dashboard</h2>
+     <h2 class="page-header">Menu Utama</h2>
         </div>
   <div class="card-body">
     <div class="row col-md-12">
@@ -14,8 +14,8 @@
                         </div>
                     <div class="mr-10"><h5> <br><b><?= $tb_responden ?> Jumlah Responden </b></h5></div>
                     </div>
-                    <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>./admin/pelanggan">
-                    <span class="float-left">View Details</span>
+                    <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>./admin/laporan">
+                    <span class="float-left">Lihat Semua</span>
                     <span class="float-right">
                         <i class="fa fa-angle-right"></i>
                     </span>
@@ -29,10 +29,10 @@
                         <div class="card-body-icon">
                             <i class="nav-link fas fa-registered"></i>
                             </div>
-                        <div class="mr-10"><h5><br><b><?= $pelatihan1 ?> Responden Pelatihan  </b></h5></div>
+                        <div class="mr-10"><h5><br><b><?= $pelatihan1 ?> Responden Divisi Pelatihan  </b></h5></div>
                             </div>
-                              <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>./admin/hasil_survey/hasil_pelatihan">
-                    <span class="float-left">View Details</span>
+                              <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>./admin/hasilsurvey/pelatihan">
+                    <span class="float-left">Lihat Semua</span>
                     <span class="float-right">
                         <i class="fa fa-angle-right"></i>
                     </span>
@@ -46,10 +46,10 @@
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-comments"></i>
                             </div>
-                        <div class="mr-10"><h5> <br><b><?= $pengujian1 ?>  Responden Pengujian </b></h5></div>
+                        <div class="mr-10"><h5> <br><b><?= $pengujian1 ?>  Responden Divisi Pengujian </b></h5></div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>./admin/hasil_survey/hasil_pengujian">
-                    <span class="float-left">View Details</span>
+                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>./admin/hasilsurvey/pengujian">
+                    <span class="float-left">Lihat Semua</span>
                     <span class="float-right">
                         <i class="fa fa-angle-right"></i>
                     </span>
@@ -63,10 +63,10 @@
                         <div class="card-body-icon">
                             <i class="fab fa-servicestack"></i>
                             </div>
-                        <div class="mr-10"><h5> <br><b><?= $rancang1 ?>  Responden Rancang </b></h5></div>
+                        <div class="mr-10"><h5> <br><b><?= $rancang1 ?>  Responden Divisi Rancang Bangun</b></h5></div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>./admin/hasil_survey/rancang">
-                    <span class="float-left">View Details</span>
+                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>./admin/hasilsurvey/rancang">
+                    <span class="float-left">Lihat Semua</span>
                     <span class="float-right">
                         <i class="fa fa-angle-right"></i>
                     </span>
@@ -343,43 +343,7 @@
             <div class="col-md-6">
                 <canvas id="myChart7" width="720" height="480"></canvas>
             </div>
-            </div>
-
-        <!-- <div class="row col-md-12" style="margin-top: 2em">
-
-            <div class="col-md-3">
-                <div class="card text-white bg-secondary o-hidden h-100">
-                    <div class="card-body row col-md-12">
-                        <div class="card-body-icon">
-                            <i class="nav-link fas fa-user"></i>
-                            </div>
-                        <div class="mr-10"><h5><br><b><?= $partner ?> Partner </b></h5></div>
-                            </div>
-                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>./admin/customer">
-                    <span class="float-left">View Details</span>
-                    <span class="float-right">
-                        <i class="fa fa-angle-right"></i>
-                    </span>
-                </a>
-                </div>
-            </div> -->
-
-            <!-- <div class="col-md-3">
-                <div class="card text-white bg-info o-hidden h-100">
-                    <div class="card-body row col-md-12">
-                        <div class="card-body-icon">
-                            <i class="fas fa-camera"></i>
-                            </div>
-                        <div class="mr-10"><h5> <br><b><?= $foto ?> Foto Kegiatan </b></h5></div>
-                            </div>
-                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>./admin/about/kegiatan">
-                    <span class="float-left">View Details</span>
-                    <span class="float-right">
-                        <i class="fa fa-angle-right"></i>
-                    </span>
-                </a>
-                </div>
-            </div> -->
+            </div>     
 
             </div>
         </div>
@@ -394,7 +358,7 @@
         data: {
             labels: ['Tidak Puas', 'Kurang Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'],
             datasets: [{
-                label: 'Pertanyaan 1',
+                label: 'Persyaratan',
                 data: <?= json_encode($q1); ?>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -430,7 +394,7 @@
         data: {
             labels: ['Tidak Puas', 'Kurang Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'],
             datasets: [{
-                label: 'Pertanyaan 2',
+                label: 'Waktu Pelayanan',
                 data: <?= json_encode($q2); ?>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -466,7 +430,7 @@
         data: {
             labels: ['Tidak Puas', 'Kurang Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'],
             datasets: [{
-                label: 'Pertanyaan 3',
+                label: 'Biaya / Tarif',
                 data: <?= json_encode($q3); ?>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -502,7 +466,7 @@
         data: {
             labels: ['Tidak Puas', 'Kurang Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'],
             datasets: [{
-                label: 'Pertanyaan 4',
+                label: 'Kompetensi Pelaksana',
                 data: <?= json_encode($q4); ?>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -538,7 +502,7 @@
         data: {
             labels: ['Tidak Puas', 'Kurang Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'],
             datasets: [{
-                label: 'Pertanyaan 5',
+                label: 'Perilaku Pelaksana',
                 data: <?= json_encode($q5); ?>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -574,7 +538,7 @@
         data: {
             labels: ['Tidak Puas', 'Kurang Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'],
             datasets: [{
-                label: 'Pertanyaan 6',
+                label: 'Maklumat Pelayanan',
                 data: <?= json_encode($q6); ?>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -610,7 +574,7 @@
         data: {
             labels: ['Tidak Puas', 'Kurang Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'],
             datasets: [{
-                label: 'Pertanyaan 7',
+                label: 'Penanganan Pengaduan',
                 data: <?= json_encode($q7); ?>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',

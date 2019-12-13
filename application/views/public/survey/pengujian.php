@@ -8,7 +8,6 @@
     <div class="card mb-3">
     	<div class="card-header text-white bg-warning ">
         <b>SURVEY KEPUASAN DIVISI PENGUJIAN</b>
-        <?= $jenis ?>
 	    </div>
     <div class="card-body">
         <?= validation_errors('<p class="alert alert-danger" role="alert">'); ?>
